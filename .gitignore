@@ -1,7 +1,10 @@
 Library/
 
 Temp/
-~
+
+Assets/VSCode/
+
+.DS_Store
 ~
 ~
 ~
