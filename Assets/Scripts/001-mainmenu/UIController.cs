@@ -15,8 +15,30 @@ public class UIController : MonoBehaviour
     public TopBGUI topUI;
     public BottomBGUI bottomUI;
     public LanguagePanel languagePanel;
-    
-	void Start () 
+
+    static private UIController instance;
+
+    static public UIController Instance
+    {
+        get
+        {
+            if (instance == null)
+                instance = new UIController();
+            return instance;
+        }
+
+        set
+        {
+            instance = value;
+        }
+    }
+
+    public UIController()
+    {
+        instance = this;
+    }
+
+    void Start () 
     {
        languagePanel = transform.parent.Find("BG/LanguageSelectPanel").GetComponent<LanguagePanel>();
         
@@ -38,5 +60,10 @@ public class UIController : MonoBehaviour
     void LanguageButtonClick()
     {
         languagePanel.ShowPanel();
+    }
+
+    public void LanguageButtonIconShow(Sprite currentSprite)
+    {
+        languageSeletButton.GetComponent<Image>().sprite = currentSprite;
     }
 }

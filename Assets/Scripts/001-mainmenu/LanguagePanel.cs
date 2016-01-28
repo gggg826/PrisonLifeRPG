@@ -73,6 +73,7 @@ public class LanguagePanel : MonoBehaviour
     void CancelButtonClick()
     {
         HidePanel();
+        UIController.Instance.SendMessage("LanguageButtonIconShow", currentLanguageSprite);
     }
     
     void ENButtonClick()

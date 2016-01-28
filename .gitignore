@@ -4,6 +4,10 @@ Temp/
 
 Assets/VSCode/
 
+.vs/
+
+.vscode/
+
 .DS_Store
 ~
 ~
