@@ -9,7 +9,10 @@ Assets/VSCode/
 .vscode/
 
 .DS_Store
-~
+
+obj/
+
+*.meta
 ~
 ~
 ~
