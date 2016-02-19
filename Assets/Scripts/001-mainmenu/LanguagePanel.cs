@@ -33,8 +33,12 @@ public class LanguagePanel : MonoBehaviour
     {
 	   cancelButton = transform.Find("CancelButton").GetComponent<Button>();
        cancelButton.onClick.AddListener(CancelButtonClick);
-       
-       enSprite1 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_en1");
+
+
+    currentLanguageSprite = UIController.Instance.GetlanguageSprite();
+
+
+    enSprite1 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_en1");
        enSprite2 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_en2");
        frSprite1 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_fr1");
        frSprite2 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_fr2");

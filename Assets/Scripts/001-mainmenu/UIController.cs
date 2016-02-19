@@ -66,4 +66,9 @@ public class UIController : MonoBehaviour
     {
         languageSeletButton.GetComponent<Image>().sprite = currentSprite;
     }
+
+    public Sprite GetlanguageSprite()
+    {
+        return languageSeletButton.gameObject.GetComponent<Image>().sprite;
+    }
 }
