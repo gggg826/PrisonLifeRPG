@@ -1,5 +1,3 @@
-Library/
-
 Temp/
 
 Assets/VSCode/
@@ -11,8 +9,6 @@ Assets/VSCode/
 .DS_Store
 
 obj/
-
-*.meta
 ~
 ~
 ~
