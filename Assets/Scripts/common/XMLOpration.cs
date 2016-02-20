@@ -12,7 +12,7 @@ using System.IO;
 
 public class XMLOpration
 {
-    static public Dictionary<string, string[]> GetRolesInfoDictionary(string path)
+    static public Dictionary<string, CharactorModel> GetRolesInfoDictionary(string path)
     {
         if (!File.Exists(path))
         {
@@ -20,11 +20,12 @@ public class XMLOpration
             return null;
         }
 
-        Dictionary<string, string[]> roleInfoDic = new Dictionary<string, string[]>();
+        Dictionary<string, CharactorModel> rolesInfoDic = new Dictionary<string, CharactorModel>();
 
         XmlDocument xmlDoc = new XmlDocument();
         xmlDoc.Load(path);
         XmlNodeList node = xmlDoc.SelectSingleNode("Root").ChildNodes;
+        
         foreach (XmlElement roleInfo in node)
         {
             string name = roleInfo.GetAttribute("Name");
@@ -33,10 +34,11 @@ public class XMLOpration
             string skinColor = roleInfo.GetAttribute("SkinColor");
             string prefabKind = roleInfo.GetAttribute("PrefabKind");
 
+            CharactorModel model = new CharactorModel(new string[] {name, headNo, bodyType, skinColor, prefabKind });
             // print(name + "  " + headNo + "  " + bodyType + "  " + skinColor + "  " + prefabKind);
 
-            roleInfoDic.Add(name, new string[]{ headNo, bodyType, skinColor, prefabKind });
+            rolesInfoDic.Add(name, model);
         }
-        return roleInfoDic;
+        return rolesInfoDic;
     }
 }
