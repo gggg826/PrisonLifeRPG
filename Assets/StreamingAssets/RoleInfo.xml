@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Root>
-	<Charactor Name="GEEK" HeadNO="1" BodyType="fat" SkinColor="normal" PrefabKind="Body_up"/>
-	<Charactor Name="SMARTY" HeadNO="2" BodyType="thin" SkinColor="normal" PrefabKind="Leg_up"/>
-	<Charactor Name="RED" HeadNO="3" BodyType="thin" SkinColor="normal" PrefabKind="Leg_up"/>
-	<Charactor Name="RANBOW" HeadNO="4" BodyType="strong" SkinColor="normal" PrefabKind="Leg_up"/>
-	<Charactor Name="OLD FISH" HeadNO="5" BodyType="thin" SkinColor="normal" PrefabKind="Leg_up"/>
+	<Charactor Name="GEEK" HeadNO="1" BodyType="1" SkinColor="" PrefabKind="Body_up"/>
+	<Charactor Name="SMARTY" HeadNO="2" BodyType="2" SkinColor="" PrefabKind="Leg_up"/>
+	<Charactor Name="RED" HeadNO="3" BodyType="2" SkinColor="" PrefabKind="Leg_up"/>
+	<Charactor Name="RANBOW" HeadNO="4" BodyType="3" SkinColor="" PrefabKind="Leg_up"/>
+	<Charactor Name="OLD FISH" HeadNO="5" BodyType="2" SkinColor="" PrefabKind="Leg_up"/>
 </Root>

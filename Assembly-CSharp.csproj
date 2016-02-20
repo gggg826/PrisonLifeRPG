@@ -53,6 +53,11 @@
      <Compile Include="Assets\Scripts\001-mainmenu\LanguagePanel.cs" />
      <Compile Include="Assets\Scripts\001-mainmenu\TopBGUI.cs" />
      <Compile Include="Assets\Scripts\001-mainmenu\UIController.cs" />
+     <Compile Include="Assets\Scripts\common\CharactorProxy.cs" />
+     <Compile Include="Assets\Scripts\common\CharactorUI.cs" />
+     <Compile Include="Assets\Scripts\common\CommonData.cs" />
+     <Compile Include="Assets\Scripts\common\XMLOpration.cs" />
+     <None Include="Assets\StreamingAssets\RoleInfo.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
