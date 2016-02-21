@@ -71,14 +71,6 @@ public class BodyModel
 
     string GetPrefabKind()
     {
-        //  prefabs.name = （腿在上还是身体在上 + "_" + 状态）
-        //string temp;
-        //if (info[3] == PREFABKIND.Leg_up.ToString())
-        //    temp = PREFABKIND.Leg_up.ToString();
-        //else
-        //    temp = PREFABKIND.Body_up.ToString();
-        //return info[3] + "_" + status;
-
         if (status == ROLESTATUS.Naked)
             return PREFABKIND.Body_up.ToString();
         else

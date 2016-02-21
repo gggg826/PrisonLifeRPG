@@ -17,7 +17,7 @@ public class CharactorModel
     public CharactorModel(string[] _info)
     {
         roleName = _info[0];
-        status = ROLESTATUS.Naked;
+        status = ROLESTATUS.Normal;
         bodyModel = new BodyModel(new string[] { _info[1], _info[2], _info[3], _info[4]}, status);
     }
 
