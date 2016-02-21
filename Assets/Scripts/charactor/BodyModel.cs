@@ -14,6 +14,9 @@ public class BodyModel
     public string normalHandName;
     public string normalLegName;
     public string prefabKind;
+    //public string strStatus;
+    public ROLESTATUS status;
+
 
     //suf后缀  pre前缀
     const string preHeadName = "prisonChar_head";
@@ -23,9 +26,11 @@ public class BodyModel
 
     private string[] info;
 
-    public BodyModel(string[] _info)
+    public BodyModel(string[] _info, ROLESTATUS _status)
     {
         info = _info;
+        status = _status;
+
         headName = GetSpriteName(preHeadName);
         normalBodyName = GetSpriteName(preNormalBodyName);
         normalHandName = GetSpriteName(preNormalHandName);
@@ -34,7 +39,6 @@ public class BodyModel
     }
 
 
-    // 图片名字 = 前缀 + 体型+肤色
     // { headNo, bodyType, skinColor, prefabKind }
     string GetSpriteName(string preName)
     {
@@ -49,22 +53,35 @@ public class BodyModel
         }
         else
         {
-            if (!Resources.Load<Sprite>("Textures/Charactors/" + preName + info[1] + info[2]))
+            //  prisonChar_bodyNaked3_g
+            // 图片名字 = 前缀 + 状态 + 体型 +肤色
+            string strStatus;
+        if (status == ROLESTATUS.Normal)
+            strStatus = "";
+        else
+            strStatus = status.ToString();
+            if (!Resources.Load<Sprite>("Textures/Charactors/" + preName + strStatus + info[1] + info[2]))
             {
-                Debug.LogError("Resources " + preName + info[1] + info[2] + " not found.");
+                Debug.LogError("Resources " + preName + strStatus + info[1] + info[2] + " not found.");
                 return null;
             }
-            return ("Textures/Charactors/" + preName + info[1] + info[2]);
+            return ("Textures/Charactors/" + preName + strStatus + info[1] + info[2]);
         }
     }
 
     string GetPrefabKind()
     {
-        string temp;
-        if (info[3] == CommonDATA.PREFABKIND.Leg_up.ToString())
-            temp = CommonDATA.PREFABKIND.Leg_up.ToString();
+        //  prefabs.name = （腿在上还是身体在上 + "_" + 状态）
+        //string temp;
+        //if (info[3] == PREFABKIND.Leg_up.ToString())
+        //    temp = PREFABKIND.Leg_up.ToString();
+        //else
+        //    temp = PREFABKIND.Body_up.ToString();
+        //return info[3] + "_" + status;
+
+        if (status == ROLESTATUS.Naked)
+            return PREFABKIND.Body_up.ToString();
         else
-            temp = CommonDATA.PREFABKIND.Body_up.ToString();
-        return temp;
+            return info[3];
     }
 }
