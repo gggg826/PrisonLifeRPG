@@ -150,6 +150,11 @@ public class SQLiteOpration
         return ExecuteQuery(query);
     }
 
+    /// <summary>
+    /// 删除数据表
+    /// </summary>
+    /// <param name="tableName"></param>
+    /// <returns></returns>
     public SqliteDataReader DeleteContents(string tableName)
     {
         string query = "DELETE FROM " + tableName;
@@ -176,6 +181,15 @@ public class SQLiteOpration
         return ExecuteQuery(query);
     }
 
+    /// <summary>
+    /// 选择范围输出
+    /// </summary>
+    /// <param name="tableName"></param>
+    /// <param name="items"></param>
+    /// <param name="col"></param>
+    /// <param name="operation"></param>
+    /// <param name="values"></param>
+    /// <returns></returns>
     public SqliteDataReader SelectWhere(string tableName, string[] items, string[] col, string[] operation, string[] values)
     {
         if (col.Length != operation.Length || operation.Length != values.Length)
@@ -190,5 +204,23 @@ public class SQLiteOpration
             query += " AND " + col[i] + operation[i] + "'" + values[0] + "' ";
 
         return ExecuteQuery(query);
+    }
+    
+    /// <summary>
+    ///查询指定字段值
+    /// </summary>
+    /// <param name="tableName"></param>
+    /// <param name="key"></param>
+    /// <param name="name"></param>
+    /// <returns>string</returns>
+    public string GetValueByKey(string tableName, string key, string name)
+    {
+        string query = "SELECT " + key + " FROM " + tableName + " WHERE Name = '" + name + "'";
+        SqliteDataReader reader = ExecuteQuery(query);
+            while (reader.Read())
+            {
+                return reader.GetString(reader.GetOrdinal(key));
+            }
+            return null;
     }
 }

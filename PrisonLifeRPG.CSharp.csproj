@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>5.2.2f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -66,11 +68,11 @@
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
-    <Reference Include="System.Data">
-      <HintPath>Assets\Plugins\System.Data.dll</HintPath>
-    </Reference>
     <Reference Include="Mono.Data.Sqlite">
       <HintPath>Assets\Plugins\Mono.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>Assets\Plugins\System.Data.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -86,9 +88,7 @@
     <Compile Include="Assets\Scripts\charactor\CharactorView.cs" />
     <Compile Include="Assets\Scripts\charactor\CharactorsController.cs" />
     <Compile Include="Assets\Scripts\common\CommonData.cs" />
-    <Compile Include="Assets\Scripts\common\DbAccess.cs" />
     <Compile Include="Assets\Scripts\common\SQLiteOpration.cs" />
-    <Compile Include="Assets\Scripts\common\Test.cs" />
     <Compile Include="Assets\Scripts\common\UnitySingletonG.cs" />
     <Compile Include="Assets\Scripts\common\XMLOpration.cs" />
     <Compile Include="Assets\Test\Charactors\LoadCharactors.cs" />

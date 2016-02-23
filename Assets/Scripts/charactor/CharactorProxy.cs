@@ -10,25 +10,28 @@ using System.Collections.Generic;
 
 public class CharactorProxy : UnitySingletonG<CharactorProxy>
 {
-    public Dictionary<string, CharactorModel> rolesDic = CommonDATA.ROLESINFO;
+    //public Dictionary<string, CharactorModel> rolesDic = CommonDATA.ROLESINFO;
 
+    /// <summary>
+    /// xml
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
     public CharactorModel GetRoleInfoByName(string name)
     {
         CharactorModel roleInfo;
-        rolesDic.TryGetValue(name, out roleInfo);
+        CommonDATA.RolseInfo.TryGetValue(name, out roleInfo);
         return roleInfo;
     }
 
-    public void AddRoleToScreen(string name, Transform parent)
-    {
-        CharactorView.Instance.RenderRole(CharactorProxy.Instance.GetRoleInfoByName(name), parent);
-    }
 
-    public void AddAllRolesToScreen(Transform parent)
+    /// <summary>
+    ///Database 
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
+    public CharactorModel GetRoleDBByName(string name)
     {
-        foreach (var item in CharactorProxy.Instance.rolesDic)
-        {
-            AddRoleToScreen(item.Key, parent);
-        }
+        return new CharactorModel(name);
     }
 }

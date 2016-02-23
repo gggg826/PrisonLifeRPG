@@ -26,6 +26,7 @@ public class BodyModel
 
     private string[] info;
 
+    
     public BodyModel(string[] _info, ROLESTATUS _status)
     {
         info = _info;
@@ -37,7 +38,6 @@ public class BodyModel
         normalLegName = GetSpriteName(preNormalLegName);
         prefabKind = GetPrefabKind();
     }
-
 
     // { headNo, bodyType, skinColor, prefabKind }
     string GetSpriteName(string preName)
