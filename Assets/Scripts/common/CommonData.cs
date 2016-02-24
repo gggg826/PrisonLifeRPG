@@ -5,6 +5,7 @@
 ******************************/
 
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using Mono.Data.Sqlite;
 
@@ -29,10 +30,10 @@ public enum ROLESTATUS
 public static class CommonDATA
 {
     static private LOADDATETYPE _loadType = LOADDATETYPE.XMLFILE;
-    static public LOADDATETYPE LoadType { get { return _loadType; }set { _loadType = value; } }
+    static public LOADDATETYPE LoadType { get { return _loadType; } set { _loadType = value; } }
 
-    static private  Dictionary<string, CharactorModel> _rolesInfo = XMLOpration.GetRolesInfoDictionary(Application.streamingAssetsPath + "/RoleInfo.xml");
-    static public Dictionary<string, CharactorModel> RolseInfo{get{return _rolesInfo;}}
+    static private Dictionary<string, CharactorModel> _rolesInfo = XMLOpration.GetRolesInfoDictionary(Application.streamingAssetsPath + "/RoleInfo.xml");
+    static public Dictionary<string, CharactorModel> RolseInfo { get { return _rolesInfo; } }
 
 
     static private string _xmlPath = Application.streamingAssetsPath + "/RoleInfo.xml";
@@ -56,5 +57,21 @@ public static class CommonDATA
         string value = data.GetValueByKey(tableName, key, name);
         data.CloseConnection();
         return value;
+    }
+
+
+    /// <summary>
+    /// 从数据表中获取指定列所有字段值
+    /// </summary>
+    /// <param name="tableName"></param>
+    /// <param name="key"></param>
+    /// <returns>返回ArrayList</returns>
+    static public ArrayList GetAllRoleName(string tableName)
+    {
+        ArrayList temp = new ArrayList();
+        SQLiteOpration data = new SQLiteOpration(CommonDATA.DBPath);
+        temp = data.GetSelectColALL("RoleInfo", "Name");
+        data.CloseConnection();
+        return temp;
     }
 }

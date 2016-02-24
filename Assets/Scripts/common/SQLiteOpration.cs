@@ -6,6 +6,7 @@
 
  
 using UnityEngine;
+using System.Collections;
 using Mono.Data.Sqlite;
 
 public class SQLiteOpration
@@ -222,5 +223,17 @@ public class SQLiteOpration
                 return reader.GetString(reader.GetOrdinal(key));
             }
             return null;
+    }
+    
+    public ArrayList GetSelectColALL(string tableName, string key)
+    {
+        ArrayList all = new ArrayList();
+        string query = "SELECT " + key + " FROM " + tableName;
+        SqliteDataReader reader = ExecuteQuery(query);
+        while (reader.Read())
+        {
+            all.Add(reader.GetString(reader.GetOrdinal(key)));
+        }
+        return all;
     }
 }

@@ -62,7 +62,7 @@ public class XMLOpration
                                      new string[] { "Name", "HeadNO", "BodyType", "SkinColor", "PrefabKind" },
                                      new string[] { "Text", "Text", "Text", "Text ", "Text" });
         }
-        catch (System.Exception e)
+        catch (System.Exception)
         {
             data.CloseConnection();
             return;
