@@ -5,12 +5,11 @@
 ******************************/
 
 
-using UnityEngine;
 using UnityEditor;
 
-public class MainMenu : EditorWindow 
+public class MainMenu : EditorWindow
 {
-    [MenuItem("Tools/Open Tools")]
+    [MenuItem("Tools/Open ToolsTemplate")]
     static void OpenTools()
     {
         ToolsGUI.InitToolsWindow();

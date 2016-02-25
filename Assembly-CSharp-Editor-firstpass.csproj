@@ -6,10 +6,10 @@
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
 	<RootNamespace></RootNamespace>
-	<ProjectGuid>{2235062D-CBA1-F6E1-21EB-326376F95D87}</ProjectGuid>
+	<ProjectGuid>{25EE4F4E-EB4F-7AB2-CC69-D3B9A80528D4}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
-	<AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+	<AssemblyName>Assembly-CSharp-Editor-firstpass</AssemblyName>
 	<TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -48,10 +48,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Tools\Plugins\Scriptes\Editor\LETools.cs" />
-     <Compile Include="Assets\Tools\Plugins\Scriptes\Editor\MainMenu.cs" />
-     <Compile Include="Assets\Tools\Plugins\Scriptes\Editor\ToolsGUI.cs" />
-     <Compile Include="Assets\VSCode\Plugins\Editor\VSCode.cs" />
+     <Compile Include="Assets\Plugins\Scriptes\Editor\LETools.cs" />
+     <Compile Include="Assets\Plugins\Scriptes\Editor\MainMenu.cs" />
+     <Compile Include="Assets\Plugins\Scriptes\Editor\ToolsGUI.cs" />
      <None Include="Assets\StreamingAssets\RoleInfo.xml" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -104,10 +103,6 @@
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{940F62B9-AB58-7575-F4E8-F47CC53013D5}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
