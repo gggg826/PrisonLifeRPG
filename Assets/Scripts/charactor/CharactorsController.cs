@@ -37,4 +37,10 @@ public class CharactorsController : UnitySingletonG<CharactorsController>
             }
         }
     }
+    
+    public void ChangeRole(CharactorItem roleGo, string name)
+    {
+        CharactorModel model = CharactorProxy.Instance.GetRoleDBByName(name);
+        CharactorView.Instance.ChangRoleRender(roleGo, model);
+    }
 }

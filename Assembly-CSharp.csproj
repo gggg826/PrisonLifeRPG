@@ -50,6 +50,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\001-mainmenu\BottomBGUI.cs" />
      <Compile Include="Assets\Scripts\001-mainmenu\BottomButtons.cs" />
+     <Compile Include="Assets\Scripts\001-mainmenu\ButtonBordItem.cs" />
+     <Compile Include="Assets\Scripts\001-mainmenu\ButtonPanelShow.cs" />
      <Compile Include="Assets\Scripts\001-mainmenu\LanguagePanel.cs" />
      <Compile Include="Assets\Scripts\001-mainmenu\TopBGUI.cs" />
      <Compile Include="Assets\Scripts\001-mainmenu\UIController.cs" />

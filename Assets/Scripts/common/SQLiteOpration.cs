@@ -30,7 +30,7 @@ public class SQLiteOpration
         {
             dbConnection = new SqliteConnection(@"Data Source=" + path);
             dbConnection.Open();
-            Debug.Log("Sqlite Connected ");
+            // Debug.Log("Sqlite Connected ");
         }
         catch (System.Exception e)
         {
@@ -49,7 +49,7 @@ public class SQLiteOpration
             dbConnection.Dispose();
         dbConnection = null;
 
-        Debug.Log("Disconnected to Sqlite");
+        // Debug.Log("Disconnected to Sqlite");
     }
 
     /// <summary>
