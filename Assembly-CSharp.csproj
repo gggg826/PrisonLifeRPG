@@ -48,24 +48,28 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\001-mainmenu\BottomBGUI.cs" />
+     <Compile Include="Assets\Scripts\001-mainmenu\BGUI.cs" />
      <Compile Include="Assets\Scripts\001-mainmenu\BottomButtons.cs" />
+     <Compile Include="Assets\Scripts\001-mainmenu\BottomPanelUI.cs" />
      <Compile Include="Assets\Scripts\001-mainmenu\ButtonBordItem.cs" />
-     <Compile Include="Assets\Scripts\001-mainmenu\ButtonPanelShow.cs" />
-     <Compile Include="Assets\Scripts\001-mainmenu\LanguagePanel.cs" />
-     <Compile Include="Assets\Scripts\001-mainmenu\TopBGUI.cs" />
-     <Compile Include="Assets\Scripts\001-mainmenu\UIController.cs" />
+     <Compile Include="Assets\Scripts\001-mainmenu\FirstSceneUIView.cs" />
+     <Compile Include="Assets\Scripts\001-mainmenu\LanguagePanelUI.cs" />
+     <Compile Include="Assets\Scripts\001-mainmenu\RoleButtonPanelUI.cs" />
+     <Compile Include="Assets\Scripts\001-mainmenu\TopPanelUI.cs" />
      <Compile Include="Assets\Scripts\charactor\BodyModel.cs" />
      <Compile Include="Assets\Scripts\charactor\CharactorItem.cs" />
      <Compile Include="Assets\Scripts\charactor\CharactorModel.cs" />
      <Compile Include="Assets\Scripts\charactor\CharactorProxy.cs" />
      <Compile Include="Assets\Scripts\charactor\CharactorView.cs" />
      <Compile Include="Assets\Scripts\charactor\CharactorsController.cs" />
+     <Compile Include="Assets\Scripts\common\ButtonManager.cs" />
      <Compile Include="Assets\Scripts\common\CommonData.cs" />
+     <Compile Include="Assets\Scripts\common\FloatButton.cs" />
      <Compile Include="Assets\Scripts\common\SQLiteOpration.cs" />
      <Compile Include="Assets\Scripts\common\UnitySingletonG.cs" />
      <Compile Include="Assets\Scripts\common\XMLOpration.cs" />
      <Compile Include="Assets\Test\Charactors\LoadCharactors.cs" />
+     <Compile Include="Assets\Test\Charactors\NewBehaviourScript.cs" />
      <None Include="Assets\StreamingAssets\RoleInfo.xml" />
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>

@@ -29,10 +29,10 @@ public class CharactorModel
     /// Database
     /// </summary>
     /// <param name="name"></param>
-    public CharactorModel(string name)
+    public CharactorModel(string name, ROLESTATUS _status)
     {
         roleName = name;
-        status = ROLESTATUS.Normal;
+        status = _status;
         bodyModel = new BodyModel(new string[] 
         {
             CommonDATA.GetDBValue("RoleInfo", "HeadNo", name),

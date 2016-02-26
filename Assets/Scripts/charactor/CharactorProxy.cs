@@ -30,8 +30,8 @@ public class CharactorProxy : UnitySingletonG<CharactorProxy>
     /// </summary>
     /// <param name="name"></param>
     /// <returns></returns>
-    public CharactorModel GetRoleDBByName(string name)
+    public CharactorModel GetRoleDBByName(string name, ROLESTATUS status)
     {
-        return new CharactorModel(name);
+        return new CharactorModel(name, status);
     }
 }
