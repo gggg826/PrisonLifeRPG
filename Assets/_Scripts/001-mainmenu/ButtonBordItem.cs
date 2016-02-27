@@ -16,7 +16,7 @@ public class ButtonBordItem : MonoBehaviour
     void Awake()
     {
         item = transform.Find("Body_up").GetComponent<CharactorItem>();
-        bord = transform.Find("ButtonImage").GetComponent<Image>();
+        bord = transform.Find("Body_up/ButtonImage").GetComponent<Image>();
     }
 
     public void InitBordItem(string roleName, Sprite image)

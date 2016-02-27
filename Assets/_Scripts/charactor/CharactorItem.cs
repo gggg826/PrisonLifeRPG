@@ -7,6 +7,7 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class CharactorItem : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class CharactorItem : MonoBehaviour
     private Image rhand;
     private Image lhand;
     private Image head;
+    private Animation animation;
 
     void Awake()
     {
@@ -27,6 +29,23 @@ public class CharactorItem : MonoBehaviour
         rhand = transform.Find("RHand").GetComponent<Image>();
         lhand = transform.Find("LHand").GetComponent<Image>();
         head = transform.Find("Head").GetComponent<Image>();
+        animation = GetComponent<Animation>();
+    }
+    
+    void LoopIdle()
+    {
+        StartCoroutine(Idle());
+    }
+    
+    void TurnOver()
+    {
+        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+    }
+    
+    IEnumerator Idle()
+    {
+        yield return new WaitForSeconds(Random.Range(1,3));
+        animation.Play("Idle");
     }
 
     public void InitCharactorUI(string _name, CharactorModel model)
