@@ -1,4 +1,4 @@
-#**PrionLifeRPG 开发记录**
+﻿#**PrionLifeRPG 开发记录**
 
 
 Athor:&#8195;TheNO.5
@@ -20,10 +20,16 @@ Athor:&#8195;TheNO.5
  &emsp;
  
  &emsp;
- 
+
+--------
+
+
+**DATE: &emsp;2016.02.27** 
+
+1. 重新设计Idle动画，加入转身 &　循环控制Event
+2. 重新设计举牌小人加载及Prefab初始化，采用继承思想
  
 ---------
-
 
 **DATE: &emsp;2016.02.26** 
 

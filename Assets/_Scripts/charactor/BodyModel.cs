@@ -14,10 +14,8 @@ public class BodyModel
     public string normalHandName;
     public string normalLegName;
     public string prefabKind;
-    //public string strStatus;
     public ROLESTATUS status;
-
-
+    
     //suf后缀  pre前缀
     const string preHeadName = "prisonChar_head";
     const string preNormalBodyName = "prisonChar_body";
@@ -25,7 +23,6 @@ public class BodyModel
     const string preNormalLegName = "prisonChar_leg";
 
     private string[] info;
-
     
     public BodyModel(string[] _info, ROLESTATUS _status)
     {

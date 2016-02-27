@@ -9,7 +9,12 @@ using UnityEngine;
 
 public class CharactorsController : UnitySingletonG<CharactorsController>
 {
-
+    /// <summary>
+    /// 添加一个角色渲染
+    /// </summary>
+    /// <param name="name"></param>
+    /// <param name="status"></param>
+    /// <param name="parent"></param>
     public void AddRoleToScreen(string name, ROLESTATUS status, Transform parent)
     {
         if (CommonDATA.LoadType == LOADDATETYPE.XMLFILE)
@@ -19,6 +24,11 @@ public class CharactorsController : UnitySingletonG<CharactorsController>
             CharactorView.Instance.RenderRole(CharactorProxy.Instance.GetRoleDBByName(name, status), parent);
     }
 
+    /// <summary>
+    /// 添加数据库中所有角色的渲染
+    /// </summary>
+    /// <param name="status"></param>
+    /// <param name="parent"></param>
     public void AddAllRolesToScreen(ROLESTATUS status, Transform parent)
     {
         if (CommonDATA.LoadType == LOADDATETYPE.XMLFILE)
@@ -37,10 +47,16 @@ public class CharactorsController : UnitySingletonG<CharactorsController>
             }
         }
     }
-
-    public void ChangeRole(CharactorItem roleGo, string name)
+    
+    /// <summary>
+    /// 添加第一界面带牌小人的渲染
+    /// </summary>
+    /// <param name="name"></param>
+    /// <param name="status"></param>
+    /// <param name="sprite">牌图片名称</param>
+    /// <param name="parent"></param>
+    public void AddButtonBordToScreen(string name, ROLESTATUS status, Sprite sprite, Transform parent)
     {
-        CharactorModel model = CharactorProxy.Instance.GetRoleDBByName(name, ROLESTATUS.Normal);
-        CharactorView.Instance.ChangRoleRender(roleGo, model);
+        CharactorView.Instance.RenderButtonBord(CharactorProxy.Instance.GetRoleDBByName(name, status), sprite, parent);
     }
 }

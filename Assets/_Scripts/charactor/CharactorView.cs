@@ -9,6 +9,11 @@ using UnityEngine;
 
 public class CharactorView : UnitySingletonG<CharactorView>
 {
+    /// <summary>
+    /// 渲染单个角色
+    /// </summary>
+    /// <param name="model"></param>
+    /// <param name="parent"></param>
     public void RenderRole(CharactorModel model, Transform parent)
     {
         GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/" + model.bodyModel.prefabKind));
@@ -17,11 +22,22 @@ public class CharactorView : UnitySingletonG<CharactorView>
         go.transform.localPosition = Vector3.zero;
         go.transform.localScale = Vector3.one;
         CharactorItem item = go.GetComponent<CharactorItem>();
-        item.InitCharactorUI(model.roleName, model);
+        item.InitCharactorItem(model.roleName, model);
     }
-    
-    public void ChangRoleRender(CharactorItem roleGo, CharactorModel model)
+
+    /// <summary>
+    /// 渲染第一界面带牌小人
+    /// </summary>
+    /// <param name="model"></param>
+    /// <param name="sprite">牌图片</param>
+    /// <param name="parent"></param>
+    public void RenderButtonBord(CharactorModel model, Sprite sprite, Transform parent)
     {
-        roleGo.GetComponent<CharactorItem>().InitCharactorUI(model.roleName, model);
+        GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/ButtonBord"));
+        go.transform.SetParent(parent);
+        go.transform.localPosition = Vector3.zero;
+        go.transform.localScale = Vector3.one;
+        CharactorBordItem item = go.GetComponent<CharactorBordItem>();
+        item.InitBordItem(model.roleName, model, sprite);
     }
 }

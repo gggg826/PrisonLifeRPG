@@ -9,22 +9,25 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class CharactorItem : BaseChractorItem
+public class CharactorBordItem : BaseChractorItem
 {
-    private Animation animation;
+    private Image bord;
 
     void Awake()
     {
         base.LoadSprite();
+        bord = transform.Find("ButtonImage").GetComponent<Image>();
     }
-    
+
     /// <summary>
     /// 初始化Prefab
     /// </summary>
     /// <param name="name"></param>
     /// <param name="model"></param>
-    public void InitCharactorItem(string name, CharactorModel model)
+    /// <param name="_bord"></param>
+    public void InitBordItem(string name, CharactorModel model, Sprite _bord)
     {
         base.InitSpriteShow(name, model);
+        bord.overrideSprite = _bord;
     }
 }

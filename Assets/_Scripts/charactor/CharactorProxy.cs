@@ -10,8 +10,6 @@ using System.Collections.Generic;
 
 public class CharactorProxy : UnitySingletonG<CharactorProxy>
 {
-    //public Dictionary<string, CharactorModel> rolesDic = CommonDATA.ROLESINFO;
-
     /// <summary>
     /// xml
     /// </summary>
@@ -23,8 +21,7 @@ public class CharactorProxy : UnitySingletonG<CharactorProxy>
         CommonDATA.RolseInfo.TryGetValue(name, out roleInfo);
         return roleInfo;
     }
-
-
+    
     /// <summary>
     ///Database 
     /// </summary>

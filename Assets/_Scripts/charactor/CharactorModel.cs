@@ -14,7 +14,7 @@ public class CharactorModel
     public ROLESTATUS status;
 
     /// <summary>
-    /// XML
+    /// XML加载方式
     /// </summary>
     /// <param name="_info"></param>
     public CharactorModel(string[] _info)
@@ -26,7 +26,7 @@ public class CharactorModel
 
 
     /// <summary>
-    /// Database
+    /// Database加载方式
     /// </summary>
     /// <param name="name"></param>
     public CharactorModel(string name, ROLESTATUS _status)

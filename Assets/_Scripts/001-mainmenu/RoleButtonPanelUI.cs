@@ -61,22 +61,17 @@ public class RoleButtonPanelUI : MonoBehaviour
        nickNameButton = nickName.GetComponent<Button>();
        nickNameButton.onClick.AddListener(delegate {ButtonManager.Instance.SendMessage("OnnickNameButtonClick");});
         
-	   buttonButtonPre = Resources.Load<GameObject>("Prefabs/ButtonBord");
-       LoadBord("DOCTOR SNLAD", specialImage, special);
-       LoadBord("BELLY", newGameImage, newGame);
-       LoadBord("MR SLAVE", loadGameImage, loadGame);
-       LoadBord("SHANE", historyImage, history);
-       LoadBord("GORDON", creditsImage, credits);
-       LoadBord("PIKMAL", nickNameImage, nickName);
-	}
+        LoadBord("DOCTOR SNLAD", ROLESTATUS.Normal, specialImage, special);
+        LoadBord("BELLY", ROLESTATUS.Normal, newGameImage, newGame);
+        LoadBord("MR SLAVE", ROLESTATUS.Normal, loadGameImage, loadGame);
+        LoadBord("SHANE", ROLESTATUS.Normal, historyImage, history);
+        LoadBord("GORDON", ROLESTATUS.Normal, creditsImage, credits);
+        LoadBord("PIKMAL", ROLESTATUS.Normal, nickNameImage, nickName);
+    }
 	
-    void LoadBord(string roleName, Sprite sprite, Transform parent)
+    void LoadBord(string roleName, ROLESTATUS status, Sprite sprite, Transform parent)
     {
-        GameObject go = Instantiate(buttonButtonPre);
-        go.transform.SetParent(parent);
-        go.transform.localPosition = Vector3.zero;
-        go.transform.localScale = Vector3.one;
-        go.GetComponent<ButtonBordItem>().InitBordItem(roleName, sprite);
+        CharactorsController.Instance.AddButtonBordToScreen(roleName, status, sprite, parent);
     }
     
     
