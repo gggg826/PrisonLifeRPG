@@ -9,7 +9,7 @@ using UnityEngine;
 using System.Collections;
 using Mono.Data.Sqlite;
 
-public class SQLiteOpration
+public class SQLiteConnect
 {
     private SqliteConnection dbConnection;
     private SqliteCommand dbCommand;
@@ -19,7 +19,7 @@ public class SQLiteOpration
     /// 构造函数
     /// </summary>
     /// <param name="path">DB文件路径</param>
-    public SQLiteOpration(string path)
+    public SQLiteConnect(string path)
     {
         OpenDB(path);
     }
@@ -214,18 +214,19 @@ public class SQLiteOpration
     /// <param name="key"></param>
     /// <param name="name"></param>
     /// <returns>string</returns>
-    public string GetValueByKey(string tableName, string key, string name)
+    public SqliteDataReader SelectValueByKey(string tableName, string key, string name)
     {
         string query = "SELECT " + key + " FROM " + tableName + " WHERE Name = '" + name + "'";
-        SqliteDataReader reader = ExecuteQuery(query);
-            while (reader.Read())
-            {
-                return reader.GetString(reader.GetOrdinal(key));
-            }
-            return null;
+        return ExecuteQuery(query);
     }
     
-    public ArrayList GetSelectColALL(string tableName, string key)
+    /// <summary>
+    /// /查询某一列全部字段值
+    /// </summary>
+    /// <param name="tableName">数据表名称</param>
+    /// <param name="key">字段名称</param>
+    /// <returns></returns>
+    public ArrayList SelectColALL(string tableName, string key)
     {
         ArrayList all = new ArrayList();
         string query = "SELECT " + key + " FROM " + tableName;
@@ -235,5 +236,31 @@ public class SQLiteOpration
             all.Add(reader.GetString(reader.GetOrdinal(key)));
         }
         return all;
+    }
+
+    /// <summary>
+    /// 查询某一行全部字段值
+    /// </summary>
+    /// <param name="tableName">数据表名称</param>
+    /// <param name="key">字段名称</param>
+    /// <param name="value">字段值</param>
+    /// <returns></returns>
+    public SqliteDataReader GetSingleRow(string tableName,string key, string value)
+    { 
+        string query = "SELECT Name " + " FROM " + tableName + " WHERE " + key + " = " + value + " LIMIT 1";
+        return ExecuteQuery(query);
+    }
+
+    /// <summary>
+    /// 根据RowID查询某一行全部字段值
+    /// </summary>
+    /// <param name="tableName"></param>
+    /// <param name="key"></param>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    public SqliteDataReader GetSingleRow(string tableName, int id)
+    {
+        string query = "SELECT Name " + " FROM " + tableName + " WHERE ROWID"  + " = " + id + " LIMIT 0, 1";
+        return ExecuteQuery(query);
     }
 }

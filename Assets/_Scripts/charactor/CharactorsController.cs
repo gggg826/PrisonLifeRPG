@@ -17,10 +17,10 @@ public class CharactorsController : UnitySingletonG<CharactorsController>
     /// <param name="parent"></param>
     public void AddRoleToScreen(string name, ROLESTATUS status, Transform parent)
     {
-        if (CommonDATA.LoadType == LOADDATETYPE.XMLFILE)
+        if (DATAManager.LoadType == LOADDATETYPE.XMLFILE)
             CharactorView.Instance.RenderRole(CharactorProxy.Instance.GetRoleInfoByName(name), parent);
 
-        else if (CommonDATA.LoadType == LOADDATETYPE.SQLiteDB)
+        else if (DATAManager.LoadType == LOADDATETYPE.SQLiteDB)
             CharactorView.Instance.RenderRole(CharactorProxy.Instance.GetRoleDBByName(name, status), parent);
     }
 
@@ -31,17 +31,17 @@ public class CharactorsController : UnitySingletonG<CharactorsController>
     /// <param name="parent"></param>
     public void AddAllRolesToScreen(ROLESTATUS status, Transform parent)
     {
-        if (CommonDATA.LoadType == LOADDATETYPE.XMLFILE)
+        if (DATAManager.LoadType == LOADDATETYPE.XMLFILE)
         {
-            foreach (var item in CommonDATA.RolseInfo)
+            foreach (var item in DATAManager.RolseInfo)
             {
                 AddRoleToScreen(item.Key, status, parent);
             }
         }
 
-        else if (CommonDATA.LoadType == LOADDATETYPE.SQLiteDB)
+        else if (DATAManager.LoadType == LOADDATETYPE.SQLiteDB)
         {
-            foreach (var item in CommonDATA.GetAllRoleName("RolseInfo"))
+            foreach (var item in DATAManager.GetAllRoleName())
             {
                 AddRoleToScreen(item.ToString(), status, parent);
             }

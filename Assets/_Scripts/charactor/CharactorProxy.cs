@@ -18,7 +18,7 @@ public class CharactorProxy : UnitySingletonG<CharactorProxy>
     public CharactorModel GetRoleInfoByName(string name)
     {
         CharactorModel roleInfo;
-        CommonDATA.RolseInfo.TryGetValue(name, out roleInfo);
+        DATAManager.RolseInfo.TryGetValue(name, out roleInfo);
         return roleInfo;
     }
     

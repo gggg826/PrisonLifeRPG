@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.2.2f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -57,12 +59,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -72,6 +68,9 @@
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Demigiant\DOTween\DOTween.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Data.Sqlite">
       <HintPath>Assets\Plugins\Mono.Data.Sqlite.dll</HintPath>
     </Reference>
@@ -80,6 +79,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
+    <Compile Include="Assets\_Scenes\Test\Achievements\LoadAchievements.cs" />
     <Compile Include="Assets\_Scenes\Test\Charactors\LoadCharactors.cs" />
     <Compile Include="Assets\_Scripts\001-mainmenu\BGUI.cs" />
     <Compile Include="Assets\_Scripts\001-mainmenu\BottomButtons.cs" />
@@ -88,7 +90,10 @@
     <Compile Include="Assets\_Scripts\001-mainmenu\LanguagePanelUI.cs" />
     <Compile Include="Assets\_Scripts\001-mainmenu\RoleButtonPanelUI.cs" />
     <Compile Include="Assets\_Scripts\001-mainmenu\TopPanelUI.cs" />
-    <Compile Include="Assets\_Scripts\assistant\SQLiteOpration.cs" />
+    <Compile Include="Assets\_Scripts\achievement\AchievementsController.cs" />
+    <Compile Include="Assets\_Scripts\achievement\AchievementICONItem.cs" />
+    <Compile Include="Assets\_Scripts\achievement\AchievementView.cs" />
+    <Compile Include="Assets\_Scripts\assistant\SQLiteConnect.cs" />
     <Compile Include="Assets\_Scripts\assistant\UnitySingletonG.cs" />
     <Compile Include="Assets\_Scripts\assistant\XMLOpration.cs" />
     <Compile Include="Assets\_Scripts\charactor\BaseChractorItem.cs" />
@@ -100,10 +105,13 @@
     <Compile Include="Assets\_Scripts\charactor\CharactorView.cs" />
     <Compile Include="Assets\_Scripts\charactor\CharactorsController.cs" />
     <Compile Include="Assets\_Scripts\common\ButtonManager.cs" />
-    <Compile Include="Assets\_Scripts\common\CommonData.cs" />
+    <Compile Include="Assets\_Scripts\common\DATAManager.cs" />
     <Compile Include="Assets\_Scripts\common\FloatButton.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Demigiant\DOTween\DOTween.XML" />
+    <None Include="Assets\Demigiant\DOTween\Editor\DOTweenEditor.XML" />
+    <None Include="Assets\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\StreamingAssets\RoleInfo.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />

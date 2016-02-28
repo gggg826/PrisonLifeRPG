@@ -15,14 +15,14 @@ public class RoleButtonPanelUI : MonoBehaviour
     public Transform loadGame;
     public Transform history;
     public Transform credits;
-    public Transform nickName;
+    public Transform achievements;
     
     public Sprite specialImage;
     public Sprite newGameImage;
     public Sprite loadGameImage;
     public Sprite historyImage;
     public Sprite creditsImage;
-    public Sprite nickNameImage;
+    public Sprite achievementsImage;
     
     public Button specialButton;
     public Button newGameButton;
@@ -39,14 +39,14 @@ public class RoleButtonPanelUI : MonoBehaviour
        loadGame = transform.Find("LoadGame").transform;
        history = transform.Find("History").transform;
        credits = transform.Find("Credits").transform;
-       nickName = transform.Find("NickNames").transform;
+       achievements = transform.Find("Achievements").transform;
        
        specialImage = Resources.Load<Sprite>("Textures/cn/signBoard_special"); 
        newGameImage = Resources.Load<Sprite>("Textures/cn/signBoard_newGame");
        loadGameImage = Resources.Load<Sprite>("Textures/cn/signBoard_loadGame");
        historyImage = Resources.Load<Sprite>("Textures/cn/signBoard_history");
        creditsImage = Resources.Load<Sprite>("Textures/cn/signBoard_credits");
-       nickNameImage = Resources.Load<Sprite>("Textures/cn/signBoard_nickNames");
+       achievementsImage = Resources.Load<Sprite>("Textures/cn/signBoard_nickNames");
        
        specialButton = special.GetComponent<Button>();
        specialButton.onClick.AddListener(delegate {ButtonManager.Instance.SendMessage("OnspecialButtonClick");});
@@ -58,7 +58,7 @@ public class RoleButtonPanelUI : MonoBehaviour
        historyButton.onClick.AddListener(delegate {ButtonManager.Instance.SendMessage("OnhistoryButtonClick");});
        creditsButton = credits.GetComponent<Button>();
        creditsButton.onClick.AddListener(delegate {ButtonManager.Instance.SendMessage("OncreditsButtonClick");});
-       nickNameButton = nickName.GetComponent<Button>();
+       nickNameButton = achievements.GetComponent<Button>();
        nickNameButton.onClick.AddListener(delegate {ButtonManager.Instance.SendMessage("OnnickNameButtonClick");});
         
         LoadBord("DOCTOR SNLAD", ROLESTATUS.Normal, specialImage, special);
@@ -66,7 +66,7 @@ public class RoleButtonPanelUI : MonoBehaviour
         LoadBord("MR SLAVE", ROLESTATUS.Normal, loadGameImage, loadGame);
         LoadBord("SHANE", ROLESTATUS.Normal, historyImage, history);
         LoadBord("GORDON", ROLESTATUS.Normal, creditsImage, credits);
-        LoadBord("PIKMAL", ROLESTATUS.Normal, nickNameImage, nickName);
+        LoadBord("PIKMAL", ROLESTATUS.Normal, achievementsImage, achievements);
     }
 	
     void LoadBord(string roleName, ROLESTATUS status, Sprite sprite, Transform parent)

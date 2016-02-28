@@ -54,7 +54,7 @@ public class XMLOpration
     /// <param name="sqlLitePath">SQLite数据库路径</param>
     static public void XMLToSQLiteDatabase(string xmlPath, string sqlLitePath)
     {
-        SQLiteOpration data = new SQLiteOpration(sqlLitePath);
+        SQLiteConnect data = new SQLiteConnect(sqlLitePath);
 
         try
         {

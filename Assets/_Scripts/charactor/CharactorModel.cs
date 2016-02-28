@@ -35,10 +35,10 @@ public class CharactorModel
         status = _status;
         bodyModel = new BodyModel(new string[] 
         {
-            CommonDATA.GetDBValue("RoleInfo", "HeadNo", name),
-            CommonDATA.GetDBValue("RoleInfo", "BodyType", name),
-            CommonDATA.GetDBValue("RoleInfo", "SkinColor", name),
-            CommonDATA.GetDBValue("RoleInfo", "PrefabKind", name)
+            DATAManager.GetDBValue("RoleInfo", "HeadNo", name),
+            DATAManager.GetDBValue("RoleInfo", "BodyType", name),
+            DATAManager.GetDBValue("RoleInfo", "SkinColor", name),
+            DATAManager.GetDBValue("RoleInfo", "PrefabKind", name)
         }, status);
     }
 
