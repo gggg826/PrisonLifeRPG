@@ -7,7 +7,6 @@
 
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class CharactorBordItem : BaseChractorItem
 {
@@ -17,6 +16,11 @@ public class CharactorBordItem : BaseChractorItem
     {
         base.LoadSprite();
         bord = transform.Find("ButtonImage").GetComponent<Image>();
+    }
+    
+    void Start()
+    {
+        StartCoroutine(base.BeginTween("ButtonBord"));
     }
 
     /// <summary>

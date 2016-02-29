@@ -5,17 +5,16 @@
 ******************************/
 
 
-using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
-
 public class CharactorItem : BaseChractorItem
 {
-    private Animation animation;
-
     void Awake()
     {
         base.LoadSprite();
+    }
+    
+    void Start()
+    {
+        StartCoroutine(base.BeginTween("Idle"));
     }
     
     /// <summary>

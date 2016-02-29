@@ -6,7 +6,6 @@
 
  
 using UnityEngine;
-using System.Collections;
 
 public class AchievementView : UnitySingletonG<AchievementView>
 {
@@ -17,8 +16,10 @@ public class AchievementView : UnitySingletonG<AchievementView>
     /// <param name="parent"></param>
     public void RenderSingleAchievement(string[] info, Transform parent)
     {
-        GameObject go = (GameObject)Instantiate(Resources.Load("AchievementICON"));
+        GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/AchievementICON"));
         go.transform.SetParent(parent);
+        go.transform.position = Vector3.zero;
+        go.transform.localScale = Vector3.one;
         go.GetComponent<AchievementItem>().InitItem(info);
     }
 }

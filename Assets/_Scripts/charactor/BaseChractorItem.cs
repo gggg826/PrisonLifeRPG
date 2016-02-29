@@ -33,6 +33,7 @@ public class BaseChractorItem : MonoBehaviour
         lhand = transform.Find("Body/LHand").GetComponent<Image>();
         head = transform.Find("Head").GetComponent<Image>();
         animation = GetComponent<Animation>();
+        animation.Stop();
     }
 
     /// <summary>
@@ -67,6 +68,12 @@ public class BaseChractorItem : MonoBehaviour
         StartCoroutine(Turn());
     }
 
+    protected IEnumerator BeginTween(string status)
+    {
+        yield return new WaitForSeconds(Random.Range(0, 300)/100f);
+        animation.Play(status);
+    }
+    
     IEnumerator Turn()
     {
         yield return new WaitForSeconds(Random.Range(0, 200) / 100f);
@@ -76,7 +83,7 @@ public class BaseChractorItem : MonoBehaviour
 
     IEnumerator Idle()
     {
-        yield return new WaitForSeconds(Random.Range(200, 400) / 100f);
+        yield return new WaitForSeconds(Random.Range(200, 500) / 100f);
         animation.Play();
     }
 }

@@ -20,7 +20,7 @@ public class AchievementItem : MonoBehaviour
     void Awake()
     {
         BGICON = GetComponent<Image>();
-        ICON = GetComponentInChildren<Image>();
+        ICON = transform.Find("Image").GetComponent<Image>();
         button = GetComponent<Button>();
         //button.onClick.AddListener(delegate { ButtonManager.Instance.SendMessage("OnSkillICONClick", )})
     }
@@ -28,7 +28,7 @@ public class AchievementItem : MonoBehaviour
     public void InitItem(string[] info)
     {
         Name = info[0];
-        ICON.overrideSprite = Resources.Load<Sprite>(info[1]);
+        ICON.overrideSprite = Resources.Load<Sprite>("Textures/cn/" + info[1]);
         if (info[2] == "1")
         {
             BGICON.color = new Vector4(255, 255, 255, 255);

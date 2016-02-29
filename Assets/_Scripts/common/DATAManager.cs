@@ -81,7 +81,7 @@ public static class DATAManager
     }
 
     /// <summary>
-    /// 从数据表中获取指定成就所有字段值
+    /// 从数据表中获取某一成就所有字段值
     /// </summary>
     /// <param name="key">字段名称</param>
     /// <param name="value">字段值</param>

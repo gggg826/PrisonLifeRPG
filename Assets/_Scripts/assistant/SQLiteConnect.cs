@@ -260,7 +260,7 @@ public class SQLiteConnect
     /// <returns></returns>
     public SqliteDataReader GetSingleRow(string tableName, int id)
     {
-        string query = "SELECT Name " + " FROM " + tableName + " WHERE ROWID"  + " = " + id + " LIMIT 0, 1";
+        string query = "SELECT * FROM " + tableName + " WHERE ROWID = " + id;
         return ExecuteQuery(query);
     }
 }
