@@ -1,4 +1,4 @@
-#**PrionLifeRPG 开发记录**
+﻿#**PrionLifeRPG 开发记录**
 
 
 Athor:&#8195;TheNO.5
@@ -20,10 +20,16 @@ Athor:&#8195;TheNO.5
  &emsp;
  
  &emsp;
+
+--------
+
+**DATE: &emsp;2016.03.01**
+
+1. 完成成就系统代码构建，不包括数据库数据的完善
  
 --------
 
- **DATE: &emsp;2016.02.29**
+**DATE: &emsp;2016.02.29**
  
  1. 修复成就图标加载BUG
 

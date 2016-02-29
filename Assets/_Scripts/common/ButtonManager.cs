@@ -77,11 +77,11 @@ public class ButtonManager : UnitySingletonG<ButtonManager>
     }
     void OncreditsButtonClick()
     {
-        print("绰号");
+        print("制作组");
     }
     void OnnickNameButtonClick()
     {
-        print("制作组");
+        AchievementUI.Instance.ShowPanel();
     }
 
     void ChangeSence(int id)

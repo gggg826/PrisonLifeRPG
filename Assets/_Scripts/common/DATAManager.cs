@@ -43,6 +43,9 @@ public static class DATAManager
     static private string _dBPath = Application.streamingAssetsPath + "/RoleDatabase.db";
     static public string DBPath { get { return _dBPath; } }
 
+    static private int _gotCountAchievements = 0;
+    static public int GOTCOUNTACHIEVEMENTS { get { return _gotCountAchievements; }set { _gotCountAchievements = value; } }
+
 
     /// <summary>
     /// 从数据表中获取指定字段值
