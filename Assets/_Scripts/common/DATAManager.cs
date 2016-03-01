@@ -40,7 +40,7 @@ public static class DATAManager
     static public string XmlPath { get { return _xmlPath; } }
 
 
-    static private string _dBPath = Application.streamingAssetsPath + "/RoleDatabase.db";
+    static private string _dBPath = Application.streamingAssetsPath + "/GameDatabase.db";
     static public string DBPath { get { return _dBPath; } }
 
     static private int _gotCountAchievements = 0;

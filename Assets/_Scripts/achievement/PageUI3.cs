@@ -14,7 +14,7 @@ public class PageUI3 : BasePageUI
     {
         pageNO = 3;
         base.Init();
-        base.ListICON(1, 20);
+        base.ListICON(41, 60);
         base.ClickButtonEvent();
     }
 }
