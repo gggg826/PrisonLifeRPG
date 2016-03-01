@@ -1,4 +1,4 @@
-#**PrionLifeRPG 开发记录**
+﻿#**PrionLifeRPG 开发记录**
 
 
 Athor:&#8195;TheNO.5
@@ -20,6 +20,13 @@ Athor:&#8195;TheNO.5
  &emsp;
  
  &emsp;
+
+--------
+
+**DATE: &emsp;2016.03.02**
+
+1. 制作 New Game UI
+2. 制作 PrisonInfo Panel 第一界面版
 
 --------
 

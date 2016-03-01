@@ -24,6 +24,11 @@ public class CharactorsController : UnitySingletonG<CharactorsController>
             CharactorView.Instance.RenderRole(CharactorProxy.Instance.GetRoleDBByName(name, status), parent);
     }
 
+    public void AddRoleToScreen(int id, ROLESTATUS status, Transform parent)
+    {
+        CharactorView.Instance.RenderRole(CharactorProxy.Instance.GetRoleDBByRowID(id, status), parent);
+    }
+
     /// <summary>
     /// 添加数据库中所有角色的渲染
     /// </summary>
@@ -58,5 +63,10 @@ public class CharactorsController : UnitySingletonG<CharactorsController>
     public void AddButtonBordToScreen(string name, ROLESTATUS status, Sprite sprite, Transform parent)
     {
         CharactorView.Instance.RenderButtonBord(CharactorProxy.Instance.GetRoleDBByName(name, status), sprite, parent);
+    }
+
+    public void ShowRoleInfoPanel(string name)
+    {
+        print(name);
     }
 }

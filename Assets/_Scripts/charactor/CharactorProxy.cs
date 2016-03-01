@@ -31,4 +31,9 @@ public class CharactorProxy : UnitySingletonG<CharactorProxy>
     {
         return new CharactorModel(name, status);
     }
+
+    public CharactorModel GetRoleDBByRowID(int rowID, ROLESTATUS status)
+    {
+        return new CharactorModel(rowID, status);
+    }
 }

@@ -67,6 +67,27 @@ public static class DATAManager
         return value;
     }
 
+    /// <summary>
+    /// 根据ROWID获取一行人物信息
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    static public string[] GetSingleCharactorInfo(int id)
+    {
+        SQLiteConnect data = new SQLiteConnect(DATAManager.DBPath);
+        SqliteDataReader reader = data.GetSingleRow("RoleInfo", id);
+        string[] info = new string[5];
+        while (reader.Read())
+        {
+            info[0] = reader.GetString(reader.GetOrdinal("Name"));
+            info[1] = reader.GetString(reader.GetOrdinal("HeadNO"));
+            info[2] = reader.GetString(reader.GetOrdinal("BodyType"));
+            info[3] = reader.GetString(reader.GetOrdinal("SkinColor"));
+            info[4] = reader.GetString(reader.GetOrdinal("PrefabKind"));
+        }
+        data.CloseConnection();
+        return info;
+    }
 
     /// <summary>
     /// 从数据表中获取指定列所有字段值
@@ -92,7 +113,7 @@ public static class DATAManager
     static public string[] GetSingleAchievementInfo(string key, string value)
     {
         SQLiteConnect data = new SQLiteConnect(DATAManager.DBPath);
-        SqliteDataReader reader = data.GetSingleRow( "Achievements", key, value);
+        SqliteDataReader reader = data.GetSingleRow("Achievements", key, value);
         string[] info = new string[4];
         while (reader.Read())
         {

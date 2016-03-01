@@ -21,6 +21,5 @@ public class AchievementsController : UnitySingletonG<AchievementsController>
             AchievementView.Instance.RenderSingleAchievement(DATAManager.GetSingleAchievementInfo(i), parent);
         }
     }
-
-
+    
 }

@@ -206,7 +206,7 @@ public class SQLiteConnect
 
         return ExecuteQuery(query);
     }
-    
+
     /// <summary>
     ///查询指定字段值
     /// </summary>
@@ -216,7 +216,7 @@ public class SQLiteConnect
     /// <returns>string</returns>
     public SqliteDataReader SelectValueByKey(string tableName, string key, string name)
     {
-        string query = "SELECT " + key + " FROM " + tableName + " WHERE Name = '" + name + "'";
+        string query = "SELECT " + key + " FROM " + tableName + " WHERE Name = "  + "'" + name + "'";
         return ExecuteQuery(query);
     }
     
@@ -239,14 +239,14 @@ public class SQLiteConnect
     }
 
     /// <summary>
-    /// 查询某一行全部字段值
+    /// 根据字段名称查询某一行全部字段值
     /// </summary>
     /// <param name="tableName">数据表名称</param>
     /// <param name="key">字段名称</param>
     /// <param name="value">字段值</param>
     /// <returns></returns>
-    public SqliteDataReader GetSingleRow(string tableName,string key, string value)
-    { 
+    public SqliteDataReader GetSingleRow(string tableName, string key, string value)
+    {
         string query = "SELECT Name " + " FROM " + tableName + " WHERE " + key + " = " + value + " LIMIT 1";
         return ExecuteQuery(query);
     }

@@ -36,10 +36,17 @@ public class CharactorModel
         bodyModel = new BodyModel(new string[] 
         {
             DATAManager.GetDBValue("RoleInfo", "HeadNo", name),
-            DATAManager.GetDBValue("RoleInfo", "BodyType", name),
+            DATAManager.GetDBValue("RoleInfo", "BodyType",name),
             DATAManager.GetDBValue("RoleInfo", "SkinColor", name),
             DATAManager.GetDBValue("RoleInfo", "PrefabKind", name)
         }, status);
+    }
+
+    public CharactorModel(int rowID, ROLESTATUS _status)
+    {
+        string[] info = DATAManager.GetSingleCharactorInfo(rowID);
+        roleName = info[0];
+        bodyModel = new BodyModel(new string[] { info[1], info[2], info[3], info[4] }, _status);
     }
 
     public void SetRoleStatus(ROLESTATUS _status)
