@@ -67,6 +67,6 @@ public class CharactorsController : UnitySingletonG<CharactorsController>
 
     public void ShowRoleInfoPanel(string name)
     {
-        print(name);
+        ButtonManager.Instance.SendMessage("ShowRoleInfoPanel");
     }
 }

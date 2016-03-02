@@ -54,7 +54,7 @@ public static class DATAManager
     /// <param name="key"></param>
     /// <param name="name"></param>
     /// <returns>string</returns>
-    static public string GetDBValue(string tableName, string key, string name)
+    static public string  GetStringDBValue(string tableName, string key, string name)
     {
         SQLiteConnect data = new SQLiteConnect(DATAManager.DBPath);
         SqliteDataReader reader = data.SelectValueByKey(tableName, key, name);
@@ -62,6 +62,27 @@ public static class DATAManager
         while (reader.Read())
         {
             value = reader.GetString(reader.GetOrdinal(key));
+        }
+        data.CloseConnection();
+        return value;
+    }
+    
+    
+    /// <summary>
+    /// 从数据表中获取指定字段值
+    /// </summary>
+    /// <param name="tableName"></param>
+    /// <param name="key"></param>
+    /// <param name="name"></param>
+    /// <returns>string</returns>
+    static public short  GetIntegerDBValue(string tableName, string key, string name)
+    {
+        SQLiteConnect data = new SQLiteConnect(DATAManager.DBPath);
+        SqliteDataReader reader = data.SelectValueByKey(tableName, key, name);
+        short value = 0;
+        while (reader.Read())
+        {
+            value = reader.GetInt16(reader.GetOrdinal(key));
         }
         data.CloseConnection();
         return value;

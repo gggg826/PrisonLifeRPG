@@ -63,29 +63,45 @@ public class ButtonManager : UnitySingletonG<ButtonManager>
         print("特殊犯人");
     }
 
+    // 新游戏
     void OnnewGameButtonClick()
     {
         print("新游戏");
     }
+
+    //  加载游戏
     void OnloadGameButtonClick()
     {
         print("加载游戏");
     }
+
+    // 历史记录
     void OnhistoryButtonClick()
     {
         Application.LoadLevel(1);
     }
+
+    // 制作组
     void OncreditsButtonClick()
     {
         print("制作组");
     }
+
+    // 成就系统
     void OnnickNameButtonClick()
     {
         AchievementUI.Instance.ShowPanel();
     }
 
+    // 加载场景
     void ChangeSence(int id)
     {
         Application.LoadLevel(id);
+    }
+
+    // 显示人物属性面板
+    void ShowRoleInfoPanel()
+    {
+        FirstSceneUIView.Instance.roleInfoPanelUI.ShowPanel();
     }
 }

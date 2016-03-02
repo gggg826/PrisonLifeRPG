@@ -57,7 +57,9 @@
      <Compile Include="Assets\_Scripts\001-mainmenu\BottomPanelUI.cs" />
      <Compile Include="Assets\_Scripts\001-mainmenu\FirstSceneUIView.cs" />
      <Compile Include="Assets\_Scripts\001-mainmenu\LanguagePanelUI.cs" />
+     <Compile Include="Assets\_Scripts\001-mainmenu\NewGameListUI.cs" />
      <Compile Include="Assets\_Scripts\001-mainmenu\RoleButtonPanelUI.cs" />
+     <Compile Include="Assets\_Scripts\001-mainmenu\RoleInfoPanelUI.cs" />
      <Compile Include="Assets\_Scripts\001-mainmenu\TopPanelUI.cs" />
      <Compile Include="Assets\_Scripts\achievement\AchievementItem.cs" />
      <Compile Include="Assets\_Scripts\achievement\AchievementView.cs" />
@@ -88,17 +90,11 @@
      <Compile Include="Assets\_Scripts\events\EventManager.cs" />
      <None Include="Assets\Demigiant\DOTween\readme.txt" />
      <None Include="Assets\StreamingAssets\RoleInfo.xml" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
  <HintPath>/Users/TheNO.5/UnityProject/PrisonLifeRPG/Assets/Demigiant/DOTween/DOTween.dll</HintPath>

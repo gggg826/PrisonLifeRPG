@@ -12,6 +12,15 @@ public class CharactorModel
     public string roleName;
     public BodyModel bodyModel;
     public ROLESTATUS status;
+    public short power;
+    public short agility;
+    public short intelligence;
+    public short charisma;
+    public short luck;
+    public short prisonDays;
+    public string prisonGol;
+    public string skillList;
+    public string traitICON;
 
     /// <summary>
     /// XML加载方式
@@ -35,11 +44,13 @@ public class CharactorModel
         status = _status;
         bodyModel = new BodyModel(new string[] 
         {
-            DATAManager.GetDBValue("RoleInfo", "HeadNo", name),
-            DATAManager.GetDBValue("RoleInfo", "BodyType",name),
-            DATAManager.GetDBValue("RoleInfo", "SkinColor", name),
-            DATAManager.GetDBValue("RoleInfo", "PrefabKind", name)
+            DATAManager.GetStringDBValue("RoleInfo", "HeadNo", name),
+            DATAManager.GetStringDBValue("RoleInfo", "BodyType",name),
+            DATAManager.GetStringDBValue("RoleInfo", "SkinColor", name),
+            DATAManager.GetStringDBValue("RoleInfo", "PrefabKind", name)
         }, status);
+        
+        power = DATAManager.GetIntegerDBValue("RoleInfo", "Power", name);
     }
 
     public CharactorModel(int rowID, ROLESTATUS _status)
