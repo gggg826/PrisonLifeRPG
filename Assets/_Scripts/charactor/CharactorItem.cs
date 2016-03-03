@@ -19,16 +19,16 @@ public class CharactorItem : BaseChractorItem
     void Start()
     {
         StartCoroutine(base.BeginTween("Idle"));
-        button.onClick.AddListener(delegate { CharactorsController.Instance.SendMessage("ShowRoleInfoPanel", name); });
     }
     
     /// <summary>
     /// 初始化Prefab
     /// </summary>
     /// <param name="name"></param>
-    /// <param name="model"></param>
-    public void InitCharactorItem(string name, CharactorModel model)
+    /// <param name="_model"></param>
+    public void InitCharactorItem(CharactorModel _model)
     {
-        base.InitSpriteShow(name, model);
+        base.InitSpriteShow(_model);
+        button.onClick.AddListener(delegate { CharactorsController.Instance.SendMessage("ShowRoleInfoPanel", _model); });
     }
 }

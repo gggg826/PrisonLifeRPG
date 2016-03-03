@@ -22,7 +22,7 @@ public class CharactorView : UnitySingletonG<CharactorView>
         go.transform.localPosition = Vector3.zero;
         go.transform.localScale = Vector3.one;
         CharactorItem item = go.GetComponent<CharactorItem>();
-        item.InitCharactorItem(model.roleName, model);
+        item.InitCharactorItem(model);
     }
 
     /// <summary>
@@ -38,6 +38,6 @@ public class CharactorView : UnitySingletonG<CharactorView>
         go.transform.localPosition = Vector3.zero;
         go.transform.localScale = Vector3.one;
         CharactorBordItem item = go.GetComponent<CharactorBordItem>();
-        item.InitBordItem(model.roleName, model, sprite);
+        item.InitBordItem(model, sprite);
     }
 }

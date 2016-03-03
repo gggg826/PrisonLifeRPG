@@ -100,8 +100,8 @@ public class ButtonManager : UnitySingletonG<ButtonManager>
     }
 
     // 显示人物属性面板
-    void ShowRoleInfoPanel()
+    void ShowRoleInfoPanel(CharactorModel model)
     {
-        FirstSceneUIView.Instance.roleInfoPanelUI.ShowPanel();
+        FirstSceneUIView.Instance.roleInfoPanelUI.ShowPanel(model);
     }
 }

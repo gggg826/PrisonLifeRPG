@@ -54,7 +54,7 @@ public static class DATAManager
     /// <param name="key"></param>
     /// <param name="name"></param>
     /// <returns>string</returns>
-    static public string  GetStringDBValue(string tableName, string key, string name)
+    static public string  GetTextDBValue(string tableName, string key, string name)
     {
         SQLiteConnect data = new SQLiteConnect(DATAManager.DBPath);
         SqliteDataReader reader = data.SelectValueByKey(tableName, key, name);
@@ -75,14 +75,14 @@ public static class DATAManager
     /// <param name="key"></param>
     /// <param name="name"></param>
     /// <returns>string</returns>
-    static public short  GetIntegerDBValue(string tableName, string key, string name)
+    static public int  GetIntegerDBValue(string tableName, string key, string name)
     {
         SQLiteConnect data = new SQLiteConnect(DATAManager.DBPath);
         SqliteDataReader reader = data.SelectValueByKey(tableName, key, name);
-        short value = 0;
+        int value = 0;
         while (reader.Read())
         {
-            value = reader.GetInt16(reader.GetOrdinal(key));
+            value = reader.GetInt32(reader.GetOrdinal(key));
         }
         data.CloseConnection();
         return value;
@@ -93,10 +93,10 @@ public static class DATAManager
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
-    static public string[] GetSingleCharactorInfo(int id)
+    static public string[] GetSingleCharactorInfo(string tableName, int id)
     {
         SQLiteConnect data = new SQLiteConnect(DATAManager.DBPath);
-        SqliteDataReader reader = data.GetSingleRow("RoleInfo", id);
+        SqliteDataReader reader = data.GetSingleRow(tableName, id);
         string[] info = new string[5];
         while (reader.Read())
         {

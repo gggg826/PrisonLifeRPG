@@ -41,15 +41,16 @@ public class BaseChractorItem : MonoBehaviour
     /// </summary>
     /// <param name="_name">角色名称</param>
     /// <param name="model"></param>
-    protected void InitSpriteShow(string _name, CharactorModel model)
+    protected void InitSpriteShow(CharactorModel _model)
     {
-        roleName.text = _name;
-        head.overrideSprite = Resources.Load<Sprite>(model.bodyModel.headName);
-        body.overrideSprite = Resources.Load<Sprite>(model.bodyModel.normalBodyName);
-        rleg.overrideSprite = Resources.Load<Sprite>(model.bodyModel.normalLegName);
-        lleg.overrideSprite = Resources.Load<Sprite>(model.bodyModel.normalLegName);
-        rhand.overrideSprite = Resources.Load<Sprite>(model.bodyModel.normalHandName);
-        lhand.overrideSprite = Resources.Load<Sprite>(model.bodyModel.normalHandName);
+        CharactorModel model = _model;
+        roleName.text = model.roleName;
+        head.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.headICONName);
+        body.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalBodyName);
+        rleg.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalLegName);
+        lleg.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalLegName);
+        rhand.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalHandName);
+        lhand.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalHandName);
     }
 
     /// <summary>

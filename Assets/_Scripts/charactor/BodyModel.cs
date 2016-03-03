@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class BodyModel
 {
-    public string headName;
+    public string headICONName;
     public string normalBodyName;
     public string normalHandName;
     public string normalLegName;
@@ -29,7 +29,7 @@ public class BodyModel
         info = _info;
         status = _status;
 
-        headName = GetSpriteName(preHeadName);
+        headICONName = GetSpriteName(preHeadName);
         normalBodyName = GetSpriteName(preNormalBodyName);
         normalHandName = GetSpriteName(preNormalHandName);
         normalLegName = GetSpriteName(preNormalLegName);
@@ -46,7 +46,7 @@ public class BodyModel
                 Debug.LogError("Resources " + preHeadName + info[0] + " not found.");
                 return null;
             }
-            return ("Textures/Charactors/" + preHeadName + info[0]);
+            return (preHeadName + info[0]);
         }
         else
         {
@@ -62,7 +62,7 @@ public class BodyModel
                 Debug.LogError("Resources " + preName + strStatus + info[1] + info[2] + " not found.");
                 return null;
             }
-            return ("Textures/Charactors/" + preName + strStatus + info[1] + info[2]);
+            return (preName + strStatus + info[1] + info[2]);
         }
     }
 

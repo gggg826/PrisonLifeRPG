@@ -27,12 +27,14 @@ public class RoleInfoPanelUI : MonoBehaviour
 
     void Start()
     {
+        CharactorsController.Instance.SetRoleInfoPanel(this);
+        
         animation = GetComponent<Animation>();
         closeButton = transform.Find("CloseButton").GetComponent<Button>();
         closeButton.onClick.AddListener(delegate { HidenPanel(); });
-        
-        headICON = transform.Find("HeadICON").GetComponent<Image>();
-        name =transform.Find("Name").GetComponent<Text>();
+
+        headICON = transform.Find("HeadICON/ICON").GetComponent<Image>();
+        name = transform.Find("Name").GetComponent<Text>();
         power = transform.Find("Image_Property/Text_Power").GetComponent<Text>();
         agility = transform.Find("Image_Property/Text_Agility").GetComponent<Text>();
         intelligence = transform.Find("Image_Property/Text_Intelligence").GetComponent<Text>();
@@ -43,11 +45,11 @@ public class RoleInfoPanelUI : MonoBehaviour
         skillList = transform.Find("Skill/SkillList").transform;
         trait = transform.Find("Trait").transform;
         traitICON = trait.Find("Image/Image").GetComponent<Image>();
-        
+
     }
-    public void ShowPanel()
+    public void ShowPanel(CharactorModel model)
     {
-        
+        InitPanel(model);
         animation.Play("PaperUp");
     }
 
@@ -55,9 +57,30 @@ public class RoleInfoPanelUI : MonoBehaviour
     {
         animation.Play("PaperDown");
     }
-    
-    void InitPanel()
+
+    void InitPanel(CharactorModel model)
     {
-        
+        name.text = model.roleName;
+        headICON.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.headICONName);
+        print(headICON.sprite.name);
+        print(model.bodyModel.headICONName);
+        power.text = model.power.ToString();
+        agility.text = model.agility.ToString();
+        intelligence.text = model.intelligence.ToString();
+        charisma.text = model.charisma.ToString();
+        luck.text = model.luck.ToString();
+        prisonDays.text = model.prisonDays.ToString();
+        prisonGol.text = model.prisonGol;
+
+        foreach (string item in model.skillList)
+        {
+            print(item);
+        }
+
+        if (model.traitICON == null)
+            trait.gameObject.SetActive(false);
+        else
+            // traitICON.overrideSprite = Resources.Load<Sprite>();
+            print(traitICON.sprite.name);
     }
 }

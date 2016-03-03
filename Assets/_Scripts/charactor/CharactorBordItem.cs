@@ -29,9 +29,9 @@ public class CharactorBordItem : BaseChractorItem
     /// <param name="name"></param>
     /// <param name="model"></param>
     /// <param name="_bord"></param>
-    public void InitBordItem(string name, CharactorModel model, Sprite _bord)
+    public void InitBordItem(CharactorModel model, Sprite _bord)
     {
-        base.InitSpriteShow(name, model);
+        base.InitSpriteShow(model);
         bord.overrideSprite = _bord;
     }
 }

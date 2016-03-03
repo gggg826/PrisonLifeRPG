@@ -6,20 +6,21 @@
 
 //prisonChar_bodyNaked3_g
 
+using UnityEngine;
 
 public class CharactorModel
 {
     public string roleName;
     public BodyModel bodyModel;
     public ROLESTATUS status;
-    public short power;
-    public short agility;
-    public short intelligence;
-    public short charisma;
-    public short luck;
-    public short prisonDays;
+    public int power;
+    public int agility;
+    public int intelligence;
+    public int charisma;
+    public int luck;
+    public int prisonDays;
     public string prisonGol;
-    public string skillList;
+    public string[] skillList;
     public string traitICON;
 
     /// <summary>
@@ -30,7 +31,7 @@ public class CharactorModel
     {
         roleName = _info[0];
         status = ROLESTATUS.Normal;
-        bodyModel = new BodyModel(new string[] { _info[1], _info[2], _info[3], _info[4]}, status);
+        bodyModel = new BodyModel(new string[] { _info[1], _info[2], _info[3], _info[4] }, status);
     }
 
 
@@ -38,26 +39,44 @@ public class CharactorModel
     /// Database加载方式
     /// </summary>
     /// <param name="name"></param>
-    public CharactorModel(string name, ROLESTATUS _status)
+    public CharactorModel(string tableName, string name, ROLESTATUS _status)
     {
         roleName = name;
         status = _status;
-        bodyModel = new BodyModel(new string[] 
+        bodyModel = new BodyModel(new string[]
         {
-            DATAManager.GetStringDBValue("RoleInfo", "HeadNo", name),
-            DATAManager.GetStringDBValue("RoleInfo", "BodyType",name),
-            DATAManager.GetStringDBValue("RoleInfo", "SkinColor", name),
-            DATAManager.GetStringDBValue("RoleInfo", "PrefabKind", name)
+            DATAManager.GetTextDBValue(tableName, "HeadNo", name),
+            DATAManager.GetTextDBValue(tableName, "BodyType",name),
+            DATAManager.GetTextDBValue(tableName, "SkinColor", name),
+            DATAManager.GetTextDBValue(tableName, "PrefabKind", name)
         }, status);
-        
-        power = DATAManager.GetIntegerDBValue("RoleInfo", "Power", name);
+        InitProperty(tableName, name);
     }
-
-    public CharactorModel(int rowID, ROLESTATUS _status)
+    public CharactorModel(string tableName, int rowID, ROLESTATUS _status)
     {
-        string[] info = DATAManager.GetSingleCharactorInfo(rowID);
+        string[] info = DATAManager.GetSingleCharactorInfo(tableName,rowID);
         roleName = info[0];
         bodyModel = new BodyModel(new string[] { info[1], info[2], info[3], info[4] }, _status);
+        InitProperty(tableName, roleName);
+    }
+    
+    void InitProperty(string tableName, string name)
+    {
+        power = DATAManager.GetIntegerDBValue(tableName, "Power", name);
+        agility = DATAManager.GetIntegerDBValue(tableName, "Agility", name);
+        intelligence = DATAManager.GetIntegerDBValue(tableName, "Intelligence", name);
+        charisma = DATAManager.GetIntegerDBValue(tableName, "Charm", name);
+        luck = DATAManager.GetIntegerDBValue(tableName, "Luck", name);
+        prisonDays = DATAManager.GetIntegerDBValue(tableName, "PrisonDays", name);
+        prisonGol = DATAManager.GetTextDBValue(tableName, "PrisonGol", name);
+        skillList = GetSkillList(tableName, name);
+        traitICON = DATAManager.GetTextDBValue(tableName, "Trait", name);
+    }
+
+    string[] GetSkillList(string tableName, string name)
+    {
+        string[] list = DATAManager.GetTextDBValue(tableName, "SkillList", name).Split(',');
+        return list;
     }
 
     public void SetRoleStatus(ROLESTATUS _status)

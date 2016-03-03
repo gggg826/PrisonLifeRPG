@@ -19,19 +19,19 @@ public class CharactorProxy : UnitySingletonG<CharactorProxy>
         DATAManager.RolseInfo.TryGetValue(name, out roleInfo);
         return roleInfo;
     }
-    
+
     /// <summary>
     ///Database 
     /// </summary>
     /// <param name="name"></param>
     /// <returns></returns>
-    public CharactorModel GetRoleDBByName(string name, ROLESTATUS status)
+    public CharactorModel GetModelByName(string tableName, string name, ROLESTATUS status)
     {
-        return new CharactorModel(name, status);
+        return new CharactorModel(tableName, name, status);
     }
 
-    public CharactorModel GetRoleDBByRowID(int rowID, ROLESTATUS status)
+    public CharactorModel GetModelByRowID(string tableName, int rowID, ROLESTATUS status)
     {
-        return new CharactorModel(rowID, status);
+        return new CharactorModel(tableName, rowID, status);
     }
 }

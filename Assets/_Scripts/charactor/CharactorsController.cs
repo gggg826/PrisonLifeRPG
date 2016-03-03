@@ -9,24 +9,26 @@ using UnityEngine;
 
 public class CharactorsController : UnitySingletonG<CharactorsController>
 {
+    
+    public RoleInfoPanelUI roleInfoPanel;
     /// <summary>
     /// 添加一个角色渲染
     /// </summary>
     /// <param name="name"></param>
     /// <param name="status"></param>
     /// <param name="parent"></param>
-    public void AddRoleToScreen(string name, ROLESTATUS status, Transform parent)
+    public void AddRoleToScreen(string tableName, string name, ROLESTATUS status, Transform parent)
     {
-        if (DATAManager.LoadType == LOADDATETYPE.XMLFILE)
-            CharactorView.Instance.RenderRole(CharactorProxy.Instance.GetRoleInfoByName(name), parent);
+        // if (DATAManager.LoadType == LOADDATETYPE.XMLFILE)
+        //     CharactorView.Instance.RenderRole(CharactorProxy.Instance.GetRoleInfoByName(name), parent);
 
-        else if (DATAManager.LoadType == LOADDATETYPE.SQLiteDB)
-            CharactorView.Instance.RenderRole(CharactorProxy.Instance.GetRoleDBByName(name, status), parent);
+        // else if (DATAManager.LoadType == LOADDATETYPE.SQLiteDB)
+            CharactorView.Instance.RenderRole(CharactorProxy.Instance.GetModelByName(tableName, name, status), parent);
     }
 
-    public void AddRoleToScreen(int id, ROLESTATUS status, Transform parent)
+    public void AddRoleToScreen(string tableName, int id, ROLESTATUS status, Transform parent)
     {
-        CharactorView.Instance.RenderRole(CharactorProxy.Instance.GetRoleDBByRowID(id, status), parent);
+        CharactorView.Instance.RenderRole(CharactorProxy.Instance.GetModelByRowID(tableName, id, status), parent);
     }
 
     /// <summary>
@@ -34,13 +36,13 @@ public class CharactorsController : UnitySingletonG<CharactorsController>
     /// </summary>
     /// <param name="status"></param>
     /// <param name="parent"></param>
-    public void AddAllRolesToScreen(ROLESTATUS status, Transform parent)
+    public void AddAllRolesToScreen(string tableName, ROLESTATUS status, Transform parent)
     {
         if (DATAManager.LoadType == LOADDATETYPE.XMLFILE)
         {
             foreach (var item in DATAManager.RolseInfo)
             {
-                AddRoleToScreen(item.Key, status, parent);
+                AddRoleToScreen(tableName, item.Key, status, parent);
             }
         }
 
@@ -48,11 +50,11 @@ public class CharactorsController : UnitySingletonG<CharactorsController>
         {
             foreach (var item in DATAManager.GetAllRoleName())
             {
-                AddRoleToScreen(item.ToString(), status, parent);
+                AddRoleToScreen(tableName, item.ToString(), status, parent);
             }
         }
     }
-    
+
     /// <summary>
     /// 添加第一界面带牌小人的渲染
     /// </summary>
@@ -60,13 +62,19 @@ public class CharactorsController : UnitySingletonG<CharactorsController>
     /// <param name="status"></param>
     /// <param name="sprite">牌图片名称</param>
     /// <param name="parent"></param>
-    public void AddButtonBordToScreen(string name, ROLESTATUS status, Sprite sprite, Transform parent)
+    public void AddButtonBordToScreen(string tableName, string name, ROLESTATUS status, Sprite sprite, Transform parent)
     {
-        CharactorView.Instance.RenderButtonBord(CharactorProxy.Instance.GetRoleDBByName(name, status), sprite, parent);
+        CharactorView.Instance.RenderButtonBord(CharactorProxy.Instance.GetModelByName(tableName, name, status), sprite, parent);
     }
 
-    public void ShowRoleInfoPanel(string name)
+    public void SetRoleInfoPanel(RoleInfoPanelUI panel)
     {
-        ButtonManager.Instance.SendMessage("ShowRoleInfoPanel");
+        roleInfoPanel = panel;
+    }
+    
+    public void ShowRoleInfoPanel(CharactorModel model)
+    {
+        // ButtonManager.Instance.SendMessage("ShowRoleInfoPanel", model);
+        roleInfoPanel.ShowPanel(model);
     }
 }

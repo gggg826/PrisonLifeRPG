@@ -4,7 +4,7 @@
 *
 ******************************/
 
- 
+
 using UnityEngine;
 using System.Collections;
 
@@ -16,7 +16,7 @@ public class NewGameListUI : MonoBehaviour
     private Transform list4;
     private Transform list5;
 
-	void Start ()
+    void Start()
     {
         list1 = transform.Find("List1").transform;
         list2 = transform.Find("List2").transform;
@@ -24,10 +24,10 @@ public class NewGameListUI : MonoBehaviour
         list4 = transform.Find("List4").transform;
         list5 = transform.Find("List5").transform;
 
-        CharactorsController.Instance.AddRoleToScreen(1, ROLESTATUS.Normal, list1);
-        CharactorsController.Instance.AddRoleToScreen(2, ROLESTATUS.Normal, list2);
-        CharactorsController.Instance.AddRoleToScreen(3, ROLESTATUS.Normal, list3);
-        CharactorsController.Instance.AddRoleToScreen(4, ROLESTATUS.Normal, list4);
-        CharactorsController.Instance.AddRoleToScreen(5, ROLESTATUS.Normal, list5);
+        CharactorsController.Instance.AddRoleToScreen("RoleInfo", 1, ROLESTATUS.Normal, list1);
+        CharactorsController.Instance.AddRoleToScreen("RoleInfo", 2, ROLESTATUS.Normal, list2);
+        CharactorsController.Instance.AddRoleToScreen("RoleInfo", 3, ROLESTATUS.Normal, list3);
+        CharactorsController.Instance.AddRoleToScreen("RoleInfo", 4, ROLESTATUS.Normal, list4);
+        CharactorsController.Instance.AddRoleToScreen("RoleInfo", 5, ROLESTATUS.Normal, list5);
     }
 }
