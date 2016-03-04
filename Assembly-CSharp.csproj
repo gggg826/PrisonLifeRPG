@@ -48,8 +48,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
-     <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
+     <Compile Include="Assets\LETools\Scriptes\LET.cs" />
+     <Compile Include="Assets\LETools\Scriptes\SQLiteConnect.cs" />
+     <Compile Include="Assets\LETools\Scriptes\UnitySingletonG.cs" />
+     <Compile Include="Assets\LETools\Scriptes\XMLOpration.cs" />
      <Compile Include="Assets\_Scenes\Test\Charactors\LoadCharactors.cs" />
      <Compile Include="Assets\_Scripts\001-mainmenu\AchievementUI.cs" />
      <Compile Include="Assets\_Scripts\001-mainmenu\BGUI.cs" />
@@ -73,9 +75,6 @@
      <Compile Include="Assets\_Scripts\achievement\PageUI5.cs" />
      <Compile Include="Assets\_Scripts\achievement\PageUI6.cs" />
      <Compile Include="Assets\_Scripts\achievement\PageUI7.cs" />
-     <Compile Include="Assets\_Scripts\assistant\SQLiteConnect.cs" />
-     <Compile Include="Assets\_Scripts\assistant\UnitySingletonG.cs" />
-     <Compile Include="Assets\_Scripts\assistant\XMLOpration.cs" />
      <Compile Include="Assets\_Scripts\charactor\BaseChractorItem.cs" />
      <Compile Include="Assets\_Scripts\charactor\BodyModel.cs" />
      <Compile Include="Assets\_Scripts\charactor\CharactorBordItem.cs" />
@@ -88,7 +87,6 @@
      <Compile Include="Assets\_Scripts\common\DATAManager.cs" />
      <Compile Include="Assets\_Scripts\common\FloatButton.cs" />
      <Compile Include="Assets\_Scripts\events\EventManager.cs" />
-     <None Include="Assets\Demigiant\DOTween\readme.txt" />
      <None Include="Assets\StreamingAssets\RoleInfo.xml" />
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
@@ -102,14 +100,11 @@
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
- <Reference Include="DOTween">
- <HintPath>/Users/TheNO.5/UnityProject/PrisonLifeRPG/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
- </Reference>
  <Reference Include="Mono.Data.Sqlite">
- <HintPath>/Users/TheNO.5/UnityProject/PrisonLifeRPG/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
+ <HintPath>/Users/TheNO.5/UnityProject/PrisonLifeRPG/Assets/LETools/Plugins/Mono.Data.Sqlite.dll</HintPath>
  </Reference>
  <Reference Include="System.Data">
- <HintPath>/Users/TheNO.5/UnityProject/PrisonLifeRPG/Assets/Plugins/System.Data.dll</HintPath>
+ <HintPath>/Users/TheNO.5/UnityProject/PrisonLifeRPG/Assets/LETools/Plugins/System.Data.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

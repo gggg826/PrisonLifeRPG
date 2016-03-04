@@ -48,11 +48,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Tools\Plugins\Scriptes\Editor\LETools.cs" />
-     <Compile Include="Assets\Tools\Plugins\Scriptes\Editor\MainMenu.cs" />
-     <Compile Include="Assets\Tools\Plugins\Scriptes\Editor\ToolsGUI.cs" />
+     <Compile Include="Assets\LETools\Editor\LETools.cs" />
+     <Compile Include="Assets\LETools\Editor\MainMenu.cs" />
+     <Compile Include="Assets\LETools\Editor\ToolsGUI.cs" />
      <Compile Include="Assets\VSCode\Plugins\Editor\VSCode.cs" />
-     <None Include="Assets\Demigiant\DOTween\readme.txt" />
      <None Include="Assets\StreamingAssets\RoleInfo.xml" />
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
@@ -75,17 +74,11 @@
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
- <Reference Include="DOTween">
- <HintPath>/Users/TheNO.5/UnityProject/PrisonLifeRPG/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
- </Reference>
- <Reference Include="DOTweenEditor">
- <HintPath>/Users/TheNO.5/UnityProject/PrisonLifeRPG/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
- </Reference>
  <Reference Include="Mono.Data.Sqlite">
- <HintPath>/Users/TheNO.5/UnityProject/PrisonLifeRPG/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
+ <HintPath>/Users/TheNO.5/UnityProject/PrisonLifeRPG/Assets/LETools/Plugins/Mono.Data.Sqlite.dll</HintPath>
  </Reference>
  <Reference Include="System.Data">
- <HintPath>/Users/TheNO.5/UnityProject/PrisonLifeRPG/Assets/Plugins/System.Data.dll</HintPath>
+ <HintPath>/Users/TheNO.5/UnityProject/PrisonLifeRPG/Assets/LETools/Plugins/System.Data.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.Graphs.dll</HintPath>
