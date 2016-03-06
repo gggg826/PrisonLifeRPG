@@ -80,10 +80,18 @@ public static class DATAManager
         SQLiteConnect data = new SQLiteConnect(DATAManager.DBPath);
         SqliteDataReader reader = data.SelectValueByKey(tableName, key, name);
         int value = 0;
-        while (reader.Read())
+        try
         {
-            value = reader.GetInt32(reader.GetOrdinal(key));
+            while (reader.Read())
+            {
+                value = reader.GetInt32(reader.GetOrdinal(key));
+            }
         }
+        catch (System.Exception)
+        {
+            Debug.Log(name + " Not Get " + key + " Integer");
+        }
+
         data.CloseConnection();
         return value;
     }
@@ -116,11 +124,11 @@ public static class DATAManager
     /// <param name="tableName"></param>
     /// <param name="key"></param>
     /// <returns>返回ArrayList</returns>
-    static public ArrayList GetAllRoleName()
+    static public ArrayList GetAllRoleName(string tableName)
     {
         ArrayList temp = new ArrayList();
         SQLiteConnect data = new SQLiteConnect(DATAManager.DBPath);
-        temp = data.SelectColALL("RoleInfo", "Name");
+        temp = data.SelectColALL(tableName, "Name");
         data.CloseConnection();
         return temp;
     }

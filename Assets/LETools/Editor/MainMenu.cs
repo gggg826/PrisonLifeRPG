@@ -15,7 +15,7 @@ public class MainMenu : EditorWindow
         ToolsGUI.InitToolsWindow();
     }
     
-    [MenuItem("Assets/Sprite To Assetbundle")]
+    [MenuItem("Assets/LETools/Sprite To Assetbundle")]
     static void SpriteToAssetbundle()
     {
         LETools.CreateSpriteAssetbundle();

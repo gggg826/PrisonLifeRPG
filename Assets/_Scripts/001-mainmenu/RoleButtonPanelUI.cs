@@ -41,12 +41,12 @@ public class RoleButtonPanelUI : MonoBehaviour
         credits = transform.Find("Credits").transform;
         achievements = transform.Find("Achievements").transform;
 
-        specialImage = Resources.Load<Sprite>("Textures/cn/signBoard_special");
-        newGameImage = Resources.Load<Sprite>("Textures/cn/signBoard_newGame");
-        loadGameImage = Resources.Load<Sprite>("Textures/cn/signBoard_loadGame");
-        historyImage = Resources.Load<Sprite>("Textures/cn/signBoard_history");
-        creditsImage = Resources.Load<Sprite>("Textures/cn/signBoard_credits");
-        achievementsImage = Resources.Load<Sprite>("Textures/cn/signBoard_nickNames");
+        specialImage = LET.LoadSprite("Charactors", "signBoard_special");
+        newGameImage = LET.LoadSprite("Charactors", "signBoard_newGame");
+        loadGameImage = LET.LoadSprite("Charactors", "signBoard_loadGame");
+        historyImage = LET.LoadSprite("Charactors", "signBoard_history");
+        creditsImage = LET.LoadSprite("Charactors", "signBoard_credits");
+        achievementsImage = LET.LoadSprite("Charactors", "signBoard_nickNames");
 
         specialButton = special.GetComponent<Button>();
         specialButton.onClick.AddListener(delegate { ButtonManager.Instance.SendMessage("OnspecialButtonClick"); });

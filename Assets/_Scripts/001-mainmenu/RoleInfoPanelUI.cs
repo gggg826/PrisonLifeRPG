@@ -61,9 +61,7 @@ public class RoleInfoPanelUI : MonoBehaviour
     void InitPanel(CharactorModel model)
     {
         name.text = model.roleName;
-        headICON.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.headICONName);
-        print(headICON.sprite.name);
-        print(model.bodyModel.headICONName);
+        headICON.overrideSprite = LET.LoadSprite("Charactors", model.bodyModel.headICONName);
         power.text = model.power.ToString();
         agility.text = model.agility.ToString();
         intelligence.text = model.intelligence.ToString();
@@ -77,10 +75,14 @@ public class RoleInfoPanelUI : MonoBehaviour
             print(item);
         }
 
-        if (model.traitICON == null)
+        if (model.traitICON == "")
             trait.gameObject.SetActive(false);
         else
+        {
+            trait.gameObject.SetActive(true);
             // traitICON.overrideSprite = Resources.Load<Sprite>();
-            print(traitICON.sprite.name);
+            print(model.traitICON);
+        }
+            
     }
 }

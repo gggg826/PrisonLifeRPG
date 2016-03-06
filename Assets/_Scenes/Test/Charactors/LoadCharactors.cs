@@ -19,8 +19,9 @@ public class LoadCharactors : MonoBehaviour
         DATAManager.LoadType = LOADDATETYPE.SQLiteDB;
         CharactorsController.Instance.SetRoleInfoPanel(transform.Find("RoleInfoPanel").GetComponent<RoleInfoPanelUI>());
         CharactorsController.Instance.AddRoleToScreen("RoleInfo","宅男", ROLESTATUS.Naked, parent);
-        CharactorsController.Instance.AddAllRolesToScreen("RoleInfo",ROLESTATUS.Normal, parent);
-        
+        CharactorsController.Instance.AddAllRolesToScreen("RoleInfo", ROLESTATUS.Normal, parent);
+        CharactorsController.Instance.AddAllRolesToScreen("NPCInfo", ROLESTATUS.Normal, parent);
+
     }
     
     void OnGUI()

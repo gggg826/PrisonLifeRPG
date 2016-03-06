@@ -48,7 +48,7 @@ public class CharactorsController : UnitySingletonG<CharactorsController>
 
         else if (DATAManager.LoadType == LOADDATETYPE.SQLiteDB)
         {
-            foreach (var item in DATAManager.GetAllRoleName())
+            foreach (var item in DATAManager.GetAllRoleName(tableName))
             {
                 AddRoleToScreen(tableName, item.ToString(), status, parent);
             }

@@ -41,9 +41,10 @@ public class BodyModel
     {
         if (preName == preHeadName)
         {
-            if (!Resources.Load<Sprite>("Textures/Charactors/" + preHeadName + info[0]))
+            //if (!Resources.Load<Sprite>("Textures/Charactors/" + preHeadName + info[0]))
+            if(!LET.LoadSprite("Charactors", preHeadName + info[0]))
             {
-                Debug.LogError("Resources " + preHeadName + info[0] + " not found.");
+                Debug.LogError("AbundleResources " + preHeadName + info[0] + " not found.");
                 return null;
             }
             return (preHeadName + info[0]);
@@ -57,9 +58,10 @@ public class BodyModel
             strStatus = "";
         else
             strStatus = status.ToString();
-            if (!Resources.Load<Sprite>("Textures/Charactors/" + preName + strStatus + info[1] + info[2]))
+            //if (!Resources.Load<Sprite>("Textures/Charactors/" + preName + strStatus + info[1] + info[2]))
+            if (!LET.LoadSprite("Charactors", preName + strStatus + info[1] + info[2]))
             {
-                Debug.LogError("Resources " + preName + strStatus + info[1] + info[2] + " not found.");
+                Debug.LogError("AbundleResources " + preName + strStatus + info[1] + info[2] + " not found.");
                 return null;
             }
             return (preName + strStatus + info[1] + info[2]);

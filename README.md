@@ -1,4 +1,4 @@
-#**PrionLifeRPG 开发记录**
+﻿#**PrionLifeRPG 开发记录**
 
 
 Athor:&#8195;TheNO.5
@@ -20,6 +20,19 @@ Athor:&#8195;TheNO.5
  &emsp;
  
  &emsp;
+
+--------
+
+**DATE: &emsp;2016.03.05**
+
+1. 编写assetbundle创建与加载工具
+2. 根据图集恢复之前的UI显示
+
+--------
+
+**DATE: &emsp;2016.03.04**
+
+制作图集
  
 --------
 

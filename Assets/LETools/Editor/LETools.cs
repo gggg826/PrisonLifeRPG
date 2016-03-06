@@ -32,15 +32,15 @@ public class LETools : Editor
 
     static public void CreateSpriteAssetbundle()
     {
-        string path = Application.streamingAssetsPath + "Sprtes";
-        if (Directory.Exists(path))
-            Directory.Delete(path);
+        string path = Application.streamingAssetsPath + "/Sprites";
+        if (!Directory.Exists(path))
+            Directory.CreateDirectory(path);
         DirectoryInfo root = new DirectoryInfo(GetSingleSelectedPath());
-        
-        string namePath = path + root.Name + ".assetbundle";
-        if(Directory.Exists(namePath))
+
+        string namePath = path + "/" + root.Name + ".assetbundle";
+        if (Directory.Exists(namePath))
             Directory.Delete(namePath);
-        
+
         List<Sprite> list = new List<Sprite>();
         foreach (FileInfo item in root.GetFiles("*.png", SearchOption.AllDirectories))
         {
@@ -48,9 +48,10 @@ public class LETools : Editor
             list.Add(AssetDatabase.LoadAssetAtPath<Sprite>(loadPath));
         }
         BuildPipeline.BuildAssetBundle(null, list.ToArray(), namePath, BuildAssetBundleOptions.UncompressedAssetBundle | BuildAssetBundleOptions.CollectDependencies, GetBuildTarget());
+        AssetDatabase.Refresh();
     }
-    
-    
+
+
     static private BuildTarget GetBuildTarget()
     {
         BuildTarget target = BuildTarget.WebPlayer;
@@ -79,9 +80,6 @@ public class LETools : Editor
             EditorUtility.DisplayDialog("", "Just Do Single Select", "OK");
             return null;
         }
-
-        // string temp = AssetDatabase.GUIDToAssetPath(path[0]);
-        // return (Application.dataPath + temp.Replace("Assets", ""));
         return AssetDatabase.GUIDToAssetPath(path[0]);
     }
 

@@ -27,7 +27,7 @@ public class AchievementItem : MonoBehaviour
     public void InitItem(string[] info)
     {
         Name = info[0];
-        ICON.sprite = Resources.Load<Sprite>("Textures/cn/" + info[1]);
+        ICON.sprite = LET.LoadSprite("ICON", info[1]);
         if (info[2] == "1")
         {
             BGICON.color = new Vector4(255, 255, 255, 255);
