@@ -11,7 +11,7 @@ using System.Collections;
 public class AchievementUI : UnitySingletonG<AchievementUI>
 {
     public BasePageUI[] list;
-    private DescriptionPanelUI desPanelUI;
+    public DescriptionPanelUI desPanelUI;
     private Animation animation;
 
     void Awake()
@@ -21,12 +21,14 @@ public class AchievementUI : UnitySingletonG<AchievementUI>
 
     void Start()
     {
+        
         desPanelUI = transform.Find("DescriptionPanel").GetComponent<DescriptionPanelUI>();
         animation = GetComponent<Animation>();
     }
 
     public void ShowPanel()
     {
+        this.gameObject.SetActive(true);
         animation.Play("PaperUp");
     }
 

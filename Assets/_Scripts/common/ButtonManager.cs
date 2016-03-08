@@ -69,6 +69,7 @@ public class ButtonManager : UnitySingletonG<ButtonManager>
         // print("新游戏");
         FirstSceneUIView.Instance.roleButtonPanelUI.gameObject.SetActive(false);
         FirstSceneUIView.Instance.newGameListUI.gameObject.SetActive(true);
+        //Resources.UnloadUnusedAssets();
     }
 
     //  加载游戏
