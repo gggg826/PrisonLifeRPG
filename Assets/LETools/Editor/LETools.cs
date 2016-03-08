@@ -47,7 +47,7 @@ public class LETools : Editor
             string loadPath = item.FullName.Substring(item.FullName.IndexOf("Assets"));
             list.Add(AssetDatabase.LoadAssetAtPath<Sprite>(loadPath));
         }
-        BuildPipeline.BuildAssetBundle(null, list.ToArray(), namePath, BuildAssetBundleOptions.UncompressedAssetBundle | BuildAssetBundleOptions.CollectDependencies, GetBuildTarget());
+        BuildPipeline.BuildAssetBundle(null, list.ToArray(), namePath, BuildAssetBundleOptions.UncompressedAssetBundle | BuildAssetBundleOptions.CollectDependencies, BuildTarget.iOS);
         AssetDatabase.Refresh();
     }
 

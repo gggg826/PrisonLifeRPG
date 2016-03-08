@@ -45,18 +45,18 @@ public class BaseChractorItem : MonoBehaviour
     {
         CharactorModel model = _model;
         roleName.text = model.roleName;
-        //head.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.headICONName);
-        //body.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalBodyName);
-        //rleg.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalLegName);
-        //lleg.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalLegName);
-        //rhand.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalHandName);
-        //lhand.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalHandName);
-        head.sprite = LET.LoadSprite("Charactors.assetbundle", model.bodyModel.headICONName);
-        body.sprite = LET.LoadSprite("Charactors.assetbundle", model.bodyModel.normalBodyName);
-        rleg.sprite = LET.LoadSprite("Charactors.assetbundle", model.bodyModel.normalLegName);
-        lleg.sprite = LET.LoadSprite("Charactors.assetbundle", model.bodyModel.normalLegName);
-        rhand.sprite = LET.LoadSprite("Charactors.assetbundle", model.bodyModel.normalHandName);
-        lhand.sprite = LET.LoadSprite("Charactors.assetbundle", model.bodyModel.normalHandName);
+        // head.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.headICONName);
+        // body.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalBodyName);
+        // rleg.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalLegName);
+        // lleg.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalLegName);
+        // rhand.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalHandName);
+        // lhand.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalHandName);
+        head.sprite = TexturesManager.CharactorsBundle.LoadAsset<Sprite>(model.bodyModel.headICONName);
+        body.sprite = TexturesManager.CharactorsBundle.LoadAsset<Sprite>(model.bodyModel.normalBodyName);
+        rleg.sprite = TexturesManager.CharactorsBundle.LoadAsset<Sprite>(model.bodyModel.normalLegName);
+        lleg.sprite = TexturesManager.CharactorsBundle.LoadAsset<Sprite>(model.bodyModel.normalLegName);
+        rhand.sprite = TexturesManager.CharactorsBundle.LoadAsset<Sprite>(model.bodyModel.normalHandName);
+        lhand.sprite = TexturesManager.CharactorsBundle.LoadAsset<Sprite>(model.bodyModel.normalHandName);
     }
 
     /// <summary>

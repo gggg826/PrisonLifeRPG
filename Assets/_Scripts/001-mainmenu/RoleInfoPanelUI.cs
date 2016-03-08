@@ -61,7 +61,8 @@ public class RoleInfoPanelUI : MonoBehaviour
     void InitPanel(CharactorModel model)
     {
         name.text = model.roleName;
-        headICON.overrideSprite = LET.LoadSprite("Charactors", model.bodyModel.headICONName);
+        // headICON.overrideSprite = LET.LoadSprite("Charactors", model.bodyModel.headICONName);
+        headICON.sprite = TexturesManager.CharactorsBundle.LoadAsset<Sprite>(model.bodyModel.headICONName);
         power.text = model.power.ToString();
         agility.text = model.agility.ToString();
         intelligence.text = model.intelligence.ToString();

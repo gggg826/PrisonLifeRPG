@@ -66,7 +66,9 @@ public class ButtonManager : UnitySingletonG<ButtonManager>
     // 新游戏
     void OnnewGameButtonClick()
     {
-        print("新游戏");
+        // print("新游戏");
+        FirstSceneUIView.Instance.roleButtonPanelUI.gameObject.SetActive(false);
+        FirstSceneUIView.Instance.newGameListUI.gameObject.SetActive(true);
     }
 
     //  加载游戏

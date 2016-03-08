@@ -15,6 +15,7 @@ public class FirstSceneUIView : UnitySingletonG<FirstSceneUIView>
     public LanguagePanelUI languagePanelUI;
     public AchievementUI achievementUI;
     public RoleInfoPanelUI roleInfoPanelUI;
+    public NewGameListUI newGameListUI;
 
     void Awake()
     {
@@ -29,6 +30,7 @@ public class FirstSceneUIView : UnitySingletonG<FirstSceneUIView>
         roleButtonPanelUI = transform.Find("RoleButtonPanel").GetComponent<RoleButtonPanelUI>();
         languagePanelUI = transform.Find("LanguageSelectPanel").GetComponent<LanguagePanelUI>();
         roleInfoPanelUI = transform.Find("RoleInfoPanel").GetComponent<RoleInfoPanelUI>();
+        newGameListUI = transform.Find("NewGameList").GetComponent<NewGameListUI>(); 
         achievementUI = AchievementUI.Instance;
         FloatButton.Instance.GetFloatButton();
     }

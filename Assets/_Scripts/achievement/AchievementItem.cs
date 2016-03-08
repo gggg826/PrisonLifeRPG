@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 public class AchievementItem : MonoBehaviour
 {
-    public string Name;
+    private string Name;
     private Image BGICON;
     private Image ICON;
     private Button button;
@@ -27,8 +27,10 @@ public class AchievementItem : MonoBehaviour
     public void InitItem(string[] info)
     {
         Name = info[0];
-        ICON.sprite = LET.LoadSprite("ICON", info[1]);
-        if (info[2] == "1")
+        // ICON.sprite = LET.LoadSprite("ICON", info[1]);
+        BGICON.sprite = TexturesManager.IconBundle.LoadAsset<Sprite>("b_btm8");
+        ICON.sprite = TexturesManager.IconBundle.LoadAsset<Sprite>(info[1]);
+        // if (info[2] == "1")
         {
             BGICON.color = new Vector4(255, 255, 255, 255);
             ICON.color = new Vector4(255, 255, 255, 255);

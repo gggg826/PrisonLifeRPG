@@ -1,9 +1,8 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrisonLifeRPG.CSharp", "PrisonLifeRPG.CSharp.csproj", "{F609F119-D1A7-9654-93EC-0679F285D7C2}"
+# Visual Studio 2012
+Project("{0D317E1F-27B4-C72E-A827-CB4516F11205}") = "PrisonLifeRPG", "Assembly-CSharp.csproj", "{940F62B9-AB58-7575-F4E8-F47CC53013D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrisonLifeRPG.CSharp.Editor", "PrisonLifeRPG.CSharp.Editor.csproj", "{85E7898D-7CE6-8F47-1071-0F615AF2DFF1}"
+Project("{0D317E1F-27B4-C72E-A827-CB4516F11205}") = "PrisonLifeRPG", "Assembly-CSharp-Editor.csproj", "{2235062D-CBA1-F6E1-21EB-326376F95D87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,16 +10,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F609F119-D1A7-9654-93EC-0679F285D7C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F609F119-D1A7-9654-93EC-0679F285D7C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F609F119-D1A7-9654-93EC-0679F285D7C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F609F119-D1A7-9654-93EC-0679F285D7C2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{85E7898D-7CE6-8F47-1071-0F615AF2DFF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{85E7898D-7CE6-8F47-1071-0F615AF2DFF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{85E7898D-7CE6-8F47-1071-0F615AF2DFF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{85E7898D-7CE6-8F47-1071-0F615AF2DFF1}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
+		{940F62B9-AB58-7575-F4E8-F47CC53013D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{940F62B9-AB58-7575-F4E8-F47CC53013D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{940F62B9-AB58-7575-F4E8-F47CC53013D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{940F62B9-AB58-7575-F4E8-F47CC53013D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2235062D-CBA1-F6E1-21EB-326376F95D87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2235062D-CBA1-F6E1-21EB-326376F95D87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2235062D-CBA1-F6E1-21EB-326376F95D87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2235062D-CBA1-F6E1-21EB-326376F95D87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

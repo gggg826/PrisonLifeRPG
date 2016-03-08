@@ -89,7 +89,7 @@ public static class DATAManager
         }
         catch (System.Exception)
         {
-            Debug.Log(name + " Not Get " + key + " Integer");
+            // Debug.Log(name + " Not Get " + key + " Integer");
         }
 
         data.CloseConnection();

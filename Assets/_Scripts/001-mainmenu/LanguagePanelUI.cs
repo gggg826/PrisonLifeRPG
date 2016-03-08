@@ -35,17 +35,17 @@ public class LanguagePanelUI : MonoBehaviour
         cancelButton.onClick.AddListener(delegate { ButtonManager.Instance.SendMessage("CancelLanguagePanelClick"); });
 
 
-        currentLanguageSprite = FirstSceneUIView.Instance.bgUI.GetlanguageCurrentSprite();
+        // currentLanguageSprite = FirstSceneUIView.Instance.bgUI.GetlanguageCurrentSprite();
 
 
-        enSprite1 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_en1");
-        enSprite2 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_en2");
-        frSprite1 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_fr1");
-        frSprite2 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_fr2");
-        scnSprite1 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_cn1");
-        scnSprite2 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_cn2");
-        unscnSprite1 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_cnt1");
-        unscnSprite2 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_cnt2");
+        // enSprite1 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_en1");
+        // enSprite2 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_en2");
+        // frSprite1 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_fr1");
+        // frSprite2 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_fr2");
+        // scnSprite1 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_cn1");
+        // scnSprite2 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_cn2");
+        // unscnSprite1 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_cnt1");
+        // unscnSprite2 = Resources.Load<Sprite>("Textures/001-mainmenu/b_language_cnt2");
 
         ENIcon = transform.Find("ENButton").GetComponent<Image>();
         ENButton = transform.Find("ENButton").GetComponent<Button>();

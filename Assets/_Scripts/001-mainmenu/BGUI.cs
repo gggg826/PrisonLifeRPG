@@ -14,7 +14,7 @@ public class BGUI : MonoBehaviour
     public Button languageSeletButton;
     public Image languageSeletIcon;
 
-    void Start () 
+    void Awake () 
     {
 	   shareButton = transform.parent.Find("BG/ShareButton").GetComponent<Button>();
        shareButton.onClick.AddListener(delegate {ButtonManager.Instance.SendMessage("ShareButtonClick");});
@@ -27,7 +27,9 @@ public class BGUI : MonoBehaviour
     
     public Sprite GetlanguageCurrentSprite()
     {
-        return languageSeletButton.gameObject.GetComponent<Image>().sprite;
+        Debug.Log(languageSeletIcon.sprite.name);
+        // return languageSeletButton.gameObject.GetComponent<Image>().sprite;
+        return languageSeletIcon.sprite;
     }
     
     void LanguageButtonIconShow(Sprite currentSprite)
