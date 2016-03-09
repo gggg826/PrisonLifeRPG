@@ -75,7 +75,10 @@ public class ButtonManager : UnitySingletonG<ButtonManager>
     //  加载游戏
     void OnloadGameButtonClick()
     {
-        print("加载游戏");
+        //print("加载游戏");
+        if (DATAManager.PLAYER.roleName == "") return;
+        print(DATAManager.PLAYER.roleName);
+        Application.LoadLevel(2);
     }
 
     // 历史记录
@@ -97,14 +100,21 @@ public class ButtonManager : UnitySingletonG<ButtonManager>
     }
 
     // 加载场景
-    void ChangeSence(int id)
-    {
-        Application.LoadLevel(id);
-    }
+    //void ChangeSence(int id)
+    //{
+    //    Application.LoadLevel(id);
+    //}
 
     // 显示人物属性面板
     void ShowRoleInfoPanel(CharactorModel model)
     {
         FirstSceneUIView.Instance.roleInfoPanelUI.ShowPanel(model);
+    }
+
+    //  开始新游戏
+    void BeginGame(CharactorModel model)
+    {
+        DATAManager.PLAYER = model;
+        Application.LoadLevel(2);
     }
 }

@@ -1,0 +1,162 @@
+﻿/*****************************
+*
+*  Author : TheNO.5
+*
+******************************/
+
+
+using UnityEngine;
+using System.Collections;
+
+public enum INFOTYPE
+{
+    TopUIInfo,
+    All,
+}
+
+public class PlayerInfo : UnitySingletonG<PlayerInfo>
+{
+    public string playerName;
+    public string workPlace;
+    public string skillList;
+    public string partyPosition;
+    public string jailRoomType;
+    public string friendsList;
+    public string enemyList;
+    public string escapTeamList;
+    public string victimList;
+
+    public int happiness;
+    public int energy;
+    public int healthy;
+    public int fame;
+    public int power;
+    public int agility;
+    public int charisma;
+    public int luck;
+    public int totalDays;
+    public int survivalDays;
+    public int fameInParty;
+    public int release;// 0-未假释  1-听证会 2-取消听证会 3-已假释
+    public int relationWithMobsters;
+    public int relationWithCoin;
+    public int relationWithRosesAndGuns;
+    public int relationWithHeartBreakers;
+    public int snicth;// 告密
+    
+    public delegate void OnPlayerInfoChanged(INFOTYPE type);
+    public event OnPlayerInfoChanged OnPlayerInfoChangedEvent;
+
+    void Start()
+    {
+        happiness = 70;
+        energy = 60;
+        healthy = 80;
+        OnPlayerInfoChangedEvent(INFOTYPE.TopUIInfo);
+    }
+
+    /// <summary>
+    /// 初始化新人物
+    /// </summary>
+    /// <param name="model"></param>
+    public void Begin(CharactorModel model)
+    {
+        playerName = model.roleName;
+        workPlace = model.workPlace;
+        skillList = model.skillList;
+        jailRoomType = "b_all_cell1";
+        friendsList = null;
+        enemyList = null;
+        escapTeamList = null;
+        victimList = null;
+        partyPosition = null;
+
+        happiness = 100;
+        energy = 100;
+        healthy = 100;
+        fame = 0;
+        power = model.power;
+        agility = model.agility;
+        charisma = model.charisma;
+        luck = model.luck;
+        totalDays = model.prisonDays;
+        survivalDays = 0;
+        fameInParty = 0;
+        release = 0; //  假释状态
+        relationWithMobsters = 0;
+        relationWithCoin = 0;
+        relationWithRosesAndGuns = 0;
+        relationWithHeartBreakers = 0;
+        snicth = 0;
+        OnPlayerInfoChangedEvent(INFOTYPE.TopUIInfo);
+    }
+
+    /// <summary>
+    /// 从PlayerPrefs加载人物信息
+    /// </summary>
+    public void Load()
+    {
+        playerName = PlayerPrefs.GetString("playerName");
+        workPlace = PlayerPrefs.GetString("workPlace");
+        skillList = PlayerPrefs.GetString("skillList");
+        jailRoomType = PlayerPrefs.GetString("jailRoomType");
+        friendsList = PlayerPrefs.GetString("friendsList");
+        enemyList = PlayerPrefs.GetString("enemyList");
+        escapTeamList = PlayerPrefs.GetString("escapTeamList");
+        victimList = PlayerPrefs.GetString("victimList");
+        partyPosition = PlayerPrefs.GetString("partyPosition");
+
+        happiness = PlayerPrefs.GetInt("happiness");
+        energy = PlayerPrefs.GetInt("energy");
+        healthy = PlayerPrefs.GetInt("healthy");
+        fame = PlayerPrefs.GetInt("fame");
+        power = PlayerPrefs.GetInt("power");
+        agility = PlayerPrefs.GetInt("agility");
+        charisma = PlayerPrefs.GetInt("charisma");
+        luck = PlayerPrefs.GetInt("luck");
+        totalDays = PlayerPrefs.GetInt("totalDays");
+        survivalDays = PlayerPrefs.GetInt("survivalDays");
+        fameInParty = PlayerPrefs.GetInt("fameInParty");
+        release = PlayerPrefs.GetInt("release");
+        happiness = PlayerPrefs.GetInt("relationWithMobsters");
+        relationWithCoin = PlayerPrefs.GetInt("relationWithCoin");
+        relationWithRosesAndGuns = PlayerPrefs.GetInt("relationWithRosesAndGuns");
+        relationWithHeartBreakers = PlayerPrefs.GetInt("relationWithHeartBreakers");
+        snicth = PlayerPrefs.GetInt("snicth");
+    }
+
+    /// <summary>
+    /// 睡觉前写日记，保存数据
+    /// </summary>
+    /// <param name="model"></param>
+    public void SaveToPlayerprefs(CharactorModel model)
+    {
+        PlayerPrefs.SetString("playerName", playerName);
+        PlayerPrefs.SetString("playerName", playerName);
+        PlayerPrefs.SetString("skillList", skillList);
+        PlayerPrefs.SetString("jailRoomType", jailRoomType);
+        PlayerPrefs.SetString("friendsList", friendsList);
+        PlayerPrefs.SetString("enemyList", enemyList);
+        PlayerPrefs.SetString("escapTeamList", escapTeamList);
+        PlayerPrefs.SetString("victimList", victimList);
+        PlayerPrefs.SetString("partyPosition", partyPosition);
+
+        PlayerPrefs.SetInt("happiness", happiness);
+        PlayerPrefs.SetInt("energy", energy);
+        PlayerPrefs.SetInt("healthy", healthy);
+        PlayerPrefs.SetInt("fame", fame);
+        PlayerPrefs.SetInt("power", power);
+        PlayerPrefs.SetInt("agility", agility);
+        PlayerPrefs.SetInt("charisma", charisma);
+        PlayerPrefs.SetInt("luck", luck);
+        PlayerPrefs.SetInt("totalDays", totalDays);
+        PlayerPrefs.SetInt("survivalDays", survivalDays);
+        PlayerPrefs.SetInt("fameInParty", fameInParty);
+        PlayerPrefs.SetInt("release", release);
+        PlayerPrefs.SetInt("relationWithMobsters", relationWithMobsters);
+        PlayerPrefs.SetInt("relationWithCoin", relationWithCoin);
+        PlayerPrefs.SetInt("relationWithRosesAndGuns", relationWithRosesAndGuns);
+        PlayerPrefs.SetInt("relationWithHeartBreakers", relationWithHeartBreakers);
+        PlayerPrefs.SetInt("snicth", snicth);
+    }
+}

@@ -12,6 +12,8 @@ public class AddPlayer : MonoBehaviour
 {
 	void Start () 
     {
-	    CharactorsController.Instance.AddRoleToScreen("RoleInfo", "小聪明", ROLESTATUS.Naked, transform);
+        CharactorsController.Instance.AddRoleToScreen("RoleInfo", 1, ROLESTATUS.Naked, transform);
+	    //CharactorsController.Instance.AddRoleToScreen(DATAManager.PLAYER, transform);
+     //   PlayerInfo.Instance.Begin(DATAManager.PLAYER);
 	}
 }

@@ -13,7 +13,7 @@ using System.IO;
 public class XMLOpration
 {
     /// <summary>
-    /// 从XML读取数据
+    /// 从XML读取数据--弃用
     /// </summary>
     /// <param name="path">XML路径</param>
     /// <returns>返回Dictionary</returns>

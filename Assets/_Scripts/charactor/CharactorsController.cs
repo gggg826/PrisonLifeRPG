@@ -31,6 +31,11 @@ public class CharactorsController : UnitySingletonG<CharactorsController>
         CharactorView.Instance.RenderRole(CharactorProxy.Instance.GetModelByRowID(tableName, id, status), parent);
     }
 
+    public void AddRoleToScreen(CharactorModel model, Transform parent)
+    {
+        CharactorView.Instance.RenderRole(model, parent);
+    }
+
     /// <summary>
     /// 添加数据库中所有角色的渲染
     /// </summary>

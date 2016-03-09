@@ -20,8 +20,9 @@ public class CharactorModel
     public int luck;
     public int prisonDays;
     public string prisonGol;
-    public string[] skillList;
+    public string skillList;
     public string traitICON;
+    public string workPlace;
 
     /// <summary>
     /// XML加载方式
@@ -69,7 +70,8 @@ public class CharactorModel
         luck = DATAManager.GetIntegerDBValue(tableName, "Luck", name);
         prisonDays = DATAManager.GetIntegerDBValue(tableName, "PrisonDays", name);
         prisonGol = DATAManager.GetTextDBValue(tableName, "PrisonGol", name);
-        skillList = GetSkillList(tableName, name);
+        //skillList = GetSkillList(tableName, name);
+        skillList = DATAManager.GetTextDBValue(tableName, "SkillList", name);
         traitICON = DATAManager.GetTextDBValue(tableName, "Trait", name);
     }
 

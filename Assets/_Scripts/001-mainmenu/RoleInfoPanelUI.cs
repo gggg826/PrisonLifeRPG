@@ -10,10 +10,12 @@ using UnityEngine.UI;
 
 public class RoleInfoPanelUI : MonoBehaviour
 {
-    private Animation animation;
+    private Animation anim;
+    private CharactorModel model;
     private Button closeButton;
+    private Button OKButton;
     private Image headICON;
-    private Text name;
+    private Text roleName;
     private Text power;
     private Text agility;
     private Text intelligence;
@@ -29,12 +31,15 @@ public class RoleInfoPanelUI : MonoBehaviour
     {
         CharactorsController.Instance.SetRoleInfoPanel(this);
         
-        animation = GetComponent<Animation>();
+        anim = GetComponent<Animation>();
         closeButton = transform.Find("CloseButton").GetComponent<Button>();
         closeButton.onClick.AddListener(delegate { HidenPanel(); });
 
+        OKButton = transform.Find("OK").GetComponent<Button>();
+        OKButton.onClick.AddListener(delegate { ButtonManager.Instance.SendMessage("BeginGame", model); });
+
         headICON = transform.Find("HeadICON/ICON").GetComponent<Image>();
-        name = transform.Find("Name").GetComponent<Text>();
+        roleName = transform.Find("Name").GetComponent<Text>();
         power = transform.Find("Image_Property/Text_Power").GetComponent<Text>();
         agility = transform.Find("Image_Property/Text_Agility").GetComponent<Text>();
         intelligence = transform.Find("Image_Property/Text_Intelligence").GetComponent<Text>();
@@ -50,17 +55,18 @@ public class RoleInfoPanelUI : MonoBehaviour
     public void ShowPanel(CharactorModel model)
     {
         InitPanel(model);
-        animation.Play("PaperUp");
+        anim.Play("PaperUp");
     }
 
     void HidenPanel()
     {
-        animation.Play("PaperDown");
+        anim.Play("PaperDown");
     }
 
-    void InitPanel(CharactorModel model)
+    void InitPanel(CharactorModel _model)
     {
-        name.text = model.roleName;
+        model = _model;
+        roleName.text = model.roleName;
         // headICON.overrideSprite = LET.LoadSprite("Charactors", model.bodyModel.headICONName);
         headICON.sprite = TexturesManager.CharactorsBundle.LoadAsset<Sprite>(model.bodyModel.headICONName);
         power.text = model.power.ToString();
@@ -71,7 +77,7 @@ public class RoleInfoPanelUI : MonoBehaviour
         prisonDays.text = model.prisonDays.ToString();
         prisonGol.text = model.prisonGol;
 
-        foreach (string item in model.skillList)
+        foreach (string item in model.skillList.Split(','))
         {
             print(item);
         }
