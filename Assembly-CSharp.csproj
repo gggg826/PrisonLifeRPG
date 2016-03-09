@@ -63,6 +63,8 @@
      <Compile Include="Assets\_Scripts\001-mainmenu\RoleButtonPanelUI.cs" />
      <Compile Include="Assets\_Scripts\001-mainmenu\RoleInfoPanelUI.cs" />
      <Compile Include="Assets\_Scripts\001-mainmenu\TopPanelUI.cs" />
+     <Compile Include="Assets\_Scripts\002-BaseGame\AddPlayer.cs" />
+     <Compile Include="Assets\_Scripts\002-BaseGame\PersentShow.cs" />
      <Compile Include="Assets\_Scripts\achievement\AchievementItem.cs" />
      <Compile Include="Assets\_Scripts\achievement\AchievementView.cs" />
      <Compile Include="Assets\_Scripts\achievement\AchievementsController.cs" />
