@@ -46,7 +46,6 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
     public delegate void OnPlayerInfoChanged(INFOTYPE type);
     public event OnPlayerInfoChanged OnPlayerInfoChangedEvent;
     
-    
     /// <summary>
     /// 初始化新人物
     /// </summary>
@@ -111,11 +110,12 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         survivalDays = PlayerPrefs.GetInt("survivalDays");
         fameInParty = PlayerPrefs.GetInt("fameInParty");
         release = PlayerPrefs.GetInt("release");
-        happiness = PlayerPrefs.GetInt("relationWithMobsters");
+        relationWithMobsters = PlayerPrefs.GetInt("relationWithMobsters");
         relationWithCoin = PlayerPrefs.GetInt("relationWithCoin");
         relationWithRosesAndGuns = PlayerPrefs.GetInt("relationWithRosesAndGuns");
         relationWithHeartBreakers = PlayerPrefs.GetInt("relationWithHeartBreakers");
         snicth = PlayerPrefs.GetInt("snicth");
+        OnPlayerInfoChangedEvent(INFOTYPE.TopUIInfo);
     }
 
     /// <summary>

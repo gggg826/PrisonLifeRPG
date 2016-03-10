@@ -12,9 +12,9 @@ public class LETProgressBar : MonoBehaviour
 {
     public Slider slider;
     public Text text;
-    
-	public void ShowPrecent() 
+
+    void Update()
     {
-	    text.text = slider.value + "/100";
-	}
+        text.text = slider.value + "/100";
+    }
 }
