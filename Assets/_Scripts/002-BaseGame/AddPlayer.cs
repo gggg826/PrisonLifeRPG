@@ -8,12 +8,22 @@
 using UnityEngine;
 using System.Collections;
 
-public class AddPlayer : MonoBehaviour 
+public class AddPlayer : MonoBehaviour
 {
-	void Start () 
+    void Start()
     {
-        CharactorsController.Instance.AddRoleToScreen("RoleInfo", 1, ROLESTATUS.Naked, transform);
-	    //CharactorsController.Instance.AddRoleToScreen(DATAManager.PLAYER, transform);
-     //   PlayerInfo.Instance.Begin(DATAManager.PLAYER);
-	}
+        if(DATAManager.GameLoadType == GAMELOADTYPE.NewGame)
+        {
+            PlayerInfo.Instance.BeginNewGame(DATAManager.PLAYER);
+        }
+        
+        else
+        {
+            PlayerInfo.Instance.Load();
+        }
+        
+        CharactorsController.Instance.AddRoleToScreen(DATAManager.PLAYER, transform);
+
+        print(PlayerPrefs.GetString("playerName"));
+    }
 }

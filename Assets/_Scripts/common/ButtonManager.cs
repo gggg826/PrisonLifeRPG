@@ -76,8 +76,7 @@ public class ButtonManager : UnitySingletonG<ButtonManager>
     void OnloadGameButtonClick()
     {
         //print("加载游戏");
-        if (DATAManager.PLAYER.roleName == "") return;
-        print(DATAManager.PLAYER.roleName);
+        
         Application.LoadLevel(2);
     }
 
@@ -115,6 +114,7 @@ public class ButtonManager : UnitySingletonG<ButtonManager>
     void BeginGame(CharactorModel model)
     {
         DATAManager.PLAYER = model;
+        DATAManager.GameLoadType = GAMELOADTYPE.NewGame;
         Application.LoadLevel(2);
     }
 }

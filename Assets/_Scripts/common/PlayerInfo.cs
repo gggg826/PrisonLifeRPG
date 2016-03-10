@@ -6,7 +6,6 @@
 
 
 using UnityEngine;
-using System.Collections;
 
 public enum INFOTYPE
 {
@@ -46,20 +45,13 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
     
     public delegate void OnPlayerInfoChanged(INFOTYPE type);
     public event OnPlayerInfoChanged OnPlayerInfoChangedEvent;
-
-    void Start()
-    {
-        happiness = 70;
-        energy = 60;
-        healthy = 80;
-        OnPlayerInfoChangedEvent(INFOTYPE.TopUIInfo);
-    }
-
+    
+    
     /// <summary>
     /// 初始化新人物
     /// </summary>
     /// <param name="model"></param>
-    public void Begin(CharactorModel model)
+    public void BeginNewGame(CharactorModel model)
     {
         playerName = model.roleName;
         workPlace = model.workPlace;
@@ -89,6 +81,7 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         relationWithHeartBreakers = 0;
         snicth = 0;
         OnPlayerInfoChangedEvent(INFOTYPE.TopUIInfo);
+        SaveToPlayerprefs();
     }
 
     /// <summary>
@@ -129,7 +122,7 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
     /// 睡觉前写日记，保存数据
     /// </summary>
     /// <param name="model"></param>
-    public void SaveToPlayerprefs(CharactorModel model)
+    public void SaveToPlayerprefs()
     {
         PlayerPrefs.SetString("playerName", playerName);
         PlayerPrefs.SetString("playerName", playerName);

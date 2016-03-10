@@ -27,10 +27,19 @@ public enum ROLESTATUS
     Naked
 }
 
+public enum GAMELOADTYPE
+{
+    NewGame,
+    LoadFromPlayerPrefs
+}
+
 public static class DATAManager
 {
     static private LOADDATETYPE _loadType = LOADDATETYPE.XMLFILE;
     static public LOADDATETYPE LoadType { get { return _loadType; } set { _loadType = value; } }
+    
+    static private GAMELOADTYPE _gameLoadType = GAMELOADTYPE.LoadFromPlayerPrefs;
+    static public GAMELOADTYPE GameLoadType { get { return _gameLoadType; } set { _gameLoadType = value; } }
 
     static private Dictionary<string, CharactorModel> _rolesInfo = XMLOpration.GetRolesInfoDictionary(Application.streamingAssetsPath + "/DATABase/RoleInfo.xml");
     static public Dictionary<string, CharactorModel> RolseInfo { get { return _rolesInfo; } }
@@ -52,12 +61,11 @@ public static class DATAManager
         set
         {
             _player = value;
-            PlayerInfo.Instance.SaveToPlayerprefs(_player);
         }
         get
         {
             if (_player == null)
-                _player = CharactorProxy.Instance.GetModelByName("RoleInfo", PlayerPrefs.GetString("name"), ROLESTATUS.Normal);
+                _player = CharactorProxy.Instance.GetModelByName("RoleInfo", PlayerPrefs.GetString("playerName"), ROLESTATUS.Normal);
             return _player;
         }
     }

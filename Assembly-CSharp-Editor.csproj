@@ -52,7 +52,11 @@
      <Compile Include="Assets\LETools\Editor\MainMenu.cs" />
      <Compile Include="Assets\LETools\Editor\ToolsGUI.cs" />
      <Compile Include="Assets\VSCode\Plugins\Editor\VSCode.cs" />
-     <None Include="Assets\StreamingAssets\RoleInfo.xml" />
+     <None Include="Assets\StreamingAssets\DATABase\PlayerInfo.xml" />
+     <None Include="Assets\StreamingAssets\DATABase\RoleInfo.xml" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -67,6 +71,9 @@
  </Reference>
  <Reference Include="UnityEditor.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Data.Sqlite">
  <HintPath>/Users/TheNO.5/UnityProject/PrisonLifeRPG/Assets/LETools/Plugins/Mono.Data.Sqlite.dll</HintPath>

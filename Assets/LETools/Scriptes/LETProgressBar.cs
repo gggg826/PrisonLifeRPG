@@ -8,12 +8,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PersentShow : MonoBehaviour 
+public class LETProgressBar : MonoBehaviour 
 {
     public Slider slider;
     public Text text;
     
-	void Update () 
+	public void ShowPrecent() 
     {
 	    text.text = slider.value + "/100";
 	}

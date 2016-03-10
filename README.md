@@ -1,4 +1,4 @@
-﻿#**PrionLifeRPG 开发记录**
+#**PrionLifeRPG 开发记录**
 
 
 Athor:&#8195;TheNO.5
@@ -27,6 +27,7 @@ Athor:&#8195;TheNO.5
 
 1. 编写PlayerInfo单例脚本，添加新游戏，加载游戏，保存游戏方法，并与第一界面按钮建立事件链接
 2. 采用委托方式控制血条显示
+3. 重新编写新游戏与加载游戏的链接方式
 
 
         采用PlayerPrefs保存玩家信息
