@@ -9,8 +9,11 @@ using UnityEngine;
 
 public enum INFOTYPE
 {
-    TopUIInfo,
-    All,
+    PlayerInfo,
+    Time,
+    Money,
+    SurvivalDays,
+    All
 }
 
 public class PlayerInfo : UnitySingletonG<PlayerInfo>
@@ -24,6 +27,7 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
     public string enemyList;
     public string escapTeamList;
     public string victimList;
+
 
     public int happiness;
     public int energy;
@@ -42,10 +46,12 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
     public int relationWithRosesAndGuns;
     public int relationWithHeartBreakers;
     public int snicth;// 告密
-    
+    public int time;
+
+
     public delegate void OnPlayerInfoChanged(INFOTYPE type);
     public event OnPlayerInfoChanged OnPlayerInfoChangedEvent;
-    
+
     /// <summary>
     /// 初始化新人物
     /// </summary>
@@ -79,7 +85,10 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         relationWithRosesAndGuns = 0;
         relationWithHeartBreakers = 0;
         snicth = 0;
-        OnPlayerInfoChangedEvent(INFOTYPE.TopUIInfo);
+
+        time = 6;
+
+        OnPlayerInfoChangedEvent(INFOTYPE.All);
         SaveToPlayerprefs();
     }
 
@@ -115,7 +124,9 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         relationWithRosesAndGuns = PlayerPrefs.GetInt("relationWithRosesAndGuns");
         relationWithHeartBreakers = PlayerPrefs.GetInt("relationWithHeartBreakers");
         snicth = PlayerPrefs.GetInt("snicth");
-        OnPlayerInfoChangedEvent(INFOTYPE.TopUIInfo);
+
+        time = 20;
+        OnPlayerInfoChangedEvent(INFOTYPE.All);
     }
 
     /// <summary>
@@ -151,5 +162,6 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         PlayerPrefs.SetInt("relationWithRosesAndGuns", relationWithRosesAndGuns);
         PlayerPrefs.SetInt("relationWithHeartBreakers", relationWithHeartBreakers);
         PlayerPrefs.SetInt("snicth", snicth);
+        PlayerPrefs.SetInt("time", time);
     }
 }
