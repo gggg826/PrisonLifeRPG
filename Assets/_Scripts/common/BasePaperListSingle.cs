@@ -8,10 +8,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BasePageUI : MonoBehaviour
+public class BasePaperListSingle : MonoBehaviour
 {
     protected int pageNO;
-    protected int gotCount;
     protected Text pageNOText;
     protected Text gotCountText;
     protected Button closeButton;
@@ -20,7 +19,7 @@ public class BasePageUI : MonoBehaviour
     protected Transform Tran_List;
     protected Animation anima;
 
-	protected void Init ()
+    protected void Init()
     {
         try
         {
@@ -33,9 +32,7 @@ public class BasePageUI : MonoBehaviour
         }
         pageNOText = transform.Find("PageNO").GetComponent<Text>();
         pageNOText.text = pageNO + " / 7";
-        gotCount = DATAManager.GOTCOUNTACHIEVEMENTS;
         gotCountText = transform.Find("Count").GetComponent<Text>();
-        gotCountText.text = gotCount + "/135";
         Tran_List = transform.Find("List").transform;
         closeButton = transform.Find("CloseButton").GetComponent<Button>();
         anima = GetComponent<Animation>();

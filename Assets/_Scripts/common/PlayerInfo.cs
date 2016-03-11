@@ -9,7 +9,8 @@ using UnityEngine;
 
 public enum INFOTYPE
 {
-    PlayerInfo,
+    BarInfo,
+    PartyInfo,
     Time,
     Money,
     SurvivalDays,
@@ -40,6 +41,7 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
     public int totalDays;
     public int survivalDays;
     public int fameInParty;
+    public int money;
     public int release;// 0-未假释  1-听证会 2-取消听证会 3-已假释
     public int relationWithMobsters;
     public int relationWithCoin;
@@ -59,7 +61,7 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
     public void BeginNewGame(CharactorModel model)
     {
         playerName = model.roleName;
-        workPlace = model.workPlace;
+        workPlace = "b_all_work1";
         skillList = model.skillList;
         jailRoomType = "b_all_cell1";
         friendsList = null;
@@ -71,6 +73,8 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         happiness = 100;
         energy = 100;
         healthy = 100;
+        time = 6;
+        money = 20;
         fame = 0;
         power = model.power;
         agility = model.agility;
@@ -86,7 +90,6 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         relationWithHeartBreakers = 0;
         snicth = 0;
 
-        time = 6;
 
         OnPlayerInfoChangedEvent(INFOTYPE.All);
         SaveToPlayerprefs();
@@ -110,6 +113,7 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         happiness = PlayerPrefs.GetInt("happiness");
         energy = PlayerPrefs.GetInt("energy");
         healthy = PlayerPrefs.GetInt("healthy");
+        money = PlayerPrefs.GetInt("money");
         fame = PlayerPrefs.GetInt("fame");
         power = PlayerPrefs.GetInt("power");
         agility = PlayerPrefs.GetInt("agility");
@@ -125,7 +129,7 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         relationWithHeartBreakers = PlayerPrefs.GetInt("relationWithHeartBreakers");
         snicth = PlayerPrefs.GetInt("snicth");
 
-        time = 20;
+        time = PlayerPrefs.GetInt("time");
         OnPlayerInfoChangedEvent(INFOTYPE.All);
     }
 
@@ -148,6 +152,7 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         PlayerPrefs.SetInt("happiness", happiness);
         PlayerPrefs.SetInt("energy", energy);
         PlayerPrefs.SetInt("healthy", healthy);
+        PlayerPrefs.SetInt("money", money);
         PlayerPrefs.SetInt("fame", fame);
         PlayerPrefs.SetInt("power", power);
         PlayerPrefs.SetInt("agility", agility);

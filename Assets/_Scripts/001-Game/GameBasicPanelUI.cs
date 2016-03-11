@@ -7,9 +7,10 @@
 
 using UnityEngine;
 
-public class BasePanelUI : UnitySingletonG<BasePanelUI>
+public class GameBasicPanelUI : UnitySingletonG<GameBasicPanelUI>
 {
     private MenuPanelUI menuPanelUI;
+    private PlayerInfoPanelUI playerinfoPanelUI;
 
     void Awake()
     {
@@ -19,10 +20,16 @@ public class BasePanelUI : UnitySingletonG<BasePanelUI>
     void Start()
     {
         menuPanelUI = transform.Find("MenuPanel").GetComponent<MenuPanelUI>();
+        playerinfoPanelUI = transform.Find("PlayerInfoPanel").GetComponent<PlayerInfoPanelUI>();
     }
     
     public void ShowMenuPanel()
     {
         menuPanelUI.ShowPanel();
+    }
+
+    public void ShowPlayerInfoPanel()
+    {
+        playerinfoPanelUI.ShowPanel(); 
     }
 }

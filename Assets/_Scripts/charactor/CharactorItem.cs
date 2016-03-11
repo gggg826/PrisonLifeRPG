@@ -26,9 +26,10 @@ public class CharactorItem : BaseChractorItem
     /// </summary>
     /// <param name="name"></param>
     /// <param name="_model"></param>
-    public void InitCharactorItem(CharactorModel _model)
+    public void InitCharactorItem(CharactorModel _model, int scene)
     {
         base.InitSpriteShow(_model);
+        if(scene == 0)
         button.onClick.AddListener(delegate { CharactorsController.Instance.SendMessage("ShowRoleInfoPanel", _model); });
     }
 }

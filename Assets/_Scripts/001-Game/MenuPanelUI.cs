@@ -16,7 +16,7 @@ public class MenuPanelUI : BasePaPerTweenPanel
 
     void Start()
     {
-        base.Init();
+        base.BaseInit();
         musicOn = transform.Find("Image_musicOn").GetComponent<Button>();
         musicOff = transform.Find("Image_musicOff").GetComponent<Button>();
         exitGame = transform.Find("Image_ExitGame").GetComponent<Button>();

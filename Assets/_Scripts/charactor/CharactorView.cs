@@ -14,7 +14,7 @@ public class CharactorView : UnitySingletonG<CharactorView>
     /// </summary>
     /// <param name="model"></param>
     /// <param name="parent"></param>
-    public void RenderRole(CharactorModel model, Transform parent)
+    public void RenderRole(CharactorModel model, Transform parent, int scene)
     {
         GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/" + model.bodyModel.prefabKind));
         go.name = model.roleName;
@@ -22,7 +22,7 @@ public class CharactorView : UnitySingletonG<CharactorView>
         go.transform.localPosition = Vector3.zero;
         go.transform.localScale = Vector3.one;
         CharactorItem item = go.GetComponent<CharactorItem>();
-        item.InitCharactorItem(model);
+        item.InitCharactorItem(model, scene);
     }
 
     /// <summary>

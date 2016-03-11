@@ -14,7 +14,7 @@ public class BasePaPerTweenPanel : MonoBehaviour
 
     protected Button close;
 
-    protected void Init()
+    protected void BaseInit()
     {
         anim = GetComponent<Animation>();
         close = transform.Find("Close").GetComponent<Button>();

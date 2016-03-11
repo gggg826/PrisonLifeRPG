@@ -24,10 +24,10 @@ public class NewGameListUI : MonoBehaviour
         list4 = transform.Find("List4").transform;
         list5 = transform.Find("List5").transform;
 
-        CharactorsController.Instance.AddRoleToScreen("RoleInfo", 1, ROLESTATUS.Normal, list1);
-        CharactorsController.Instance.AddRoleToScreen("RoleInfo", 2, ROLESTATUS.Normal, list2);
-        CharactorsController.Instance.AddRoleToScreen("RoleInfo", 3, ROLESTATUS.Normal, list3);
-        CharactorsController.Instance.AddRoleToScreen("RoleInfo", 4, ROLESTATUS.Normal, list4);
-        CharactorsController.Instance.AddRoleToScreen("RoleInfo", 5, ROLESTATUS.Normal, list5);
+        CharactorsController.Instance.AddRoleToScreen("RoleInfo", 1, ROLESTATUS.Normal, list1,0);
+        CharactorsController.Instance.AddRoleToScreen("RoleInfo", 2, ROLESTATUS.Normal, list2, 0);
+        CharactorsController.Instance.AddRoleToScreen("RoleInfo", 3, ROLESTATUS.Normal, list3, 0);
+        CharactorsController.Instance.AddRoleToScreen("RoleInfo", 4, ROLESTATUS.Normal, list4, 0);
+        CharactorsController.Instance.AddRoleToScreen("RoleInfo", 5, ROLESTATUS.Normal, list5, 0);
     }
 }

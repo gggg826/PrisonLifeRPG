@@ -22,7 +22,7 @@ public class AddPlayer : MonoBehaviour
             PlayerInfo.Instance.Load();
         }
         
-        CharactorsController.Instance.AddRoleToScreen(DATAManager.PLAYER, transform);
+        CharactorsController.Instance.AddRoleToScreen(DATAManager.PLAYER, transform, 1);
 
         print(PlayerPrefs.GetString("playerName"));
     }

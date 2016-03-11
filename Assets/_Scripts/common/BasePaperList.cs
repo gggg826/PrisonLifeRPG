@@ -4,23 +4,23 @@
 *
 ******************************/
 
-
+ 
 using UnityEngine;
 using System.Collections;
 
-public class EventManager : MonoBehaviour 
+public class BasePaperList : MonoBehaviour
 {
     void Awake()
     {
-        
+
     }
-    
-	void Start () 
+
+	void Start ()
     {
 	
 	}
 	
-	void Update () 
+	void Update ()
     {
 	
 	}

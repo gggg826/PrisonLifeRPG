@@ -18,7 +18,7 @@ public class BaseChractorItem : MonoBehaviour
     protected Image rhand;
     protected Image lhand;
     protected Image head;
-    protected Animation animation;
+    protected Animation anim;
 
     /// <summary>
     /// 初始化变量
@@ -32,8 +32,8 @@ public class BaseChractorItem : MonoBehaviour
         rhand = transform.Find("Body/RHand").GetComponent<Image>();
         lhand = transform.Find("Body/LHand").GetComponent<Image>();
         head = transform.Find("Head").GetComponent<Image>();
-        animation = GetComponent<Animation>();
-        animation.Stop();
+        anim = GetComponent<Animation>();
+        anim.Stop();
     }
 
     /// <summary>
@@ -78,7 +78,7 @@ public class BaseChractorItem : MonoBehaviour
     protected IEnumerator BeginTween(string status)
     {
         yield return new WaitForSeconds(Random.Range(0, 300)/100f);
-        animation.Play(status);
+        anim.Play(status);
     }
     
     IEnumerator Turn()
@@ -91,6 +91,6 @@ public class BaseChractorItem : MonoBehaviour
     IEnumerator Idle()
     {
         yield return new WaitForSeconds(Random.Range(200, 500) / 100f);
-        animation.Play();
+        anim.Play();
     }
 }
