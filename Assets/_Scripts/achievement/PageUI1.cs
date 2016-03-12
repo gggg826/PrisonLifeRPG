@@ -8,12 +8,12 @@
 using UnityEngine;
 using System.Collections;
 
-public class PageUI1 : BasePageUI
+public class PageUI1 : BaseAchievementPanel
 {
 	void Start ()
     {
         pageNO = 1;
-        base.Init();
+        base.InitBaseAchievementPanel();
         base.ListICON(1, 20);
         base.ClickButtonEvent();
 	}

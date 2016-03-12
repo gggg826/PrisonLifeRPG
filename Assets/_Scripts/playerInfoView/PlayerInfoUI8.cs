@@ -8,20 +8,12 @@
 using UnityEngine;
 using System.Collections;
 
-public class BasePaperList : MonoBehaviour
+public class PlayerInfoUI8 : BasePlayerInfoSingleUI
 {
-    void Awake()
+    void Start()
     {
-
+        pageNO = 8;
+        base.Init();
+        base.ClickButtonEvent();
     }
-
-	void Start ()
-    {
-	
-	}
-	
-	void Update ()
-    {
-	
-	}
 }

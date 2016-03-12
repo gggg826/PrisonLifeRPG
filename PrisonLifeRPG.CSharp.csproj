@@ -93,12 +93,11 @@
     <Compile Include="Assets\_Scripts\001-Game\AddPlayer.cs" />
     <Compile Include="Assets\_Scripts\001-Game\GameBasicPanelUI.cs" />
     <Compile Include="Assets\_Scripts\001-Game\MenuPanelUI.cs" />
-    <Compile Include="Assets\_Scripts\001-Game\PlayerInfoPanelUI.cs" />
     <Compile Include="Assets\_Scripts\001-Game\TopInfoShowPanelUI.cs" />
     <Compile Include="Assets\_Scripts\achievement\AchievementItem.cs" />
     <Compile Include="Assets\_Scripts\achievement\AchievementView.cs" />
     <Compile Include="Assets\_Scripts\achievement\AchievementsController.cs" />
-    <Compile Include="Assets\_Scripts\achievement\BasePageUI.cs" />
+    <Compile Include="Assets\_Scripts\achievement\BaseAchievementPanel.cs" />
     <Compile Include="Assets\_Scripts\achievement\DescriptionPanelUI.cs" />
     <Compile Include="Assets\_Scripts\achievement\PageUI1.cs" />
     <Compile Include="Assets\_Scripts\achievement\PageUI2.cs" />
@@ -115,15 +114,25 @@
     <Compile Include="Assets\_Scripts\charactor\CharactorProxy.cs" />
     <Compile Include="Assets\_Scripts\charactor\CharactorView.cs" />
     <Compile Include="Assets\_Scripts\charactor\CharactorsController.cs" />
-    <Compile Include="Assets\_Scripts\common\BasePaPerTweenPanel.cs" />
-    <Compile Include="Assets\_Scripts\common\BasePaperList.cs" />
-    <Compile Include="Assets\_Scripts\common\BasePaperListSingle.cs" />
+    <Compile Include="Assets\_Scripts\common\BasePaPerTween.cs" />
     <Compile Include="Assets\_Scripts\common\ButtonManager.cs" />
     <Compile Include="Assets\_Scripts\common\DATAManager.cs" />
     <Compile Include="Assets\_Scripts\common\FloatButton.cs" />
     <Compile Include="Assets\_Scripts\common\PlayerInfo.cs" />
     <Compile Include="Assets\_Scripts\common\TexturesManager.cs" />
     <Compile Include="Assets\_Scripts\events\TimeEvent.cs" />
+    <Compile Include="Assets\_Scripts\playerInfoView\BasePlayerInfoSingleUI.cs" />
+    <Compile Include="Assets\_Scripts\playerInfoView\PlayerInfoPanelUI.cs" />
+    <Compile Include="Assets\_Scripts\playerInfoView\PlayerInfoUI1.cs" />
+    <Compile Include="Assets\_Scripts\playerInfoView\PlayerInfoUI10.cs" />
+    <Compile Include="Assets\_Scripts\playerInfoView\PlayerInfoUI2.cs" />
+    <Compile Include="Assets\_Scripts\playerInfoView\PlayerInfoUI3.cs" />
+    <Compile Include="Assets\_Scripts\playerInfoView\PlayerInfoUI4.cs" />
+    <Compile Include="Assets\_Scripts\playerInfoView\PlayerInfoUI5.cs" />
+    <Compile Include="Assets\_Scripts\playerInfoView\PlayerInfoUI6.cs" />
+    <Compile Include="Assets\_Scripts\playerInfoView\PlayerInfoUI7.cs" />
+    <Compile Include="Assets\_Scripts\playerInfoView\PlayerInfoUI8.cs" />
+    <Compile Include="Assets\_Scripts\playerInfoView\PlayerInfoUI9.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\StreamingAssets\DATABase\PlayerInfo.xml" />

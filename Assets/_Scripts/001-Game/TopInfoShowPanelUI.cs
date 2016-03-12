@@ -17,7 +17,7 @@ public class TopInfoShowPanelUI : MonoBehaviour
     private Image partyPosition;
     private Text time;
     private Text money;
-    private Text daysLeft;
+    public Text daysLeft;
     private Button menu;
     public Button showInfoPanel;
     void Start()
@@ -47,8 +47,8 @@ public class TopInfoShowPanelUI : MonoBehaviour
     {
         UpdateBarRender();
         UpdatePartyRender();
-        UpdateMoneyRender();
         UpdateLeftDaysRender();
+        UpdateMoneyRender();
     }
 
     void UpdateBarRender()
@@ -60,8 +60,8 @@ public class TopInfoShowPanelUI : MonoBehaviour
 
     void UpdatePartyRender()
     {
-        
-        if(PlayerInfo.Instance.partyPosition == null)
+        if (!partyPosition) return;
+        if (PlayerInfo.Instance.partyPosition == "")
         {
             partyPosition.gameObject.SetActive(false);
         }
@@ -79,6 +79,7 @@ public class TopInfoShowPanelUI : MonoBehaviour
 
     void UpdateLeftDaysRender()
     {
-        daysLeft.text = PlayerInfo.Instance.totalDays - PlayerInfo.Instance.survivalDays + " 天";
+        int left = PlayerInfo.Instance.totalDays - PlayerInfo.Instance.survivalDays;
+        daysLeft.text = left + " 天";
     }
 }

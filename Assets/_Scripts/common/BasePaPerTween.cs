@@ -8,7 +8,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BasePaPerTweenPanel : MonoBehaviour
+public class BasePaPerTween : MonoBehaviour
 {
     protected Animation anim;
 

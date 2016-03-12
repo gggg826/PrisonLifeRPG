@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 public class PlayerInfoPanelUI : MonoBehaviour
 {
-    public BasePageUI[] list;
+    public BasePlayerInfoSingleUI[] list;
     private Animation anim;
  
     void Start()

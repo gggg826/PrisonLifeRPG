@@ -8,7 +8,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuPanelUI : BasePaPerTweenPanel
+public class MenuPanelUI : BasePaPerTween
 {
     private Button musicOn;
     private Button musicOff;

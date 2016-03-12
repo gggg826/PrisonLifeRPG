@@ -19,6 +19,7 @@ public enum INFOTYPE
 
 public class PlayerInfo : UnitySingletonG<PlayerInfo>
 {
+    public string headIcon;
     public string playerName;
     public string workPlace;
     public string skillList;
@@ -28,14 +29,14 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
     public string enemyList;
     public string escapTeamList;
     public string victimList;
-
-
+    
     public int happiness;
     public int energy;
     public int healthy;
     public int fame;
     public int power;
     public int agility;
+    public int intelligence;
     public int charisma;
     public int luck;
     public int totalDays;
@@ -76,8 +77,10 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         time = 6;
         money = 20;
         fame = 0;
+        headIcon = model.bodyModel.headICONName;
         power = model.power;
         agility = model.agility;
+        intelligence = model.intelligence;
         charisma = model.charisma;
         luck = model.luck;
         totalDays = model.prisonDays;
@@ -100,6 +103,7 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
     /// </summary>
     public void Load()
     {
+        headIcon = PlayerPrefs.GetString("headIcon");
         playerName = PlayerPrefs.GetString("playerName");
         workPlace = PlayerPrefs.GetString("workPlace");
         skillList = PlayerPrefs.GetString("skillList");
@@ -117,6 +121,7 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         fame = PlayerPrefs.GetInt("fame");
         power = PlayerPrefs.GetInt("power");
         agility = PlayerPrefs.GetInt("agility");
+        intelligence = PlayerPrefs.GetInt("intelligence");
         charisma = PlayerPrefs.GetInt("charisma");
         luck = PlayerPrefs.GetInt("luck");
         totalDays = PlayerPrefs.GetInt("totalDays");
@@ -139,6 +144,7 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
     /// <param name="model"></param>
     public void SaveToPlayerprefs()
     {
+        PlayerPrefs.SetString("headIcon", headIcon);
         PlayerPrefs.SetString("playerName", playerName);
         PlayerPrefs.SetString("playerName", playerName);
         PlayerPrefs.SetString("skillList", skillList);
@@ -156,6 +162,7 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         PlayerPrefs.SetInt("fame", fame);
         PlayerPrefs.SetInt("power", power);
         PlayerPrefs.SetInt("agility", agility);
+        PlayerPrefs.SetInt("intelligence", intelligence);
         PlayerPrefs.SetInt("charisma", charisma);
         PlayerPrefs.SetInt("luck", luck);
         PlayerPrefs.SetInt("totalDays", totalDays);

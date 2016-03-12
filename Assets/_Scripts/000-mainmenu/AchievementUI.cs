@@ -10,9 +10,9 @@ using System.Collections;
 
 public class AchievementUI : UnitySingletonG<AchievementUI>
 {
-    public BasePageUI[] list;
+    public BaseAchievementPanel[] list;
     public DescriptionPanelUI desPanelUI;
-    private Animation animation;
+    private Animation anim;
 
     void Awake()
     {
@@ -23,18 +23,18 @@ public class AchievementUI : UnitySingletonG<AchievementUI>
     {
         
         desPanelUI = transform.Find("DescriptionPanel").GetComponent<DescriptionPanelUI>();
-        animation = GetComponent<Animation>();
+        anim = GetComponent<Animation>();
     }
 
     public void ShowPanel()
     {
         this.gameObject.SetActive(true);
-        animation.Play("PaperUp");
+        anim.Play("PaperUp");
     }
 
     public void HidePanel()
     {
-        animation.Play("PaperDown");
+        anim.Play("PaperDown");
     }
 
     public void ShowDesPanel(Sprite sprite, string str)
