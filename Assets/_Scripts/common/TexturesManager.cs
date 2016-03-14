@@ -7,7 +7,7 @@
 
 using UnityEngine;
 
-public class TexturesManager
+public static class TexturesManager
 {
     static private AssetBundle _charactorsBundle;
     static public AssetBundle CharactorsBundle

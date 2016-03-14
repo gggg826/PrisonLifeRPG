@@ -80,6 +80,7 @@
     <Compile Include="Assets\LETools\Scriptes\UnitySingletonG.cs" />
     <Compile Include="Assets\LETools\Scriptes\XMLOpration.cs" />
     <Compile Include="Assets\_Scenes\Test\Charactors\LoadCharactors.cs" />
+    <Compile Include="Assets\_Scenes\Test\Skill\LoadSkill.cs" />
     <Compile Include="Assets\_Scripts\000-mainmenu\AchievementUI.cs" />
     <Compile Include="Assets\_Scripts\000-mainmenu\BGUI.cs" />
     <Compile Include="Assets\_Scripts\000-mainmenu\BottomButtons.cs" />
@@ -133,7 +134,10 @@
     <Compile Include="Assets\_Scripts\playerInfoView\PlayerInfoUI7.cs" />
     <Compile Include="Assets\_Scripts\playerInfoView\PlayerInfoUI8.cs" />
     <Compile Include="Assets\_Scripts\playerInfoView\PlayerInfoUI9.cs" />
+    <Compile Include="Assets\_Scripts\skills\SkillItem.cs" />
     <Compile Include="Assets\_Scripts\skills\SkillManager.cs" />
+    <Compile Include="Assets\_Scripts\skills\SkillModel.cs" />
+    <Compile Include="Assets\_Scripts\skills\TraitSkillUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\StreamingAssets\DATABase\PlayerInfo.xml" />

@@ -146,7 +146,7 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
     {
         PlayerPrefs.SetString("headIcon", headIcon);
         PlayerPrefs.SetString("playerName", playerName);
-        PlayerPrefs.SetString("playerName", playerName);
+        PlayerPrefs.SetString("workPlace", workPlace);
         PlayerPrefs.SetString("skillList", skillList);
         PlayerPrefs.SetString("jailRoomType", jailRoomType);
         PlayerPrefs.SetString("friendsList", friendsList);
