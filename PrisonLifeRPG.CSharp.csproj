@@ -133,6 +133,7 @@
     <Compile Include="Assets\_Scripts\playerInfoView\PlayerInfoUI7.cs" />
     <Compile Include="Assets\_Scripts\playerInfoView\PlayerInfoUI8.cs" />
     <Compile Include="Assets\_Scripts\playerInfoView\PlayerInfoUI9.cs" />
+    <Compile Include="Assets\_Scripts\skills\SkillManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\StreamingAssets\DATABase\PlayerInfo.xml" />
