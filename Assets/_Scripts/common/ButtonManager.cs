@@ -105,10 +105,10 @@ public class ButtonManager : UnitySingletonG<ButtonManager>
     //}
 
     // 显示人物属性面板
-    void ShowRoleInfoPanel(CharactorModel model)
-    {
-        FirstSceneUIView.Instance.roleInfoPanelUI.ShowPanel(model);
-    }
+    // void ShowRoleInfoPanel(CharactorModel model)
+    // {
+    //     FirstSceneUIView.Instance.roleInfoPanelUI.ShowPanel(model);
+    // }
 
     //  开始新游戏
     void BeginGame(CharactorModel model)

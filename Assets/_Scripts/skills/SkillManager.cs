@@ -16,6 +16,7 @@ public class SkillManager : UnitySingletonG<SkillManager>
         SkillModel model = new SkillModel(skillName);
         GameObject go = Instantiate(prefab) as GameObject;
         go.transform.SetParent(parent);
+        go.transform.localPosition = Vector3.zero;
         go.transform.localScale = Vector3.one;
         SkillItem item = go.GetComponent<SkillItem>();
         item.Init(model.spriteIcon);

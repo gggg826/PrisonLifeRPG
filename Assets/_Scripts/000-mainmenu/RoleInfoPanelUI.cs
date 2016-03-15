@@ -61,13 +61,21 @@ public class RoleInfoPanelUI : MonoBehaviour
     void HidenPanel()
     {
         anim.Play("PaperDown");
+        
+        foreach (Transform item in transform.GetComponentsInChildren<Transform>())
+        {
+            if (item.parent == skillList)
+            {
+                GameObject.Destroy(item.gameObject);
+            }
+            
+        }
     }
 
     void InitPanel(CharactorModel _model)
     {
         model = _model;
         roleName.text = model.roleName;
-        // headICON.overrideSprite = LET.LoadSprite("Charactors", model.bodyModel.headICONName);
         headICON.sprite = TexturesManager.CharactorsBundle.LoadAsset<Sprite>(model.bodyModel.headICONName);
         power.text = model.power.ToString();
         agility.text = model.agility.ToString();
@@ -76,10 +84,10 @@ public class RoleInfoPanelUI : MonoBehaviour
         luck.text = model.luck.ToString();
         prisonDays.text = model.prisonDays.ToString();
         prisonGol.text = model.prisonGol;
-
         foreach (string item in model.skillList.Split(','))
         {
             print(item);
+            SkillManager.Instance.ShowSkill(item, skillList);
         }
 
         if (model.traitICON == "")
