@@ -20,6 +20,7 @@ public class SkillModel
     {
         skillName = _skillName;
         spriteIcon = DATAManager.GetTextDBValue("Skill", "Icon", skillName);
+        Debug.Log(spriteIcon);
         needProperty = DATAManager.GetTextDBValue("Skill", "Need", skillName);
         point = DATAManager.GetTextDBValue("Skill", "Point", skillName);
         des = DATAManager.GetTextDBValue("Skill", "Description", skillName);

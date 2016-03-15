@@ -19,13 +19,14 @@ public class PlayerInfoUI2 : BasePlayerInfoSingleUI
         base.Init();
         base.ClickButtonEvent();
 
-        list = transform.Find("Image_skillList/SkillList").transform;
+        list = transform.Find("Image_skillList/Panel/SkillList").transform;
         workPlace = transform.Find("Image_job/Image").GetComponent<Image>();
         cell = transform.Find("Image_cell/Image").GetComponent<Image>();
 
 
         foreach (string item in PlayerInfo.Instance.skillList.Split(','))
         {
+            print(item);
             SkillManager.Instance.ShowSkill(item, list);
         }
         workPlace.sprite = TexturesManager.IconBundle.LoadAsset<Sprite>(PlayerInfo.Instance.workPlace);

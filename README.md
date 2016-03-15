@@ -1,4 +1,4 @@
-﻿#**PrionLifeRPG 开发记录**
+#**PrionLifeRPG 开发记录**
 
 
 Athor:&#8195;TheNO.5
@@ -21,6 +21,13 @@ Athor:&#8195;TheNO.5
  &emsp;
  
  &emsp;
+ 
+--------
+
+**DATE: &emsp;2016.03.15**
+
+1. 技能显示改为ScrollView显示
+2. 
 
 --------
 
