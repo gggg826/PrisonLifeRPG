@@ -87,7 +87,7 @@ public class RoleInfoPanelUI : MonoBehaviour
         foreach (string item in model.skillList.Split(','))
         {
             print(item);
-            SkillManager.Instance.ShowSkill(item, skillList);
+            SkillManager.Instance.AddSkillToScreenl(item, skillList);
         }
 
         if (model.traitICON == "")

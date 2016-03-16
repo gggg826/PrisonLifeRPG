@@ -16,7 +16,7 @@ public class LoadSkill : MonoBehaviour
     {
         foreach (string skill in DATAManager.GetAllRoleName("Skill"))
         {
-            SkillManager.Instance.ShowSkill(skill, parent);
+            SkillManager.Instance.AddSkillToScreenl(skill, parent);
         }
 	}
 }

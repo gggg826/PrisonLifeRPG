@@ -21,10 +21,10 @@ public class SkillItem : MonoBehaviour
         button = GetComponent<Button>();
     }
 
-    public void Init(string _spriteIcon)
+    public void Init(SkillModel model)
     {
         bg.sprite = TexturesManager.IconBundle.LoadAsset<Sprite>("b_btm 1");
-        print(_spriteIcon);
-        spriteIcon.sprite = TexturesManager.IconBundle.LoadAsset<Sprite>(_spriteIcon);
+        spriteIcon.sprite = TexturesManager.IconBundle.LoadAsset<Sprite>(model.spriteIcon);
+        button.onClick.AddListener(delegate { SkillManager.Instance.SendMessage("ShowSkillDital", model);});
     }
 }
