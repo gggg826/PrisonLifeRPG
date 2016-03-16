@@ -10,13 +10,13 @@ using UnityEngine.UI;
 
 public class BasePlayerInfoSingleUI : MonoBehaviour
 {
-    public PlayerInfoPanelUI playerInfoPanel;
+    protected PlayerInfoPanelUI playerInfoPanel;
     protected int pageNO;
     protected Text pageNOText;
-    public Button closeButton;
-    public Button goAheadButton;
-    public Button GoBackButton;
-    public Animation anima;
+    protected Button closeButton;
+    protected Button goAheadButton;
+    protected Button GoBackButton;
+    protected Animation anima;
 
     protected void Init()
     {

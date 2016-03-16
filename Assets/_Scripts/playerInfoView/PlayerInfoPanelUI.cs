@@ -38,4 +38,9 @@ public class PlayerInfoPanelUI : MonoBehaviour
     {
         list[pageNO - 1].TurnRighe();
     }
+    
+    void Init()
+    {
+       
+    }
 }
