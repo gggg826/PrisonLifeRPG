@@ -1,4 +1,4 @@
-#**PrionLifeRPG 开发记录**
+﻿#**PrionLifeRPG 开发记录**
 
 
 Athor:&#8195;TheNO.5
@@ -21,6 +21,12 @@ Athor:&#8195;TheNO.5
  &emsp;
  
  &emsp;
+
+--------
+
+**DATE: &emsp;2016.03.17**
+
+1.  编写玩家信息第四页部分代码
 
 --------
 
