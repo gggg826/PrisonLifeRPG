@@ -1,4 +1,4 @@
-﻿#**PrionLifeRPG 开发记录**
+#**PrionLifeRPG 开发记录**
 
 
 Athor:&#8195;TheNO.5
@@ -21,6 +21,13 @@ Athor:&#8195;TheNO.5
  &emsp;
  
  &emsp;
+ 
+--------
+
+**DATE: &emsp;2016.03.18**
+
+1. 完成玩家信息第四页显示
+2. 完成玩家信息第五页显示
 
 --------
 

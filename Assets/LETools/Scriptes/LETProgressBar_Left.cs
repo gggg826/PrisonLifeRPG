@@ -8,12 +8,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum TextStyle
-{
-    ValueOnly,
-    Percentage
-}
-public class LETProgressBar : MonoBehaviour
+public class LETProgressBar_Left : MonoBehaviour
 {
     public TextStyle textStyle = TextStyle.Percentage;
     public bool showZero;
@@ -23,10 +18,9 @@ public class LETProgressBar : MonoBehaviour
     void Update()
     {
         if (textStyle == TextStyle.Percentage)
-            text.text = slider.value + "/100";
+            text.text = "-" + slider.value + "/100";
         else
-            text.text = slider.value.ToString();
-
+            text.text = "-" + slider.value;
 
         if (!showZero && slider.value == 0)
             text.text = "";

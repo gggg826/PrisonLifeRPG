@@ -10,26 +10,49 @@ using UnityEngine.UI;
 
 public class PlayerInfoUI5 : BasePlayerInfoSingleUI
 {
-    private Image gangIcon;
-    private Text gangName;
-    private Transform panel1;//老大
-    private Transform panel2;
-    private Transform panel3;
-    private Transform panel4;
-    private Slider partyFamSlider;
+    
+    private Slider mobstersBadSlider;
+    private Slider mobstersGoodSlider;
+    private Slider coinBadSlider;
+    private Slider coinGoodSlider;
+    private Slider heartBadSlider;
+    private Slider heartGoodSlider;
+    private Slider roseBadSlider;
+    private Slider roseGoodSlider;
 
     void Start()
     {
         pageNO = 5;
         base.Init();
         base.ClickButtonEvent();
-
-        gangIcon = transform.Find("Image_gangIcon").GetComponent<Image>();
-        gangName = transform.Find("Image_gangIcon/Text").GetComponent<Text>();
-        panel1 = transform.Find("Image_boss/Panel1").transform; 
-        panel2 = panel1.Find("Image_leader/Panel2").transform;
-        panel3 = panel2.Find("Image_killer/Panel3").transform; 
-        panel4 = panel3.Find("Image_member/Panel4").transform;
-        partyFamSlider = panel4.Find("Image_fam/Bar_Energy").GetComponent<Slider>();
+        
+        mobstersBadSlider = transform.Find("Image_mobsters/Text/Bar_Relationship/Bar_Left").GetComponent<Slider>();
+        mobstersGoodSlider = transform.Find("Image_mobsters/Text/Bar_Relationship/Bar_Right").GetComponent<Slider>();
+        
+        coinBadSlider = transform.Find("Image_coin/Text/Bar_Relationship/Bar_Left").GetComponent<Slider>();
+        coinGoodSlider = transform.Find("Image_coin/Text/Bar_Relationship/Bar_Right").GetComponent<Slider>();
+        
+        heartBadSlider = transform.Find("Image_heart/Text/Bar_Relationship/Bar_Left").GetComponent<Slider>();
+        heartGoodSlider = transform.Find("Image_heart/Text/Bar_Relationship/Bar_Right").GetComponent<Slider>();
+        
+        roseBadSlider = transform.Find("Image_rose/Text/Bar_Relationship/Bar_Left").GetComponent<Slider>();
+        roseGoodSlider = transform.Find("Image_rose/Text/Bar_Relationship/Bar_Right").GetComponent<Slider>();
+        
+        
+        SetSlider(mobstersBadSlider, mobstersGoodSlider, PlayerInfo.Instance.relationWithMobsters);
+        SetSlider(coinBadSlider,coinGoodSlider, PlayerInfo.Instance.relationWithCoin);
+        SetSlider(heartBadSlider,heartGoodSlider,PlayerInfo.Instance.relationWithHeartBreakers);
+        SetSlider(roseBadSlider,roseGoodSlider, PlayerInfo.Instance.relationWithRosesAndGuns);
+    }
+    
+    void SetSlider(Slider bad, Slider good, int value)
+    {
+        bad.value = 0;
+        good.value = 0;
+        
+        if(value < 0)
+            bad.value = value;
+        else
+            good.value = value;
     }
 }
