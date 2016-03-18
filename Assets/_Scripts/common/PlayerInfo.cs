@@ -23,7 +23,8 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
     public string playerName;
     public string workPlace;
     public string skillList;
-    public string partyPosition;
+    public string party;
+    public string duty;
     public string jailRoomType;
     public string friendsList;
     public string enemyList;
@@ -69,7 +70,8 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         enemyList = null;
         escapTeamList = null;
         victimList = null;
-        partyPosition = null;
+        party = null;
+        duty = null;
 
         happiness = 100;
         energy = 100;
@@ -112,7 +114,8 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         enemyList = PlayerPrefs.GetString("enemyList");
         escapTeamList = PlayerPrefs.GetString("escapTeamList");
         victimList = PlayerPrefs.GetString("victimList");
-        partyPosition = PlayerPrefs.GetString("partyPosition");
+        party = PlayerPrefs.GetString("party");
+        duty = PlayerPrefs.GetString("duty");
 
         happiness = PlayerPrefs.GetInt("happiness");
         energy = PlayerPrefs.GetInt("energy");
@@ -153,7 +156,8 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         PlayerPrefs.SetString("enemyList", enemyList);
         PlayerPrefs.SetString("escapTeamList", escapTeamList);
         PlayerPrefs.SetString("victimList", victimList);
-        PlayerPrefs.SetString("partyPosition", partyPosition);
+        PlayerPrefs.SetString("party", party);
+        PlayerPrefs.SetString("duty", duty);
 
         PlayerPrefs.SetInt("happiness", happiness);
         PlayerPrefs.SetInt("energy", energy);

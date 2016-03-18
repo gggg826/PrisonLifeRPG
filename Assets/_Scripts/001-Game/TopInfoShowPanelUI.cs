@@ -61,7 +61,7 @@ public class TopInfoShowPanelUI : MonoBehaviour
     void UpdatePartyRender()
     {
         if (!partyPosition) return;
-        if (PlayerInfo.Instance.partyPosition == ""||PlayerInfo.Instance.partyPosition == null)
+        if (PlayerInfo.Instance.party == ""||PlayerInfo.Instance.party == null)
         {
             partyPosition.gameObject.SetActive(false);
         }
