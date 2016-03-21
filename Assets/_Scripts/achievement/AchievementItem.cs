@@ -35,6 +35,7 @@ public class AchievementItem : MonoBehaviour
             ICON.color = new Vector4(255, 255, 255, 255);
         }
         description = info[3];
-        button.onClick.AddListener(delegate { AchievementUI.Instance.ShowDesPanel(ICON.sprite, description); });
+        //button.onClick.AddListener(delegate { AchievementUI.Instance.ShowDesPanel(ICON.sprite, description); });
+        button.onClick.AddListener(delegate { AchievementsController.Instance.ShowDesPanel(ICON.sprite, description); });
     }
 }

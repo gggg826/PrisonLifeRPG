@@ -9,6 +9,8 @@ using UnityEngine;
 
 public class AchievementsController : UnitySingletonG<AchievementsController>
 {
+    public DescriptionPanelUI des;
+
     public void AddSingleAchievementToScreen(string name, Transform parent)
     {
         AchievementView.Instance.RenderSingleAchievement(DATAManager.GetSingleAchievementInfo("Name", name), parent);
@@ -22,4 +24,8 @@ public class AchievementsController : UnitySingletonG<AchievementsController>
         }
     }
     
+    public void ShowDesPanel( Sprite sprite, string str)
+    { 
+        des.ShowPanel(sprite, str);
+    }
 }

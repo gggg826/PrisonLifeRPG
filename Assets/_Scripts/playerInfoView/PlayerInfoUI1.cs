@@ -39,7 +39,10 @@ public class PlayerInfoUI1 : BasePlayerInfoSingleUI
         energy = transform.Find("Image_energy/Bar").GetComponent<Slider>();
         healthy = transform.Find("Image_healthy/Bar").GetComponent<Slider>();
         fam = transform.Find("Image_famours/Bar").GetComponent<Slider>();
+    }
 
+    public override void InitInfo()
+    {
         headICON.sprite = TexturesManager.CharactorsBundle.LoadAsset<Sprite>(PlayerInfo.Instance.headIcon);
         roleName.text = PlayerInfo.Instance.playerName;
         power.text = PlayerInfo.Instance.power.ToString();

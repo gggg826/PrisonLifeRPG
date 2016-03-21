@@ -20,7 +20,8 @@ public class PlayerInfoPanelUI : MonoBehaviour
 
     public void ShowPanel()
     {
-        this.gameObject.SetActive(true);
+        //gameObject.SetActive(true);
+        Init();
         anim.Play("PaperUp");
     }
 
@@ -41,6 +42,9 @@ public class PlayerInfoPanelUI : MonoBehaviour
     
     void Init()
     {
-       
+        foreach (BasePlayerInfoSingleUI item in list)
+        {
+            item.InitInfo();
+        }
     }
 }

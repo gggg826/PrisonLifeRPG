@@ -29,14 +29,16 @@ public class PlayerInfoUI4 : BasePlayerInfoSingleUI
         panel2 = panel1.Find("Image_leader/Panel2").transform;
         panel3 = panel2.Find("Image_killer/Panel3").transform;
         panel4 = panel3.Find("Image_member/Panel4").transform;
-        
         gangFamSlider = panel4.Find("Image_fam/Bar_Energy").GetComponent<Slider>();
-     
-        if(PlayerInfo.Instance.party == null || PlayerInfo.Instance.party == "")
+    }
+
+    public override void InitInfo()
+    {
+        if (PlayerInfo.Instance.party == null || PlayerInfo.Instance.party == "")
         {
             gangIcon.gameObject.SetActive(false);
             panel1.parent.gameObject.SetActive(false);
             gangName.text = "暂无帮派";
-        }   
+        }
     }
 }

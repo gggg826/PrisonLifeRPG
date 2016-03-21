@@ -247,7 +247,8 @@ public class SQLiteConnect
     /// <returns></returns>
     public SqliteDataReader GetSingleRow(string tableName, string key, string value)
     {
-        string query = "SELECT Name " + " FROM " + tableName + " WHERE " + key + " = " + value + " LIMIT 1";
+        //string query = "SELECT Name " + " FROM " + tableName + " WHERE " + key + " = " + value + " LIMIT 1";
+        string query = "SELECT * FROM " + tableName + " WHERE " + key + " = '" + value + "'";
         return ExecuteQuery(query);
     }
 

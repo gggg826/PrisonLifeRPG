@@ -18,6 +18,10 @@ public class PlayerInfoUI8 : BasePlayerInfoSingleUI
         
         grid = transform.Find("Image/Panel/Grid").transform;
 
+    }
+
+    public override void InitInfo()
+    {
         // CharactorsController.Instance.AddHeadIconToScreen("小聪明", grid);
         SetEnemyList(grid);
     }

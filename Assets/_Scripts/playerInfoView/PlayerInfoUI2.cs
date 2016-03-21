@@ -24,11 +24,12 @@ public class PlayerInfoUI2 : BasePlayerInfoSingleUI
         workPlace = transform.Find("Image_job/Image").GetComponent<Image>();
         cell = transform.Find("Image_cell/Image").GetComponent<Image>();
         ditalPanel = transform.Find("DitalSkillInfoPanel").GetComponent<DitalSkillInfoUI>();
+    }
 
-
+    public override void InitInfo()
+    {
         foreach (string item in PlayerInfo.Instance.skillList.Split(','))
         {
-            print(item);
             SkillManager.Instance.AddSkillToScreenl(item, list);
         }
         SkillManager.Instance.SetDitalPanel(ditalPanel);

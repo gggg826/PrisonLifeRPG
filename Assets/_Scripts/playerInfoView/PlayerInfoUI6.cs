@@ -20,7 +20,10 @@ public class PlayerInfoUI6 : BasePlayerInfoSingleUI
 
         barLeft = transform.Find("Image_guards/Bar/Bar_Left").GetComponent<Slider>();
         barRight = transform.Find("Image_guards/Bar/Bar_Right").GetComponent<Slider>();
+    }
 
+    public override void InitInfo()
+    {
         SetSlider(barLeft, barRight, PlayerInfo.Instance.snicth);
     }
 

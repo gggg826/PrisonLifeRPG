@@ -23,6 +23,7 @@ public class AchievementUI : UnitySingletonG<AchievementUI>
     {
         
         desPanelUI = transform.Find("DescriptionPanel").GetComponent<DescriptionPanelUI>();
+        AchievementsController.Instance.des = desPanelUI;
         anim = GetComponent<Animation>();
     }
 
@@ -37,10 +38,10 @@ public class AchievementUI : UnitySingletonG<AchievementUI>
         anim.Play("PaperDown");
     }
 
-    public void ShowDesPanel(Sprite sprite, string str)
-    {
-        desPanelUI.ShowPanel(sprite, str);
-    }
+    //public void ShowDesPanel(Sprite sprite, string str)
+    //{
+    //    desPanelUI.ShowPanel(sprite, str);
+    //}
 
     public void GoAhead(int pageNO)
     {

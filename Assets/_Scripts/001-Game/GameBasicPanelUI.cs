@@ -21,6 +21,7 @@ public class GameBasicPanelUI : UnitySingletonG<GameBasicPanelUI>
     {
         menuPanelUI = transform.Find("MenuPanel").GetComponent<MenuPanelUI>();
         playerinfoPanelUI = transform.Find("PlayerInfoPanel").GetComponent<PlayerInfoPanelUI>();
+        //playerinfoPanelUI.gameObject.SetActive(false);
     }
     
     public void ShowMenuPanel()

@@ -51,4 +51,8 @@ public class BasePlayerInfoSingleUI : MonoBehaviour
     {
         anima.Play("PaperGoRight");
     }
+
+    public virtual void InitInfo()
+    {
+    }
 }
