@@ -40,4 +40,15 @@ public class CharactorView : UnitySingletonG<CharactorView>
         CharactorBordItem item = go.GetComponent<CharactorBordItem>();
         item.InitBordItem(model, sprite);
     }
+
+    public void AddHeadIcon(string roleName, Transform parent)
+    {
+        string headNO = DATAManager.GetTextDBValue("RoleInfo", "HeadNO", roleName);
+        GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/HeadIcon"));
+        go.transform.SetParent(parent);
+        go.transform.localScale = Vector3.one;
+        HeadIconItem item = go.GetComponent<HeadIconItem>();
+        print(headNO);
+        item.Init("prisonChar_head" + headNO);
+    }
 }

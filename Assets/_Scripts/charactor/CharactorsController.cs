@@ -82,4 +82,9 @@ public class CharactorsController : UnitySingletonG<CharactorsController>
         // ButtonManager.Instance.SendMessage("ShowRoleInfoPanel", model);
         roleInfoPanel.ShowPanel(model);
     }
+    
+    public void AddHeadIconToScreen(string roleName, Transform parent)
+    {
+        CharactorView.Instance.AddHeadIcon(roleName, parent);
+    }
 }

@@ -48,7 +48,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\HeadIconItem.cs" />
      <Compile Include="Assets\LETools\Scriptes\LET.cs" />
      <Compile Include="Assets\LETools\Scriptes\LETProgressBar.cs" />
      <Compile Include="Assets\LETools\Scriptes\LETProgressBar_Left.cs" />
@@ -92,6 +91,7 @@
      <Compile Include="Assets\_Scripts\charactor\CharactorProxy.cs" />
      <Compile Include="Assets\_Scripts\charactor\CharactorView.cs" />
      <Compile Include="Assets\_Scripts\charactor\CharactorsController.cs" />
+     <Compile Include="Assets\_Scripts\charactor\HeadIconItem.cs" />
      <Compile Include="Assets\_Scripts\common\BasePaPerTween.cs" />
      <Compile Include="Assets\_Scripts\common\ButtonManager.cs" />
      <Compile Include="Assets\_Scripts\common\DATAManager.cs" />

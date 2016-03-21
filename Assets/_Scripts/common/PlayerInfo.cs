@@ -30,6 +30,7 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
     public string enemyList;
     public string escapTeamList;
     public string victimList;
+    public string achievementsList;
     
     public int happiness;
     public int energy;
@@ -70,6 +71,7 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         enemyList = null;
         escapTeamList = null;
         victimList = null;
+        achievementsList = null;
         party = null;
         duty = null;
 
@@ -114,6 +116,7 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         enemyList = PlayerPrefs.GetString("enemyList");
         escapTeamList = PlayerPrefs.GetString("escapTeamList");
         victimList = PlayerPrefs.GetString("victimList");
+        achievementsList = PlayerPrefs.GetString("achievementsList");
         party = PlayerPrefs.GetString("party");
         duty = PlayerPrefs.GetString("duty");
 
@@ -156,6 +159,7 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         PlayerPrefs.SetString("enemyList", enemyList);
         PlayerPrefs.SetString("escapTeamList", escapTeamList);
         PlayerPrefs.SetString("victimList", victimList);
+        PlayerPrefs.SetString("achievementsList", achievementsList);
         PlayerPrefs.SetString("party", party);
         PlayerPrefs.SetString("duty", duty);
 
