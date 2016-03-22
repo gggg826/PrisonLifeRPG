@@ -10,7 +10,8 @@ using UnityEngine;
 public class CharactorsController : UnitySingletonG<CharactorsController>
 {
 
-    public RoleInfoPanelUI roleInfoPanel;
+    private RoleInfoPanelUI roleInfoPanel;
+    private CharactorItem currentItem;
     /// <summary>
     /// 添加一个角色渲染
     /// </summary>
@@ -34,6 +35,11 @@ public class CharactorsController : UnitySingletonG<CharactorsController>
     public void AddRoleToScreen(CharactorModel model, Transform parent, int scene)
     {
         CharactorView.Instance.RenderRole(model, parent, scene);
+    }
+    
+        public void AddPlayerToScreen(CharactorModel model, Transform parent)
+    {
+        CharactorView.Instance.RenderPlayer(model, parent);
     }
 
     /// <summary>
@@ -77,9 +83,12 @@ public class CharactorsController : UnitySingletonG<CharactorsController>
         roleInfoPanel = panel;
     }
 
-    public void ShowRoleInfoPanel(CharactorModel model)
+    public void ShowRoleInfoPanel(CharactorModel model, CharactorItem item)
     {
-        // ButtonManager.Instance.SendMessage("ShowRoleInfoPanel", model);
+        if(currentItem != null)
+            currentItem.HideCircle();
+        currentItem = item;
+        currentItem.ShowCircle();
         roleInfoPanel.ShowPanel(model);
     }
     

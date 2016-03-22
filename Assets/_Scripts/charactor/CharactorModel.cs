@@ -6,8 +6,6 @@
 
 //prisonChar_bodyNaked3_g
 
-using UnityEngine;
-
 public class CharactorModel
 {
     public string roleName;
@@ -19,6 +17,7 @@ public class CharactorModel
     public int charisma;
     public int luck;
     public int prisonDays;
+    public int isPlayer;
     public string prisonGol;
     public string skillList;
     public string traitICON;
@@ -44,6 +43,7 @@ public class CharactorModel
     {
         roleName = name;
         status = _status;
+        isPlayer = 0;
         bodyModel = new BodyModel(new string[]
         {
             DATAManager.GetTextDBValue(tableName, "HeadNo", name),
@@ -55,6 +55,7 @@ public class CharactorModel
     }
     public CharactorModel(string tableName, int rowID, ROLESTATUS _status)
     {
+        isPlayer = 0;
         string[] info = DATAManager.GetSingleCharactorInfo(tableName,rowID);
         roleName = info[0];
         bodyModel = new BodyModel(new string[] { info[1], info[2], info[3], info[4] }, _status);
@@ -70,7 +71,6 @@ public class CharactorModel
         luck = DATAManager.GetIntegerDBValue(tableName, "Luck", name);
         prisonDays = DATAManager.GetIntegerDBValue(tableName, "PrisonDays", name);
         prisonGol = DATAManager.GetTextDBValue(tableName, "PrisonGol", name);
-        //skillList = GetSkillList(tableName, name);
         skillList = DATAManager.GetTextDBValue(tableName, "SkillList", name);
         traitICON = DATAManager.GetTextDBValue(tableName, "Trait", name);
     }
@@ -84,5 +84,10 @@ public class CharactorModel
     public void SetRoleStatus(ROLESTATUS _status)
     {
         status = _status;
+    }
+    
+    public void SetIsPlayer(int _isPlayer)
+    {
+        isPlayer = _isPlayer;
     }
 }

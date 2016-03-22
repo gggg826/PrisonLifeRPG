@@ -24,6 +24,17 @@ public class CharactorView : UnitySingletonG<CharactorView>
         CharactorItem item = go.GetComponent<CharactorItem>();
         item.InitCharactorItem(model, scene);
     }
+    
+     public void RenderPlayer(CharactorModel model, Transform parent)
+    {
+        GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/" + model.bodyModel.prefabKind));
+        go.name = model.roleName;
+        go.transform.SetParent(parent);
+        go.transform.localPosition = Vector3.zero;
+        go.transform.localScale = Vector3.one;
+        CharactorItem item = go.GetComponent<CharactorItem>();
+        item.InitPlayerItem(model);
+    }
 
     /// <summary>
     /// 渲染第一界面带牌小人

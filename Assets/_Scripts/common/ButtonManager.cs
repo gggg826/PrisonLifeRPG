@@ -114,6 +114,7 @@ public class ButtonManager : UnitySingletonG<ButtonManager>
     void BeginGame(CharactorModel model)
     {
         DATAManager.PLAYER = model;
+        DATAManager.PLAYER.isPlayer = 1;
         DATAManager.GameLoadType = GAMELOADTYPE.NewGame;
         Application.LoadLevel(2);
     }

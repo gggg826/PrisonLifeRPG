@@ -5,8 +5,6 @@
 ******************************/
 
  
-using UnityEngine;
-using System.Collections;
 
 public class PageUI6 : BaseAchievementPanel
 {

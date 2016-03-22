@@ -6,7 +6,6 @@
 
 
 using UnityEngine;
-using System.Collections;
 
 public class AddPlayer : MonoBehaviour
 {
@@ -22,7 +21,7 @@ public class AddPlayer : MonoBehaviour
             PlayerInfo.Instance.Load();
         }
         
-        CharactorsController.Instance.AddRoleToScreen(DATAManager.PLAYER, transform, 1);
+        CharactorsController.Instance.AddPlayerToScreen(DATAManager.PLAYER, transform);
 
         print(PlayerPrefs.GetString("playerName"));
     }

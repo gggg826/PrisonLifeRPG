@@ -31,6 +31,13 @@ public class PlayerInfoUI3 : BasePlayerInfoSingleUI
         totalDays.text = PlayerInfo.Instance.totalDays.ToString();
         survivalDays.text = PlayerInfo.Instance.survivalDays.ToString();
 
+        switch (PlayerInfo.Instance.release)
+        {
+            case 0:
+                release.text = "在电话里和你的律师恰谈";
+                break;
+        }
+
         if (PlayerInfo.Instance.escapTeamList != null || PlayerInfo.Instance.escapTeamList != "")
         {
             foreach (RectTransform item in teamList.GetComponentsInChildren<RectTransform>())
