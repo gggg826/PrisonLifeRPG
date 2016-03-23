@@ -15,7 +15,7 @@ public class NewGameListUI : MonoBehaviour
     private Transform list4;
     private Transform list5;
 
-    void Start()
+    void Awake()
     {
         list1 = transform.Find("List1").transform;
         list2 = transform.Find("List2").transform;

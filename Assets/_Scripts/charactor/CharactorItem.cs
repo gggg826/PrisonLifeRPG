@@ -34,8 +34,6 @@ public class CharactorItem : BaseChractorItem
     public void InitCharactorItem(CharactorModel _model, int scene)
     {
         base.InitSpriteShow(_model);
-        print(_model.isPlayer);
-        print(DATAManager.PLAYER.isPlayer);
         // if(_model.isPlayer == 1)
         // {
         //     circle.GetComponent<Image>().sprite = TexturesManager.CharactorsBundle.LoadAsset<Sprite>("b_walk_b");
@@ -50,8 +48,6 @@ public class CharactorItem : BaseChractorItem
     public void InitPlayerItem(CharactorModel _model)
     {
         base.InitSpriteShow(_model);
-        print(_model.isPlayer);
-        print(DATAManager.PLAYER.isPlayer);
         circle.GetComponent<Image>().sprite = TexturesManager.CharactorsBundle.LoadAsset<Sprite>("b_walk_b");
         arrow.GetComponent<Image>().sprite = TexturesManager.CharactorsBundle.LoadAsset<Sprite>("b_arrow_b");
     }

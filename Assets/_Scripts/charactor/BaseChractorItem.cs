@@ -45,12 +45,6 @@ public class BaseChractorItem : MonoBehaviour
     {
         CharactorModel model = _model;
         roleName.text = model.roleName;
-        // head.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.headICONName);
-        // body.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalBodyName);
-        // rleg.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalLegName);
-        // lleg.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalLegName);
-        // rhand.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalHandName);
-        // lhand.overrideSprite = Resources.Load<Sprite>("Textures/Charactors/" + model.bodyModel.normalHandName);
         head.sprite = TexturesManager.CharactorsBundle.LoadAsset<Sprite>(model.bodyModel.headICONName);
         body.sprite = TexturesManager.CharactorsBundle.LoadAsset<Sprite>(model.bodyModel.normalBodyName);
         rleg.sprite = TexturesManager.CharactorsBundle.LoadAsset<Sprite>(model.bodyModel.normalLegName);

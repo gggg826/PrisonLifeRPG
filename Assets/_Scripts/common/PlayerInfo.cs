@@ -31,7 +31,7 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
     public string escapTeamList;
     public string victimList;
     public string achievementsList;
-    
+
     public int happiness;
     public int energy;
     public int healthy;
@@ -96,8 +96,7 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         relationWithRosesAndGuns = 0;
         relationWithHeartBreakers = 0;
         snicth = 0;
-
-
+        
         OnPlayerInfoChangedEvent(INFOTYPE.All);
         SaveToPlayerprefs();
     }
@@ -183,5 +182,22 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
         PlayerPrefs.SetInt("relationWithHeartBreakers", relationWithHeartBreakers);
         PlayerPrefs.SetInt("snicth", snicth);
         PlayerPrefs.SetInt("time", time);
+    }
+
+    public void EnergyChange(int point)
+    {
+        energy += point;
+        if (energy < 0)
+            energy = 0;
+        else if (energy > 100)
+            energy = 100;
+
+        OnPlayerInfoChangedEvent(INFOTYPE.BarInfo);
+    }
+    
+    public void DaySurvivalChange()
+    {
+        survivalDays += 1;
+        OnPlayerInfoChangedEvent(INFOTYPE.SurvivalDays);
     }
 }

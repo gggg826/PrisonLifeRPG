@@ -35,9 +35,10 @@ public enum GAMELOADTYPE
 
 public static class DATAManager
 {
+
     static private LOADDATETYPE _loadType = LOADDATETYPE.XMLFILE;
     static public LOADDATETYPE LoadType { get { return _loadType; } set { _loadType = value; } }
-    
+
     static private GAMELOADTYPE _gameLoadType = GAMELOADTYPE.LoadFromPlayerPrefs;
     static public GAMELOADTYPE GameLoadType { get { return _gameLoadType; } set { _gameLoadType = value; } }
 
@@ -45,15 +46,27 @@ public static class DATAManager
     static public Dictionary<string, CharactorModel> RolseInfo { get { return _rolesInfo; } }
 
 
+    // static public string streamingPath =
+// #if UNITY_ANDROID
+// 		// "jar:file://" + 
+//         Application.dataPath + "!/assets/";
+// #elif UNITY_IPHONE
+//         Application.dataPath + "/Raw/";
+// #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+// 	    Application.streamingAssetsPath +"/";
+// #else
+//         // string.Empty;
+//         Application.streamingAssetsPath +"/";
+// #endif
     static private string _xmlPath = Application.streamingAssetsPath + "/DATABase/RoleInfo.xml";
     static public string XmlPath { get { return _xmlPath; } }
 
 
-    static private string _dBPath = Application.streamingAssetsPath + "/GameDatabase.db";
+    static private string _dBPath = Application.streamingAssetsPath + "/DATABase/GameDatabase.db";
     static public string DBPath { get { return _dBPath; } }
 
     static private int _gotCountAchievements = 0;
-    static public int GOTCOUNTACHIEVEMENTS { get { return _gotCountAchievements; }set { _gotCountAchievements = value; } }
+    static public int GOTCOUNTACHIEVEMENTS { get { return _gotCountAchievements; } set { _gotCountAchievements = value; } }
 
     static private CharactorModel _player;
     static public CharactorModel PLAYER
@@ -78,7 +91,7 @@ public static class DATAManager
     /// <param name="key"></param>
     /// <param name="name"></param>
     /// <returns>string</returns>
-    static public string  GetTextDBValue(string tableName, string key, string name)
+    static public string GetTextDBValue(string tableName, string key, string name)
     {
         SQLiteConnect data = new SQLiteConnect(DATAManager.DBPath);
         SqliteDataReader reader = data.SelectValueByKey(tableName, key, name);
@@ -90,8 +103,8 @@ public static class DATAManager
         data.CloseConnection();
         return value;
     }
-    
-    
+
+
     /// <summary>
     /// 从数据表中获取指定字段值
     /// </summary>
@@ -99,7 +112,7 @@ public static class DATAManager
     /// <param name="key"></param>
     /// <param name="name"></param>
     /// <returns>string</returns>
-    static public int  GetIntegerDBValue(string tableName, string key, string name)
+    static public int GetIntegerDBValue(string tableName, string key, string name)
     {
         SQLiteConnect data = new SQLiteConnect(DATAManager.DBPath);
         SqliteDataReader reader = data.SelectValueByKey(tableName, key, name);

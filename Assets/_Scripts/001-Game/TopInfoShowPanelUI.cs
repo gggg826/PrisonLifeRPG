@@ -22,7 +22,6 @@ public class TopInfoShowPanelUI : MonoBehaviour
     public Button showInfoPanel;
     void Start()
     {
-        PlayerInfo.Instance.OnPlayerInfoChangedEvent += this.OnPlayerInfoChangedEvent;
         slider_happiness = transform.Find("Bar_Happiness").GetComponent<Slider>();
         slider_energy = transform.Find("Bar_Energy").GetComponent<Slider>();
         slider_heathy = transform.Find("Bar_Health").GetComponent<Slider>();
@@ -31,16 +30,22 @@ public class TopInfoShowPanelUI : MonoBehaviour
         money = transform.Find("Text_Money").GetComponent<Text>();
         daysLeft = transform.Find("Text_Date").GetComponent<Text>();
         menu = transform.Find("Menu").GetComponent<Button>();
-        menu.onClick.AddListener(delegate { GameBasicPanelUI.Instance.ShowMenuPanel();});
+        menu.onClick.AddListener(delegate { GameBasicPanelUI.Instance.ShowMenuPanel(); });
         showInfoPanel = transform.Find("Button_ShowInfoPanel").GetComponent<Button>();
         showInfoPanel.onClick.AddListener(delegate { GameBasicPanelUI.Instance.ShowPlayerInfoPanel(); });
 
+        PlayerInfo.Instance.OnPlayerInfoChangedEvent += this.OnPlayerInfoChangedEvent;
+        // UpdateAllReRender();
     }
 
     void OnPlayerInfoChangedEvent(INFOTYPE type)
     {
         if (type == INFOTYPE.All)
             UpdateAllReRender();
+        if (type == INFOTYPE.BarInfo)
+            UpdateBarRender();
+        if (type == INFOTYPE.SurvivalDays)
+            UpdateLeftDaysRender();
     }
 
     void UpdateAllReRender()
@@ -56,12 +61,14 @@ public class TopInfoShowPanelUI : MonoBehaviour
         slider_happiness.value = PlayerInfo.Instance.happiness;
         slider_energy.value = PlayerInfo.Instance.energy;
         slider_heathy.value = PlayerInfo.Instance.healthy;
+        print("b");
+        print(slider_energy.value);
     }
 
     void UpdatePartyRender()
     {
         if (!partyPosition) return;
-        if (PlayerInfo.Instance.party == ""||PlayerInfo.Instance.party == null)
+        if (PlayerInfo.Instance.party == "" || PlayerInfo.Instance.party == null)
         {
             partyPosition.gameObject.SetActive(false);
         }
@@ -80,6 +87,6 @@ public class TopInfoShowPanelUI : MonoBehaviour
     void UpdateLeftDaysRender()
     {
         int left = PlayerInfo.Instance.totalDays - PlayerInfo.Instance.survivalDays;
-        daysLeft.text = left + " 天";
+        daysLeft.text = left + "天";
     }
 }

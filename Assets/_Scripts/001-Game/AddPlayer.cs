@@ -25,4 +25,11 @@ public class AddPlayer : MonoBehaviour
 
         print(PlayerPrefs.GetString("playerName"));
     }
+    
+    void Update()
+    {
+        if(Input.GetMouseButtonDown(1))
+            // PlayerInfo.Instance.EnergyChange(-5);
+            PlayerInfo.Instance.DaySurvivalChange();
+    }
 }
