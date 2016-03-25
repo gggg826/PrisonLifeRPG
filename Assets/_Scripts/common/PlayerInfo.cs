@@ -17,8 +17,11 @@ public enum INFOTYPE
     All
 }
 
-public class PlayerInfo : UnitySingletonG<PlayerInfo>
+public class PlayerInfo : MonoBehaviour
 {
+    private static PlayerInfo _instance;
+    public static PlayerInfo Instance{get {return _instance;}set { _instance = value;}}
+    
     public string headIcon;
     public string playerName;
     public string workPlace;
@@ -56,6 +59,11 @@ public class PlayerInfo : UnitySingletonG<PlayerInfo>
 
     public delegate void OnPlayerInfoChanged(INFOTYPE type);
     public event OnPlayerInfoChanged OnPlayerInfoChangedEvent;
+    
+    void Awake()
+    {
+        _instance = this;
+    }
 
     /// <summary>
     /// 初始化新人物
