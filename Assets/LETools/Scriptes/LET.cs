@@ -10,6 +10,22 @@ using System.Collections.Generic;
 
 public class LET : MonoBehaviour 
 {
+    
+    static public void ReSortStringList(List<string> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            string temp = list[i];
+            int index = Random.Range(0, list.Count);
+            list[i] = list[index];
+            list[index] = temp;
+        }
+    }
+    
+    
+    
+    
+    
     // static private Dictionary<string, Sprite> spriteDic = new Dictionary<string, Sprite>();
     // static private Dictionary<string, string> bundleNameDic = new Dictionary<string, string>();
     // static private AssetBundle SpriteBundle;

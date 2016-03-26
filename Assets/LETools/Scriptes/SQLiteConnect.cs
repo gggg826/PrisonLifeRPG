@@ -6,7 +6,7 @@
 
  
 using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using Mono.Data.Sqlite;
 
 public class SQLiteConnect
@@ -226,9 +226,9 @@ public class SQLiteConnect
     /// <param name="tableName">数据表名称</param>
     /// <param name="key">字段名称</param>
     /// <returns></returns>
-    public ArrayList SelectColALL(string tableName, string key)
+    public List<string> SelectColALL(string tableName, string key)
     {
-        ArrayList all = new ArrayList();
+        List<string> all = new List<string>();
         string query = "SELECT " + key + " FROM " + tableName;
         SqliteDataReader reader = ExecuteQuery(query);
         while (reader.Read())

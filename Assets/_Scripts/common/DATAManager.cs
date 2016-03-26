@@ -161,11 +161,11 @@ public static class DATAManager
     /// <param name="tableName"></param>
     /// <param name="key"></param>
     /// <returns>返回ArrayList</returns>
-    static public ArrayList GetAllRoleName(string tableName)
+    static public List<string> GetAllRoleName(string tableName, string key)
     {
-        ArrayList temp = new ArrayList();
+        List<string> temp = new List<string>();
         SQLiteConnect data = new SQLiteConnect(DATAManager.DBPath);
-        temp = data.SelectColALL(tableName, "Name");
+        temp = data.SelectColALL(tableName, key);
         data.CloseConnection();
         return temp;
     }
@@ -212,4 +212,6 @@ public static class DATAManager
         data.CloseConnection();
         return info;
     }
+    
+    // static public void RandomCharactorList(string[] list)
 }

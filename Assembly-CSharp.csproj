@@ -56,6 +56,7 @@
      <Compile Include="Assets\LETools\Scriptes\XMLOpration.cs" />
      <Compile Include="Assets\_Scenes\Test\Charactors\LoadCharactors.cs" />
      <Compile Include="Assets\_Scenes\Test\Skill\LoadSkill.cs" />
+     <Compile Include="Assets\_Scenes\Test\Test.cs" />
      <Compile Include="Assets\_Scripts\000-mainmenu\AchievementUI.cs" />
      <Compile Include="Assets\_Scripts\000-mainmenu\BGUI.cs" />
      <Compile Include="Assets\_Scripts\000-mainmenu\BottomButtons.cs" />
@@ -70,6 +71,7 @@
      <Compile Include="Assets\_Scripts\001-Game\DitalSkillInfoUI.cs" />
      <Compile Include="Assets\_Scripts\001-Game\GameBasicPanelUI.cs" />
      <Compile Include="Assets\_Scripts\001-Game\MenuPanelUI.cs" />
+     <Compile Include="Assets\_Scripts\001-Game\RolesListUI.cs" />
      <Compile Include="Assets\_Scripts\001-Game\TopInfoShowPanelUI.cs" />
      <Compile Include="Assets\_Scripts\achievement\AchievementItem.cs" />
      <Compile Include="Assets\_Scripts\achievement\AchievementView.cs" />
@@ -117,17 +119,11 @@
      <Compile Include="Assets\_Scripts\skills\TraitSkillUI.cs" />
      <None Include="Assets\StreamingAssets\DATABase\PlayerInfo.xml" />
      <None Include="Assets\StreamingAssets\DATABase\RoleInfo.xml" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Data.Sqlite">
  <HintPath>/Users/TheNO.5/UnityProject/PrisonLifeRPG/Assets/LETools/Plugins/Mono.Data.Sqlite.dll</HintPath>

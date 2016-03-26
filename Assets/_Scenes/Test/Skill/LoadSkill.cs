@@ -6,7 +6,6 @@
 
  
 using UnityEngine;
-using System.Collections;
 
 public class LoadSkill : MonoBehaviour
 {
@@ -14,7 +13,7 @@ public class LoadSkill : MonoBehaviour
 
 	void Start ()
     {
-        foreach (string skill in DATAManager.GetAllRoleName("Skill"))
+        foreach (string skill in DATAManager.GetAllRoleName("Skill", "Name"))
         {
             SkillManager.Instance.AddSkillToScreenl(skill, parent);
         }
